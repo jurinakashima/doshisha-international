@@ -1,270 +1,404 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#faf9f7">
-<meta name="description" content="数字でひもとく同志社国際中学校・高等学校。異なる経験が出会い、未来が広がる。学校案内の数字をもとにしたデザインプレビュー。">
-<title>数字でひもとく同志社国際 | Design Preview</title>
+<meta name="theme-color" content="#f8f7f4">
+<meta name="description" content="数字でわかる同志社国際中学校・高等学校。帰国生徒数、海外滞在国、語学、進学、学校生活、蔵書数まで。学校案内の数字を紹介するデザインプレビュー。">
+<title>数字でわかる同志社国際 | Doshisha International by the Numbers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--plum:#593269;--deep:#312039;--ink:#302e31;--mute:#827d7d;--ivory:#faf9f7;--line:#dad6d6;--gold:#b99568;--teal:#628b81;--pale:#e8e1e8;--section:110px}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:"DM Sans","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit}button{font:inherit}::selection{background:#cbb6d3;color:#29212e}
-svg{max-width:100%}img{max-width:100%;display:block}
-header{position:absolute;z-index:30;top:0;left:0;right:0;padding:28px clamp(24px,5vw,82px);display:flex;align-items:start;justify-content:space-between;gap:18px}
-.school-name{font-weight:700;color:var(--deep);font-size:clamp(11px,1.15vw,14px);line-height:1.6;letter-spacing:.06em;text-decoration:none}
-.school-name small{display:block;font:600 9px "DM Sans",sans-serif;letter-spacing:.16em;color:#6e6570}
-.nav-link{display:inline-flex;align-items:center;gap:15px;color:var(--plum);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.16em;border-bottom:1px solid #a78fae;padding:4px 0 8px;white-space:nowrap}
-.nav-link b{font-size:19px;font-weight:400;line-height:1}
-.label{display:inline-flex;align-items:center;gap:12px;font:700 10px "DM Sans",sans-serif;letter-spacing:.22em;color:var(--plum)}
-.label:before{content:"";display:inline-block;width:31px;height:1px;background:currentColor;opacity:.7}
-.serif-en{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:-.055em}
-.serif-ja{font-family:"Noto Serif JP","Yu Mincho",serif;font-weight:500;letter-spacing:-.045em}
-.ambient{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.ambient .photo{position:absolute;inset:-16%;background-size:cover;background-position:center;filter:blur(46px) saturate(.56);transform:scale(1.08);opacity:.36}
-.ambient .wash{position:absolute;inset:0;background:linear-gradient(90deg,#faf9f7ee 0%,#faf9f7b2 45%,#faf9f78a 100%)}
-.ambient .light{position:absolute;display:block;width:36vw;height:38vw;min-width:330px;min-height:330px;right:4%;top:-14%;background:#fff;border-radius:50%;filter:blur(88px);opacity:.67}
-.ambient--campus .photo{background-image:linear-gradient(60deg,#9b7c7b30,#ffffff11),url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1500&q=70")}
-.ambient--students .photo{background-image:linear-gradient(25deg,#f3eeee44,#ffffff22),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=70");background-position:40% 50%}
-.ambient--library .photo{background-image:linear-gradient(25deg,#ede8dd44,#ffffff22),url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=70");background-position:center 55%}
-.ambient--neutral .photo{background-image:radial-gradient(ellipse at 25% 80%,#d3d5c7 0 15%,transparent 45%),radial-gradient(ellipse at 90% 20%,#c6b6c9 0 18%,transparent 50%),linear-gradient(120deg,#e1dce1,#e2e0d7)}
-.ambient--cool .photo{background-image:radial-gradient(ellipse at 30% 75%,#8d9e9b99 0 11%,transparent 44%),radial-gradient(ellipse at 83% 14%,#c6c2b9 0 23%,transparent 61%),linear-gradient(130deg,#ebebea,#e3e6e2)}
-.ambient--cool .wash{background:linear-gradient(110deg,#f5f6f4e8,#f5f6f4a0)}
-.ambient--library .wash{background:linear-gradient(92deg,#f7f4efef 0%,#f7f4efce 51%,#f7f4ef85 100%)}
-.top{position:relative;min-height:800px;min-height:100svh;overflow:hidden;display:flex;align-items:center;isolation:isolate}
-.top .ambient{z-index:-1}
-.top:after{content:"";position:absolute;top:0;bottom:0;left:56%;border-left:1px solid #ffffffb5;transform:rotate(13deg);pointer-events:none}
-.top-inner{width:min(100%,1480px);margin:0 auto;display:grid;grid-template-columns:1fr .87fr;align-items:center;gap:40px;padding:120px clamp(30px,8vw,140px) 88px}
-.top-copy{position:relative;z-index:3}
-.top .label{color:var(--plum)}
-.top h1{font-size:clamp(44px,5.5vw,78px);line-height:1.65;color:var(--deep);margin:25px 0 28px}
-.top h1 em{font-style:normal;color:var(--plum)}
-.top p{font-size:13px;line-height:2.5;letter-spacing:.045em;color:#635d63;max-width:430px}
-.top-art{position:relative;height:530px;min-width:0;display:grid;place-items:center}
-.top-art .orbit{position:absolute;width:91%;aspect-ratio:1;border-radius:50%;border:1px solid #a98eae87;transform:rotate(-24deg)}
-.top-art .orbit:before{content:"";position:absolute;inset:15%;border:1px dashed #a58daa88;border-radius:50%;animation:spin 55s linear infinite}
-.top-art .number{position:relative;z-index:2;font-size:clamp(210px,28vw,420px);line-height:.7;color:var(--plum);opacity:.92;text-shadow:0 7px 25px #fff7}
-.top-art .number:after{content:"";position:absolute;width:55px;height:4px;background:var(--gold);right:-45px;bottom:17px;transform:rotate(-24deg)}
-.top-art .tiny{position:absolute;right:7%;top:15%;font:600 10px "DM Sans",sans-serif;letter-spacing:.16em;color:#685771}
-.top-art .top-art-caption{position:absolute;left:17%;bottom:10%;display:flex;gap:14px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--deep)}
-.top-art-caption:before{content:"";width:27px;height:1px;background:var(--gold)}
-.top-art svg{position:absolute;width:100%;height:100%;opacity:.6;overflow:visible}
-.top-art svg path{stroke:var(--plum);stroke-width:1.1;stroke-dasharray:3 8;fill:none;opacity:.5}
-.top-art .point{fill:var(--gold)}
-.scroll-note{position:absolute;bottom:37px;left:clamp(30px,8vw,140px);font:700 10px "DM Sans",sans-serif;letter-spacing:.18em;color:var(--plum);display:flex;align-items:center;gap:22px}
-.scroll-note:before{content:"";width:42px;border-top:1px solid currentColor}
-.vertical-note{position:absolute;right:26px;bottom:48px;writing-mode:vertical-rl;font-size:9px;font-weight:600;letter-spacing:.2em;color:#8a818c}
-.intro{background:var(--ivory);padding:var(--section) 6% 82px;text-align:center}
-.intro h2{font-size:clamp(32px,4vw,57px);line-height:1.65;margin:18px auto 0;color:var(--deep)}
-.intro p{font-size:12px;color:#777077;line-height:2.25;margin:22px auto 0}
-.overview{max-width:1130px;margin:54px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
-.overview>div{padding:23px 8px;text-align:center;border-right:1px solid var(--line)}
-.overview>div:nth-child(5n){border-right:0}
-.overview>div:nth-child(n+6){border-top:1px solid var(--line)}
-.overview strong{display:block;font:500 clamp(39px,5vw,70px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:-.055em;color:var(--plum);white-space:nowrap}
-.overview span{display:block;margin-top:4px;font-size:10px;font-weight:600;letter-spacing:.03em;color:#615760}
-.chapter{position:relative;isolation:isolate;overflow:hidden}
-.chapter .chapter-inner{position:relative;z-index:2;width:min(100%,1380px);min-height:690px;margin:0 auto;display:grid;grid-template-columns: 1fr .9fr;gap:40px;align-items:center;padding:105px clamp(30px,7vw,112px)}
-.chapter .ambient{z-index:-1}
-.chapter-kicker{font-size:10px;font-weight:700;color:var(--plum);letter-spacing:.2em}
-.chapter-kicker span{font-family:"Cormorant Garamond",serif;font-size:21px;margin-right:16px;letter-spacing:0}
-.chapter h2{font-size:clamp(38px,4.7vw,66px);line-height:1.55;color:var(--deep);margin:20px 0 17px}
-.chapter .desc{font-size:13px;line-height:2.35;color:#666169;max-width:420px;margin:20px 0}
-.chapter .micro{font-size:10px;letter-spacing:.12em;color:#857681;line-height:1.9}
-.chapter .huge{display:flex;align-items:baseline;gap:15px;white-space:nowrap}
-.huge .digits{font:500 clamp(165px,20vw,280px)/.95 "Cormorant Garamond",Georgia,serif;letter-spacing:-.07em;color:var(--plum)}
-.huge .unit{font-size:clamp(17px,2vw,25px);font-weight:500;color:var(--plum)}
-.secondary-stat{display:flex;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid #9d949d6b;padding:18px 0;margin-top:28px;max-width:520px}
-.secondary-stat .stat-text strong{display:block;font-size:13px;font-weight:700;letter-spacing:.04em}
-.secondary-stat .stat-text small{display:block;font-size:10px;color:#807780;line-height:2;margin-top:2px}
-.secondary-stat .stat-digit{font:500 clamp(62px,8vw,112px)/1 "Cormorant Garamond",serif;color:var(--plum);letter-spacing:-.06em;white-space:nowrap}
-.secondary-stat .stat-digit i{font-style:normal;font:500 17px "Noto Sans JP",sans-serif;margin-left:4px}
-.chapter-art{position:relative;display:flex;align-items:center;justify-content:center}
-.chapter-art svg{width:100%;height:auto;max-width:590px;display:block;overflow:visible}
-.chapter-art .outline{stroke:var(--plum);stroke-width:1.65;fill:none}
-.chapter-art .thin{stroke:#c2aebf;stroke-width:1;fill:none}
-.chapter-art .soft{fill:#e2d7e3}
-.chapter-art .gold{fill:var(--gold)}
-.chapter-art .route{stroke:#a27f9d;stroke-width:1.3;stroke-dasharray:4 7;fill:none;animation:dash 26s linear infinite}
-.chapter-art .pulse{fill:none;stroke:var(--plum);stroke-width:1.3;transform-box:fill-box;transform-origin:center;animation:pulse 4s linear infinite}
-.chapter-art .region{fill:#d1c5d3}
-.chapter-art .region2{fill:#baa7be}
-.chapter-art .dashed{fill:none;stroke:#997c9c;stroke-width:1;stroke-dasharray:3 8}
-.chapter-art .chip{font:600 11px "DM Sans",sans-serif;letter-spacing:.1em;fill:var(--plum)}
-.chapter--world{background:#f9f8f7}
-.chapter--world .chapter-inner{grid-template-columns:.9fr 1.1fr}
-.world-map{margin:10px -8%}
-.chapter--language{background:#f4f3f0}
-.chapter--language .chapter-inner{grid-template-columns:.92fr 1.08fr}
-.language-words{position:relative;width:100%;height:520px;display:grid;place-items:center;isolation:isolate}
-.language-words:before{content:"";position:absolute;width:79%;aspect-ratio:1;border:1px solid #aa9aab74;border-radius:50%;z-index:-1}
-.language-words:after{content:"";position:absolute;width:56%;aspect-ratio:1;border:1px dashed #aa9aab7a;border-radius:50%;z-index:-1}
-.lang-word{position:absolute;display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3vw,42px);font-weight:500;color:#785783;letter-spacing:-.03em}
-.lang-word:nth-child(1){left:2%;top:15%}.lang-word:nth-child(2){right:1%;top:23%}.lang-word:nth-child(3){left:6%;bottom:20%}.lang-word:nth-child(4){right:9%;bottom:13%}.lang-word:nth-child(5){top:1%;left:45%;font-family:"Noto Serif JP",serif;font-size:30px}.lang-word:nth-child(6){bottom:0;left:39%;font-family:"Noto Serif JP",serif;font-size:29px}
-.language-center{text-align:center;background:#f8f6f4e3;width:43%;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 60px #523a5120}
-.language-center b{font:500 120px/.9 "Cormorant Garamond",serif;color:var(--plum)}
-.language-center span{font-size:11px;letter-spacing:.1em;color:var(--plum)}
-.chapter--path{background:#442b50;color:#fff}
-.chapter--path .chapter-inner{min-height:725px}
-.chapter--path .chapter-kicker,.chapter--path .chapter-kicker span{color:#d0b7ce}
-.chapter--path h2{color:#fff}
-.chapter--path .huge .digits,.chapter--path .huge .unit{color:#fff}
-.chapter--path .desc{color:#e5dce4}
-.chapter--path .secondary-stat{border-color:#ffffff55}
-.chapter--path .secondary-stat .stat-digit{color:#f7e6dc}
-.chapter--path .secondary-stat .stat-text strong{color:#fff}
-.chapter--path .secondary-stat .stat-text small{color:#d3c4d4}
-.chapter--path .micro{color:#d3c4d4}
-.chapter--path .path-decor{position:absolute;inset:0;overflow:hidden;opacity:.24;z-index:-1}
-.chapter--path .path-decor:before{content:"";position:absolute;border:1px solid #fff;border-radius:50%;width:700px;height:700px;top:-290px;right:-150px;box-shadow:0 0 0 55px #ffffff22,0 0 0 140px #ffffff18}
-.path-rings{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center}
-.path-rings svg{width:100%;height:100%}
-.path-rings circle{fill:none;stroke:#d1b9cf;stroke-width:1.4}
-.path-rings .bright{stroke:#e0c5e0;stroke-width:4;stroke-linecap:round;stroke-dasharray:540 700;transform-origin:center;transform:rotate(-90deg)}
-.path-rings text{fill:#fff;font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:-.055em}
-.path-rings .ring-note{font-family:"DM Sans",sans-serif;font-size:11px;letter-spacing:2px;fill:#d9c7d9}
-.chapter--campus{background:#f5f6f3}
-.chapter--campus .chapter-inner{grid-template-columns: .9fr 1.1fr}
-.campus-visual{min-height:400px;display:grid;place-items:center;position:relative}
-.campus-visual svg{width:100%;max-width:560px;height:auto}
-.campus-visual .outline{stroke:#687e78;stroke-width:2.1;fill:none}
-.campus-visual .soft{fill:#d4d9d3}
-.campus-visual .gold{fill:#b99568}
-.campus-visual .route{stroke:#687e78}
-.campus-label{position:absolute;right:1%;bottom:4%;font:700 11px "DM Sans",sans-serif;letter-spacing:.12em;color:#63776f}
-.chapter--library{background:#f7f4ee}
-.chapter--library .chapter-inner{grid-template-columns:.94fr 1.06fr}
-.chapter--library .huge .digits{font-size:clamp(116px,14.5vw,220px)}
-.chapter--library .secondary-stat .stat-digit{font-size:clamp(70px,9vw,127px)}
-.library-shelf{width:100%;position:relative;display:grid;place-items:center}
-.library-shelf svg{width:100%;height:auto}
-.library-shelf .line{stroke:#9a7d99;stroke-width:2;fill:none}
-.library-shelf .book1{fill:#b9b0b3}.library-shelf .book2{fill:#ad9b94}.library-shelf .book3{fill:#8f778b}.library-shelf .book4{fill:#d0bd9f}
-.library-shelf .page{fill:#f9f3e9;stroke:#846882;stroke-width:1.3}
-.library-shelf .book-marks{stroke:#f3ebee;stroke-width:1.8}
-.last{position:relative;padding:150px 6% 140px;overflow:hidden;text-align:center;background:#faf9f7;isolation:isolate}
-.last .ambient{z-index:-1}
-.last .ambient .wash{background:#faf9f7c9}
-.last h2{font-size:clamp(43px,5.3vw,76px);line-height:1.65;color:var(--deep);margin:28px auto 24px}
-.last h2 em{font-style:normal;color:var(--plum)}
-.last p{font-size:13px;line-height:2.2;color:#645a64}
-.last a{display:inline-flex;align-items:center;justify-content:space-between;min-width:285px;gap:40px;text-decoration:none;padding:18px 22px;border:1px solid var(--plum);background:var(--plum);color:#fff;font-size:12px;font-weight:600;margin-top:34px;transition:background .25s,transform .25s}
-.last a:hover{transform:translateY(-3px);background:#452351}
-.last a span{font-size:21px}
-footer{padding:28px 6% 42px;text-align:center;font-size:10px;color:#8b848b;line-height:1.9}
-.source-note{display:block;font-size:10px;color:#7f777e;line-height:1.9;margin-top:22px}
-.reveal{opacity:1;transform:none}
-.has-motion .reveal{opacity:0;transform:translateY(29px);transition:opacity .9s cubic-bezier(.22,.78,.26,1),transform .9s cubic-bezier(.22,.78,.26,1)}
-.has-motion .reveal.shown{opacity:1;transform:none}
-@keyframes dash{to{stroke-dashoffset:-170}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%{opacity:.8;transform:scale(.65)}85%,100%{opacity:0;transform:scale(1.8)}}
-@media(max-width:1000px){.top-inner{grid-template-columns:1fr .76fr;gap:16px}.top h1{font-size:clamp(42px,5.5vw,67px)}.top-art{height:400px}.chapter .chapter-inner{gap:20px;padding-left:4%;padding-right:4%}.chapter h2{font-size:clamp(33px,4.5vw,55px)}.overview strong{font-size:clamp(35px,5vw,57px)}}
-@media(max-width:720px){
-:root{--section:85px}
-header{padding:20px 22px}.school-name{font-size:10px}.school-name small{font-size:7px}.nav-link{font-size:9px;gap:8px}.nav-link b{font-size:16px}
-.top{min-height:710px;min-height:100svh;align-items:start}
-.top-inner{display:block;padding:130px 23px 75px}
-.top h1{font-size:clamp(38px,9.5vw,53px);line-height:1.6;margin:20px 0}
-.top p{font-size:11px;line-height:2.3;max-width:340px}
-.top-art{height:320px;margin:-8px auto 0;width:min(100%,420px)}
-.top-art .orbit{width:76%}.top-art .number{font-size:clamp(220px,54vw,300px)}
-.top-art .top-art-caption{font-size:11px;bottom:7%;left:13%}.top-art .tiny{right:0;top:9%;font-size:9px}
-.top-art .number:after{width:35px;right:-25px}
-.scroll-note{bottom:21px;left:24px;font-size:9px}.vertical-note{display:none}
-.ambient .photo{filter:blur(40px) saturate(.6)}.ambient .wash{background:linear-gradient(110deg,#faf9f7f5,#faf9f7bf)}
-.intro{padding:85px 20px 65px}.intro h2{font-size:34px}.intro p{font-size:11px}
-.overview{grid-template-columns:repeat(2,1fr);margin-top:40px}
-.overview>div{padding:19px 6px;text-align:center;border-right:0}
-.overview>div:nth-child(odd){border-right:1px solid var(--line)}
-.overview>div:nth-child(n+3){border-top:1px solid var(--line)}
-.overview strong{font-size:clamp(46px,14vw,70px)}.overview span{font-size:10px}
-.chapter .chapter-inner,.chapter--world .chapter-inner,.chapter--language .chapter-inner,.chapter--campus .chapter-inner,.chapter--library .chapter-inner{display:flex;flex-direction:column;align-items:stretch;gap:17px;min-height:0;padding:75px 22px 68px}
-.chapter--path .chapter-inner{min-height:0}
-.chapter h2{font-size:clamp(35px,8.6vw,47px);line-height:1.6;margin:16px 0}
-.chapter .desc{font-size:11px;line-height:2.35;margin:15px 0}
-.chapter .huge .digits{font-size:clamp(160px,44vw,225px)}
-.chapter--library .huge .digits{font-size:clamp(112px,30vw,160px)}
-.chapter .huge .unit{font-size:18px}
-.secondary-stat{margin-top:23px;padding-top:14px}
-.secondary-stat .stat-digit{font-size:88px}.chapter--library .secondary-stat .stat-digit{font-size:78px}
-.chapter-art{order:2;margin-top:5px}.chapter-art svg{max-height:350px}
-.world-map{margin:0}
-.language-words{height:325px;width:100%;max-width:410px;margin:auto}
-.lang-word{font-size:clamp(23px,7vw,31px)}.lang-word:nth-child(5),.lang-word:nth-child(6){font-size:21px}
-.language-center b{font-size:80px}.language-center span{font-size:9px}
-.chapter--path .path-rings{max-width:370px;margin:auto}
-.campus-visual{min-height:280px}.campus-visual svg{max-height:300px}
-.last{padding:120px 23px 105px}.last h2{font-size:clamp(38px,9vw,53px)}.last p{font-size:12px}.last a{min-width:265px}
+:root{
+  --plum:#663874;--dark:#3b2742;--ink:#353238;--slate:#6f6b70;
+  --paper:#f8f7f4;--white:#fff;--mist:#efeeec;--bluegrey:#91a7af;
+  --hairline:rgba(79,61,82,.23);--serif:"Cormorant Garamond",Georgia,serif;
+  --jpserif:"Noto Serif JP","Yu Mincho",serif;--sans:"Noto Sans JP",sans-serif;
 }
-@media(max-width:390px){.top-inner{padding-top:106px}.top h1{font-size:36px}.top-art{height:275px}.top-art .number{font-size:220px}.overview strong{font-size:46px}.chapter--library .huge .digits{font-size:112px}.secondary-stat .stat-digit{font-size:76px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.has-motion .reveal{opacity:1;transform:none}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font:inherit}img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--plum);outline-offset:4px}
+.site-header{position:absolute;top:0;left:0;right:0;height:92px;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(25px,6vw,94px);gap:15px}
+.site-header__name{font-size:clamp(11px,1.05vw,13px);font-weight:700;line-height:1.65;letter-spacing:.03em;text-decoration:none;color:var(--dark)}
+.site-header__name small{display:block;font:500 9px "DM Sans",sans-serif;letter-spacing:.14em;color:#776c79}
+.site-header__menu{display:inline-flex;align-items:center;gap:14px;min-height:44px;font:700 10px "DM Sans",sans-serif;letter-spacing:.13em;text-decoration:none;color:var(--plum)}
+.site-header__menu:after{content:"";display:block;width:37px;height:37px;border:1px solid var(--plum);border-radius:50%;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 7v18m-6-6 6 6 6-6' stroke='%23663874' fill='none' stroke-width='1.4'/%3E%3C/svg%3E") center/17px no-repeat}
+.eyebrow{font:700 10px "DM Sans",sans-serif;letter-spacing:.18em;color:var(--plum)}
+.fine-rule{height:1px;background:var(--plum);transform-origin:left;position:relative}
+.fine-rule:after{content:"";position:absolute;right:0;top:-4px;width:1px;height:9px;background:var(--plum)}
+.photo-backdrop{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;background:linear-gradient(135deg,#eeede9,#dedbdc)}
+.photo-backdrop:before{content:"";position:absolute;inset:-30px;background-image:var(--photo);background-size:cover;background-position:var(--bg-position,center);filter:blur(18px) saturate(.42) contrast(.83) brightness(1.1);transform:scale(1.05);opacity:.61}
+.photo-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(248,247,244,.93),rgba(248,247,244,.83) 44%,rgba(248,247,244,.74))}
+.photo-backdrop--strong:after{background:linear-gradient(100deg,rgba(248,247,244,.92),rgba(248,247,244,.67))}
+.photo-backdrop--book:after{background:linear-gradient(100deg,rgba(247,245,241,.94),rgba(247,245,241,.76))}
+.hero{min-height:720px;min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;isolation:isolate}
+.hero .photo-backdrop{z-index:-1}
+.hero:before{content:"";position:absolute;top:0;left:0;right:0;border-top:3px solid var(--plum);z-index:20}
+.hero__inner{width:min(100%,1350px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:2vw;padding:125px clamp(30px,7vw,115px) 105px;z-index:2}
+.hero__counter{font:600 12px "DM Sans",sans-serif;letter-spacing:.17em;color:var(--plum);margin-bottom:33px;display:flex;gap:14px;align-items:center}
+.hero__counter:before{content:"";width:33px;height:1px;background:var(--plum)}
+.hero h1{font:500 clamp(47px,5.4vw,77px)/1.55 var(--jpserif);color:var(--dark);letter-spacing:-.06em;margin:0}
+.hero h1 em{font-style:normal;color:var(--plum)}
+.hero__en{font:500 clamp(24px,2.5vw,37px)/1.16 var(--serif);color:var(--plum);letter-spacing:.015em;margin:22px 0 0}
+.hero__body{max-width:390px;font:400 13px/2.25 var(--sans);color:#655b66;margin:32px 0 0;letter-spacing:.015em}
+.hero__media{align-self:center;position:relative;padding:30px 0 35px}
+.hero__circle{width:min(32vw,430px);height:min(32vw,430px);border-radius:50%;overflow:hidden;position:relative;margin:auto;background:#ddd5dd;box-shadow:0 0 0 14px #ffffff9c}
+.hero__circle img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.68) contrast(.91)}
+.hero__media:before{content:"";position:absolute;left:-42%;right:-9%;height:1px;background:var(--plum);top:52%;z-index:-1}
+.hero__media:after{content:"01 — 05";position:absolute;right:0;bottom:8px;font:500 15px var(--serif);letter-spacing:.1em;color:var(--plum)}
+.hero__photo-label{margin:22px auto 0;text-align:center;font:500 11px "DM Sans",sans-serif;letter-spacing:.14em;color:var(--slate)}
+.hero__bottom{position:absolute;bottom:30px;left:clamp(30px,7vw,115px);right:clamp(30px,7vw,115px);display:flex;justify-content:space-between;align-items:center;gap:20px;font:700 10px "DM Sans",sans-serif;letter-spacing:.15em;color:var(--plum)}
+.hero__bottom:after{content:"";display:block;width:54%;height:1px;background:#a68caa87}
+.summary{background:#fff;padding:112px 6% 94px;position:relative}
+.summary__intro{text-align:center}
+.summary__intro h2{font:500 clamp(34px,4vw,58px)/1.6 var(--jpserif);color:var(--dark);margin:22px 0 0;letter-spacing:-.055em}
+.summary__intro p{font-size:13px;line-height:2.25;color:var(--slate);margin:23px 0 0}
+.summary__grid{width:min(100%,1160px);margin:75px auto 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--hairline);border-left:1px solid transparent}
+.summary__stat{padding:20px 12px 24px;min-width:0;position:relative;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline);text-align:center}
+.summary__stat:nth-child(5n){border-right:0}
+.summary__stat strong{font:500 clamp(42px,5.5vw,70px)/1.08 var(--serif);letter-spacing:-.065em;color:var(--plum);display:block;white-space:nowrap}
+.summary__stat span{font:500 11px/1.65 var(--sans);color:var(--slate);display:block;margin-top:7px}
+.summary__note{font-size:11px;line-height:1.95;max-width:900px;text-align:center;color:#827e83;margin:25px auto 0}
+.scene{position:relative;overflow:hidden;isolation:isolate;min-height:790px;display:grid;align-items:center}
+.scene .photo-backdrop{z-index:-1}
+.scene--tint .photo-backdrop:after{background:linear-gradient(110deg,rgba(239,239,236,.91),rgba(239,239,236,.74))}
+.scene__container{width:min(100%,1370px);margin:0 auto;padding:100px clamp(26px,6vw,95px);display:grid;grid-template-columns:1fr .88fr;align-items:center;gap:6vw}
+.scene--reverse .scene__container{grid-template-columns:.88fr 1fr}
+.scene--reverse .scene__media{order:-1}
+.scene__copy{position:relative;z-index:4;min-width:0}
+.scene__index{display:flex;align-items:center;gap:15px;font:700 11px "DM Sans",sans-serif;letter-spacing:.16em;color:#84628b;margin-bottom:42px}
+.scene__index b{font:500 29px var(--serif);letter-spacing:0;color:var(--plum)}
+.scene__heading{font:500 clamp(28px,2.4vw,38px)/1.6 var(--jpserif);letter-spacing:-.04em;color:var(--dark);margin:0 0 2px}
+.scene__measure{display:flex;align-items:baseline;gap:15px;white-space:nowrap;margin:3px 0 10px;position:relative}
+.scene__measure small{font:500 13px var(--sans);color:var(--plum);letter-spacing:.1em}
+.scene__num{font:400 clamp(155px,16.6vw,255px)/.93 var(--serif);letter-spacing:-.075em;color:var(--plum);display:block}
+.scene__num--wide{font-size:clamp(105px,11.3vw,177px);letter-spacing:-.08em}
+.scene__unit{font:500 clamp(18px,1.7vw,24px) var(--jpserif);color:var(--plum)}
+.scene__rule{height:1px;background:var(--plum);width:calc(100% + 9vw);position:relative;z-index:0;transform-origin:left}
+.scene__rule:before,.scene__rule:after{content:"";position:absolute;width:1px;height:10px;background:var(--plum);top:-5px}
+.scene__rule:before{left:0}.scene__rule:after{right:0}
+.scene--reverse .scene__rule{transform-origin:right;transform:translateX(-9vw);width:calc(100% + 9vw)}
+.scene__body{font:400 13px/2.25 var(--sans);max-width:430px;color:#5e585f;margin:25px 0}
+.scene__sub{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:18px;margin:12px 0 0}
+.scene__sub strong{font:500 clamp(63px,7.5vw,103px)/1 var(--serif);letter-spacing:-.06em;color:var(--plum);white-space:nowrap}
+.scene__sub strong i{font:500 17px var(--jpserif);font-style:normal;letter-spacing:0;margin-left:5px}
+.scene__sub span{font-size:12px;line-height:1.9;font-weight:600;color:var(--ink)}
+.scene__footnote{font-size:11px;line-height:1.9;color:var(--slate);margin:20px 0 0}
+.scene__media{position:relative;z-index:2;min-width:0;display:grid;place-items:center;align-self:center}
+.scene__photo{width:min(32vw,435px);height:min(32vw,435px);border-radius:50%;overflow:hidden;background:#ddd7dd;box-shadow:0 0 0 12px #fff8;position:relative}
+.scene__photo img{width:100%;height:100%;object-fit:cover;object-position:var(--photo-pos,center);filter:saturate(.65) contrast(.92) sepia(.07)}
+.scene__photo:after{content:"";position:absolute;inset:0;border:1px solid #ffffffbb;border-radius:50%;pointer-events:none}
+.scene__photo-label{position:relative;text-align:center;background:#ffffffd9;margin-top:-16px;padding:13px 26px;color:#675a68;font:500 11px var(--sans);z-index:3;letter-spacing:.03em;max-width:90%}
+.scene__media--map:before{content:"";position:absolute;left:-8%;top:-2%;width:90%;aspect-ratio:1;border:1px dotted #957b9b9e;border-radius:50%;z-index:-2}
+.scene__media--map:after{content:"";position:absolute;right:-2%;bottom:1%;height:8px;width:8px;background:var(--plum);border-radius:50%;z-index:0}
+.scene__languages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px;max-width:510px}
+.scene__languages span{display:block;border-top:1px solid #a899ac8a;padding:9px 2px;font:600 11px/1.3 "DM Sans",sans-serif;color:#726477;letter-spacing:.07em;text-align:left}
+.scene__sub--wide{grid-template-columns:1fr;gap:4px}
+.scene__sub--wide strong{font-size:clamp(65px,8vw,117px)}
+.scene__sub--wide span{margin-bottom:4px}
+.scene--library .scene__num--wide{font-size:clamp(99px,10.1vw,153px)}
+.scene--library .scene__sub strong{font-size:clamp(65px,8vw,112px)}
+.scene--library .scene__sub{grid-template-columns:1fr;gap:3px}
+.scene--library .scene__photo-label{margin-top:-19px}
+.scene__deco{position:absolute;left:4vw;top:11%;width:200px;height:200px;opacity:.07;z-index:0;pointer-events:none}
+.scene__deco svg{width:100%;height:100%}
+.end{position:relative;min-height:580px;background:#f8f7f4;display:grid;place-items:center;text-align:center;isolation:isolate;overflow:hidden}
+.end .photo-backdrop{z-index:-1}
+.end .photo-backdrop:before{filter:blur(13px) saturate(.45) contrast(.84) brightness(1.1)}
+.end__inner{width:100%;position:relative;z-index:2;padding:110px 20px}
+.end h2{font:500 clamp(38px,5vw,69px)/1.65 var(--jpserif);letter-spacing:-.05em;color:var(--dark);margin:25px auto}
+.end h2 em{color:var(--plum);font-style:normal}
+.end p{font-size:13px;color:var(--slate);line-height:2.1}
+.end__cta{display:inline-flex;align-items:center;justify-content:space-between;gap:36px;background:var(--plum);color:white;min-height:55px;padding:0 24px;text-decoration:none;font-size:12px;font-weight:700;margin-top:25px;transition:transform .25s,background .25s}
+.end__cta:hover{transform:translateY(-2px);background:var(--dark)}
+.end__cta span{font-size:22px;font-weight:400}
+.site-footer{font-size:11px;line-height:2.1;color:#7c777d;text-align:center;padding:30px 22px 42px;background:#fff}
+.side-dots{position:fixed;z-index:28;right:23px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;align-items:center}
+.side-dots a{display:grid;place-items:center;width:26px;height:26px;position:relative;text-decoration:none}
+.side-dots a:after{content:"";width:5px;height:5px;background:#a6a0a8;border-radius:50%;transition:all .25s}
+.side-dots a.active:after{width:12px;height:12px;background:var(--plum);box-shadow:0 0 0 5px #ffffffb4}
+.side-dots a:focus-visible{outline-offset:0}
+.motion .reveal{opacity:.78;transform:translateY(13px);transition:opacity .62s ease,transform .62s ease}
+.motion .reveal.visible{opacity:1;transform:translateY(0)}
+.motion .scene__rule{transform:scaleX(.8);opacity:.7;transition:transform .7s ease,opacity .7s ease}
+.motion .scene__rule.visible{transform:scaleX(1);opacity:1}
+.motion .scene--reverse .scene__rule{transform:translateX(-9vw) scaleX(.8)}
+.motion .scene--reverse .scene__rule.visible{transform:translateX(-9vw) scaleX(1)}
+@media(max-width:1050px){
+ .hero__inner{grid-template-columns:1.05fr .95fr;padding-left:5%;padding-right:5%}
+ .hero__circle,.scene__photo{width:min(36vw,370px);height:min(36vw,370px)}
+ .scene__container{gap:3vw;padding-left:5%;padding-right:5%}
+ .scene__num{font-size:clamp(130px,18vw,210px)}
+ .scene__num--wide{font-size:clamp(95px,12vw,145px)}
+ .scene--library .scene__num--wide{font-size:clamp(85px,10.5vw,130px)}
+ .summary__stat strong{font-size:clamp(40px,5vw,55px)}
+}
+@media(max-width:720px){
+ .site-header{height:70px;padding:0 23px}
+ .site-header__name{font-size:10px}.site-header__name small{font-size:7px;letter-spacing:.08em}
+ .site-header__menu{font-size:9px;gap:5px}.site-header__menu:after{width:32px;height:32px}
+ .hero{min-height:740px;min-height:100svh;display:block}
+ .hero__inner{display:flex;flex-direction:column;align-items:stretch;padding:120px 24px 77px;gap:0}
+ .hero__counter{font-size:9px;margin-bottom:16px;letter-spacing:.12em}
+ .hero h1{font-size:clamp(37px,9.6vw,55px);line-height:1.55}
+ .hero__en{font-size:26px;margin:17px 0 0}
+ .hero__body{font-size:11px;line-height:2.2;margin-top:21px}
+ .hero__media{margin:17px auto 0;padding:0;width:100%}
+ .hero__circle{width:min(60vw,260px);height:min(60vw,260px)}
+ .hero__media:before{left:0;right:0;top:45%}
+ .hero__media:after{font-size:12px;right:7%;bottom:-14px}
+ .hero__photo-label{font-size:9px;margin-top:12px}
+ .hero__bottom{left:24px;right:24px;bottom:19px;font-size:9px}
+ .hero__bottom:after{width:28%}
+ .summary{padding:84px 24px 70px}
+ .summary__intro h2{font-size:clamp(31px,7.4vw,43px)}
+ .summary__intro p{font-size:11px}
+ .summary__grid{margin-top:45px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .summary__stat{padding:18px 6px 20px;min-height:90px}
+ .summary__stat:nth-child(5n){border-right:1px solid var(--hairline)}
+ .summary__stat:nth-child(2n){border-right:0}
+ .summary__stat strong{font-size:clamp(43px,12vw,61px)}
+ .summary__stat span{font-size:10px}
+ .summary__note{font-size:10px;margin-top:22px}
+ .scene{min-height:0}
+ .scene__container,.scene--reverse .scene__container{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:72px 24px 76px}
+ .scene--reverse .scene__media{order:1}
+ .scene__copy{order:0}
+ .scene__index{font-size:10px;margin-bottom:26px}
+ .scene__index b{font-size:25px}
+ .scene__heading{font-size:clamp(27px,7vw,37px);line-height:1.5}
+ .scene__measure{margin:5px 0 10px;gap:9px}
+ .scene__num{font-size:clamp(128px,39vw,190px)}
+ .scene__num--wide{font-size:clamp(86px,24vw,130px)}
+ .scene--library .scene__num--wide{font-size:clamp(79px,22vw,125px)}
+ .scene__unit{font-size:17px}
+ .scene__rule{width:100%}
+ .scene--reverse .scene__rule{transform:none;width:100%}
+ .motion .scene--reverse .scene__rule{transform:scaleX(.8)}
+ .motion .scene--reverse .scene__rule.visible{transform:scaleX(1)}
+ .scene__body{font-size:11px;line-height:2.2;margin:23px 0}
+ .scene__sub{margin-top:8px;gap:13px}
+ .scene__sub strong{font-size:80px}
+ .scene__sub strong i{font-size:14px}
+ .scene__sub span{font-size:11px}
+ .scene__footnote{font-size:10px;margin-top:15px}
+ .scene__media{order:1;margin:35px auto 0;width:100%}
+ .scene__photo{width:min(66vw,285px);height:min(66vw,285px)}
+ .scene__photo-label{font-size:9px;margin-top:-12px;padding:11px 16px}
+ .scene__languages{gap:7px 10px;margin-top:12px}
+ .scene__languages span{font-size:9px;padding-top:7px}
+ .scene--library .scene__sub strong{font-size:76px}
+ .side-dots{display:none}
+ .end{min-height:520px}
+ .end__inner{padding:94px 24px}
+ .end h2{font-size:clamp(35px,8.7vw,49px)}
+ .end p{font-size:11px}
+ .end__cta{font-size:11px;padding:0 21px}
+ .site-footer{font-size:10px}
+}
+@media(max-width:390px){
+ .hero__inner{padding-top:102px}.hero h1{font-size:35px}.hero__en{font-size:23px}
+ .hero__circle{width:215px;height:215px}.hero__media{margin-top:13px}
+ .scene__num{font-size:124px}
+ .scene__num--wide{font-size:81px}
+ .scene--library .scene__num--wide{font-size:76px}
+ .scene--library .scene__sub strong{font-size:70px}
+ .scene__sub strong{font-size:74px}
+ .scene__languages span{letter-spacing:0}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .motion .reveal{opacity:1!important;transform:none!important}
+ .motion .scene__rule{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
-<header><a class="school-name" href="#top">同志社国際中学校・高等学校<small>DOSHISHA INTERNATIONAL JUNIOR / SENIOR HIGH SCHOOL</small></a><a class="nav-link" href="#numbers">DISCOVER <b aria-hidden="true">↘</b></a></header>
+<header class="site-header">
+  <a class="site-header__name" href="#top">同志社国際中学校・高等学校<small>DOSHISHA INTERNATIONAL JUNIOR / SENIOR HIGH SCHOOL</small></a>
+  <a class="site-header__menu" href="#numbers">EXPLORE</a>
+</header>
 <main>
-<section class="top" id="top" aria-label="同志社国際について">
-<div class="ambient ambient--campus" aria-hidden="true"><div class="photo"></div><div class="wash"></div><div class="light"></div></div>
-<div class="top-inner">
-<div class="top-copy"><div class="label">DOSHISHA INTERNATIONAL, IN NUMBERS</div><h1 class="serif-ja">違いが集まる。<br><em>未来がひらく。</em></h1><p>一人ひとりのバックグラウンドが、<br>誰かの新しい発見になる。<br>数字から見えてくる、同志社国際の素顔。</p></div>
-<div class="top-art">
-<div class="orbit"></div>
-<svg viewBox="0 0 550 550" aria-hidden="true"><path d="M50 155Q265-20 495 134M72 425Q267 563 477 379M74 200Q300 340 492 201M148 458Q194 200 409 55"/><circle class="point" cx="73" cy="201" r="7"/><circle class="point" cx="421" cy="57" r="6"/><circle class="point" cx="475" cy="376" r="6"/></svg>
-<div class="number serif-en">DI</div><div class="tiny">THE WORLD IS OUR CLASSROOM</div><div class="top-art-caption">DOSHISHA INTERNATIONAL</div>
-</div>
-</div><div class="scroll-note">SCROLL TO EXPLORE</div><div class="vertical-note">THE STORY BEHIND THE NUMBERS</div>
+<section class="hero" id="top" style="--photo:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=75')" aria-labelledby="hero-title">
+  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <div class="hero__counter">DOSHISHA INTERNATIONAL / 2026</div>
+      <h1 id="hero-title">数字でわかる<br>同志社国際</h1>
+      <p class="hero__en">Doshisha International<br>by the Numbers.</p>
+      <p class="hero__body">国際色豊かな本校には、さまざまなバックグラウンドを持つ生徒たちが集まります。その魅力を、学校案内に掲載された数字とともに。</p>
+    </div>
+    <div class="hero__media">
+      <div class="hero__circle"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を伝えるイメージ写真（実際の校舎ではありません）" fetchpriority="high" decoding="async"></div>
+      <div class="hero__photo-label">A WORLD OF POSSIBILITIES</div>
+    </div>
+  </div>
+  <div class="hero__bottom"><span>SCROLL TO DISCOVER</span><span>01 — 05 / OUR STORIES</span></div>
 </section>
-<section class="intro" id="numbers"><div class="label reveal">DOSHISHA INTERNATIONAL BY THE NUMBERS</div><h2 class="serif-ja reveal">数字の向こうに、<br>私たちの物語がある。</h2><p class="reveal">学校案内に登場する10の数字から、<br>同志社国際の魅力をひもときます。</p>
-<div class="overview reveal" aria-label="学校の数字一覧">
-<div><strong>682</strong><span>帰国生徒数</span></div><div><strong>70</strong><span>海外滞在国</span></div>
-<div><strong>6</strong><span>学べる外国語</span></div><div><strong>100</strong><span>海外プログラム参加者</span></div>
-<div><strong>929</strong><span>TOEFL受験者数</span></div><div><strong>90%</strong><span>内部進学率</span></div>
-<div><strong>120</strong><span>寮生徒数</span></div><div><strong>54</strong><span>同時展開授業数</span></div>
-<div><strong>63,500</strong><span>図書蔵書数</span></div><div><strong>11,400</strong><span>洋書数</span></div>
-</div><span class="source-note">※ 数値はご提供いただいた学校パンフレットの掲載値です。年度・定義は正式公開前に学校の最新資料で確認します。</span></section>
-<section class="chapter chapter--world" aria-labelledby="world-title"><div class="ambient ambient--students" aria-hidden="true"><div class="photo"></div><div class="wash"></div></div>
-<div class="chapter-inner"><div><div class="chapter-kicker"><span>01</span> DIVERSITY / BACKGROUND</div><h2 class="serif-ja reveal" id="world-title">世界中の経験が、<br>ここに集まる。</h2><div class="huge reveal"><span class="digits">682</span><span class="unit">名</span></div><p class="desc">さまざまな国や地域での暮らしを経験した仲間たち。互いの「違い」が、学びの原動力になる。</p><div class="secondary-stat reveal"><div class="stat-text"><strong>海外滞在国</strong><small>世界各地から集まる、多様な経験</small></div><div class="stat-digit">70<i>ヶ国</i></div></div></div>
-<div class="chapter-art world-map reveal"><svg viewBox="0 0 580 480" role="img" aria-label="学校へとつながる海外滞在国のイメージ地図">
-<path class="region" d="M35 146l65-52 74 5 31 36-21 24-48 2-20 38-35 11-16-31-30-9zM145 229l49-12 37 39-15 56-31 69-29-19 6-55-26-32zM292 120l61-34 71 15 55 32-19 28-46-3-19 43-42 5-22-36-30-13zM374 226l54-15 48 32-14 49-42 24-31-34zM458 173l65-8 35 29-17 37-59-2z"/>
-<path class="region2" d="M58 146l37-29 38 9-12 25-38 13zM323 120l36-16 34 11-12 26-36 7zM400 246l23-10 31 17-10 23-27-8z"/>
-<path class="route" d="M118 158Q200 35 300 272M391 132Q345 194 300 272M514 205Q405 182 300 272M184 283Q242 260 300 272M434 267Q372 241 300 272"/>
-<circle class="gold" cx="118" cy="158" r="5"/><circle class="gold" cx="391" cy="132" r="5"/><circle class="gold" cx="514" cy="205" r="5"/><circle class="gold" cx="184" cy="283" r="5"/>
-<circle cx="300" cy="272" r="23" fill="#593269"/><circle cx="300" cy="272" r="7" fill="#fff"/><circle class="pulse" cx="300" cy="272" r="26"/>
-<path class="thin" d="M13 410h555M15 72h550"/><text x="36" y="435" class="chip">ONE CAMPUS · MANY STORIES</text><text x="527" y="435" text-anchor="end" class="chip">70 COUNTRIES</text>
-</svg></div></div></section>
-<section class="chapter chapter--language" aria-labelledby="language-title"><div class="ambient ambient--neutral" aria-hidden="true"><div class="photo"></div><div class="wash"></div></div>
-<div class="chapter-inner"><div><div class="chapter-kicker"><span>02</span> GLOBAL EDUCATION</div><h2 class="serif-ja reveal" id="language-title">学ぶ言葉の数だけ、<br>視野が広がる。</h2><div class="huge reveal"><span class="digits">6</span><span class="unit">ヶ国語</span></div><p class="desc">言葉の背景にある文化にふれる。学校案内には、6つの言語を学べる環境が紹介されています。</p><div class="secondary-stat reveal"><div class="stat-text"><strong>海外プログラム参加者</strong><small>教室の外へ、世界を学びに</small></div><div class="stat-digit">100<i>名</i></div></div></div>
-<div class="chapter-art reveal"><div class="language-words" aria-label="6言語の挨拶が広がるタイポグラフィ">
-<span class="lang-word">Hello.</span><span class="lang-word">Bonjour.</span><span class="lang-word">Hola.</span><span class="lang-word">Hallo.</span><span class="lang-word">你好</span><span class="lang-word">안녕하세요</span>
-<div class="language-center"><b>6</b><span>LANGUAGES</span></div></div></div></div></section>
-<section class="chapter chapter--path" aria-labelledby="path-title"><div class="path-decor" aria-hidden="true"></div>
-<div class="chapter-inner"><div><div class="chapter-kicker"><span>03</span> ACADEMIC PATH</div><h2 class="serif-ja reveal" id="path-title">その先の未来も、<br>自分らしく。</h2><div class="huge reveal"><span class="digits">929</span><span class="unit">名</span></div><p class="desc">TOEFLを受験した生徒数。学びへの挑戦と、次のステージへ進む可能性を表す数字。</p><div class="secondary-stat reveal"><div class="stat-text"><strong>内部進学率</strong><small>学校パンフレットに掲載された数値</small></div><div class="stat-digit">90<i>%</i></div></div></div>
-<div class="chapter-art reveal"><div class="path-rings"><svg viewBox="0 0 500 500" role="img" aria-label="90パーセントを示す円形インフォグラフィック"><circle cx="250" cy="250" r="173"/><circle cx="250" cy="250" r="147"/><circle class="bright" cx="250" cy="250" r="147"/><circle cx="250" cy="250" r="110" opacity=".35"/><text x="250" y="257" text-anchor="middle" font-size="150">90</text><text x="250" y="305" text-anchor="middle" class="ring-note">PERCENT</text><path d="M75 395l24-10 10 24" fill="none" stroke="#b99568" stroke-width="3"/><circle cx="395" cy="115" r="5" fill="#b99568"/></svg></div></div></div></section>
-<section class="chapter chapter--campus" aria-labelledby="campus-title"><div class="ambient ambient--cool" aria-hidden="true"><div class="photo"></div><div class="wash"></div></div>
-<div class="chapter-inner"><div><div class="chapter-kicker"><span>04</span> SCHOOL LIFE</div><h2 class="serif-ja reveal" id="campus-title">学びも、暮らしも、<br>この場所から。</h2><div class="huge reveal"><span class="digits">120</span><span class="unit">名</span></div><p class="desc">学校生活を支える寮にも、多様なバックグラウンドを持つ生徒たちの毎日がある。</p><div class="secondary-stat reveal"><div class="stat-text"><strong>同時展開授業数（2026年度）</strong><small>一人ひとりの学びを支える授業編成</small></div><div class="stat-digit">54<i>コマ</i></div></div></div>
-<div class="chapter-art campus-visual reveal"><svg viewBox="0 0 580 460" role="img" aria-label="学びと暮らしを支える校舎をモチーフにした線画"><path class="soft" d="M31 378Q289 292 559 373v45H31z"/>
-<path class="outline" d="M80 379V182l119-55 118 55v197M317 379V160l97-40 96 40v219M199 127V81l118 54v45"/>
-<path class="outline" d="M71 182h254M307 160h212M116 213h43v54h-43zM209 213h43v54h-43zM116 295h43v54h-43zM209 295h43v54h-43zM350 195h37v47h-37zM439 195h37v47h-37zM350 273h37v47h-37zM439 273h37v47h-37zM187 379v-81h24v81M400 379v-82h26v82"/>
-<path class="outline" d="M43 379h493M41 401h498" opacity=".5"/>
-<circle class="gold" cx="69" cy="249" r="29"/><circle class="gold" cx="531" cy="286" r="43"/><path class="outline" d="M69 273v112M531 330v55"/>
-<path class="route" d="M15 432Q291 388 563 432"/>
-</svg><div class="campus-label">A PLACE TO LEARN & BELONG</div></div></div></section>
-<section class="chapter chapter--library" aria-labelledby="library-title"><div class="ambient ambient--library" aria-hidden="true"><div class="photo"></div><div class="wash"></div></div>
-<div class="chapter-inner"><div><div class="chapter-kicker"><span>05</span> LIBRARY / KNOWLEDGE</div><h2 class="serif-ja reveal" id="library-title">知りたい気持ちに、<br>こたえる場所。</h2><div class="huge reveal"><span class="digits">63,500</span><span class="unit">冊</span></div><p class="desc">コミュニケーションセンターの蔵書数。世界を知るための入り口が、日常のすぐそばに。</p><div class="secondary-stat reveal"><div class="stat-text"><strong>コミュニケーションセンター 洋書数</strong><small>多様な言語・文化にふれる書籍</small></div><div class="stat-digit">11,400<i>冊</i></div></div></div>
-<div class="chapter-art library-shelf reveal"><svg viewBox="0 0 580 460" role="img" aria-label="本棚と開いた本を表現した落ち着いた線画">
-<path class="line" d="M40 382h500M53 398h474M85 91v296M491 91v296M86 116h406M86 250h406"/>
-<rect class="book1" x="108" y="144" width="37" height="106" rx="3"/><rect class="book3" x="151" y="126" width="27" height="124" rx="3"/><rect class="book2" x="185" y="142" width="51" height="108" rx="3"/><rect class="book4" x="244" y="155" width="24" height="95" rx="3"/><rect class="book3" x="283" y="138" width="33" height="112" rx="3"/><rect class="book1" x="326" y="145" width="40" height="105" rx="3"/><rect class="book2" x="374" y="158" width="23" height="92" rx="3"/><rect class="book4" x="410" y="133" width="40" height="117" rx="3"/>
-<rect class="book4" x="113" y="273" width="27" height="109" rx="3"/><rect class="book2" x="146" y="282" width="49" height="100" rx="3"/><rect class="book3" x="205" y="258" width="29" height="124" rx="3"/><rect class="book1" x="243" y="267" width="38" height="115" rx="3"/><rect class="book2" x="289" y="292" width="30" height="90" rx="3"/><rect class="book4" x="328" y="257" width="46" height="125" rx="3"/><rect class="book3" x="382" y="277" width="27" height="105" rx="3"/><rect class="book1" x="416" y="267" width="43" height="115" rx="3"/>
-<path class="book-marks" d="M120 165h14M156 146h17M198 167h23M289 163h23M337 168h25M415 152h28M151 303h35M248 300h28M333 284h37M420 298h34"/>
-<path class="page" d="M175 73q50-27 115 3v61q-53-25-115-5zM290 76q70-33 119 0v56q-64-22-119 5z"/><path class="line" d="M290 78v61M190 91q47-14 86 0M300 92q51-18 92 0"/>
-<path d="M480 66l7 20 20 7-20 7-7 20-7-20-20-7 20-7z" fill="#b99568"/>
-</svg></div></div></section>
-<section class="last"><div class="ambient ambient--campus" aria-hidden="true"><div class="photo"></div><div class="wash"></div></div><div class="label reveal">A WORLD OF POSSIBILITIES</div><h2 class="serif-ja reveal">まだ知らない自分に、<br><em>出会いにいこう。</em></h2><p class="reveal">この数字の先には、一人ひとりのストーリーがある。</p><a href="https://www.intnl.doshisha.ac.jp/" target="_blank" rel="noopener">同志社国際 公式サイトを見る <span aria-hidden="true">↗</span></a></section>
-</main><footer>同志社国際中学校・高等学校｜非公式デザインプレビュー<br>数字はご提供の学校パンフレットに基づく掲載値です。年度・定義の最終確認が必要です。背景写真は雰囲気を表す仮素材で、学校の実際の写真ではありません。</footer>
+<section class="summary" id="numbers">
+  <div class="summary__intro">
+    <div class="eyebrow reveal">THE STORY BEHIND THE NUMBERS</div>
+    <h2 class="reveal">10の数字に、<br>10の発見。</h2>
+    <p class="reveal">ひとつの数字から、ひとつのストーリーへ。<br>同志社国際の特徴を、わかりやすくひもときます。</p>
+  </div>
+  <div class="summary__grid reveal"><div class="summary__stat"><strong>682</strong><span>帰国生徒数</span></div>
+<div class="summary__stat"><strong>70</strong><span>海外滞在国</span></div>
+<div class="summary__stat"><strong>6</strong><span>学べる外国語</span></div>
+<div class="summary__stat"><strong>100</strong><span>海外プログラム参加者</span></div>
+<div class="summary__stat"><strong>929</strong><span>TOEFL®受験者数</span></div>
+<div class="summary__stat"><strong>90%</strong><span>内部進学率</span></div>
+<div class="summary__stat"><strong>120</strong><span>寮生徒数</span></div>
+<div class="summary__stat"><strong>54</strong><span>同時展開授業数</span></div>
+<div class="summary__stat"><strong>63,500</strong><span>蔵書数</span></div>
+<div class="summary__stat"><strong>11,400</strong><span>洋書数</span></div></div>
+  <p class="summary__note">数字はご提供いただいた学校パンフレットの掲載値です。対象年度や定義の詳細は、学校の最新資料でご確認ください。</p>
+</section>
+<section class="scene " id="returning" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 44%" aria-labelledby="returning-title">
+  <div class="photo-backdrop " aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>01</b> DIVERSITY / BACKGROUND</div>
+      <h2 class="scene__heading reveal" id="returning-title">さまざまな経験が、<br>ひとつの教室に。</h2>
+      <div class="eyebrow reveal" style="margin-top:27px">帰国生徒数</div>
+      <div class="scene__measure reveal"><strong class="scene__num ">682</strong><span class="scene__unit">名</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      <div class="scene__footnote">全校生徒1,215名のうち（2026年度）</div>
+      <p class="scene__body reveal">多様な国や地域での生活経験を持つ生徒たち。異なる文化や価値観との出会いが、日々の学びを豊かにします。</p>
+      
+      <div class="scene__sub reveal"><strong>70<i>ヶ国</i></strong><span>海外滞在国</span></div>
+      <p class="scene__footnote">※帰国生徒数・海外滞在国は学校案内の掲載値です。</p>
+    </div>
+    <figure class="scene__media scene__media--map">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
+      <figcaption class="scene__photo-label">DIVERSITY / SCHOOL LIFE</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="scene scene--reverse " id="languages" style="--photo:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=75');--bg-position:center 45%;--photo-pos:center 48%" aria-labelledby="languages-title">
+  <div class="photo-backdrop " aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>02</b> LANGUAGES / GLOBAL LEARNING</div>
+      <h2 class="scene__heading reveal" id="languages-title">学ぶ言葉の数だけ、<br>世界が広がる。</h2>
+      <div class="eyebrow reveal" style="margin-top:27px">学べる外国語</div>
+      <div class="scene__measure reveal"><strong class="scene__num ">6</strong><span class="scene__unit">ヶ国語</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      
+      <p class="scene__body reveal">言葉の向こうにある、文化や考え方を知る。教室での学びは、海外での体験にもつながっています。</p>
+      <div class="scene__languages" aria-label="学べる言語"><span>ENGLISH</span><span>DEUTSCH</span><span>FRANÇAIS</span><span>ESPAÑOL</span><span>中文</span><span>한국어</span></div>
+      <div class="scene__sub reveal"><strong>100<i>名</i></strong><span>海外プログラム参加者</span></div>
+      <p class="scene__footnote">※語学の科目・履修条件は年度や学年によって異なります。</p>
+    </div>
+    <figure class="scene__media ">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
+      <figcaption class="scene__photo-label">LANGUAGE / EXPLORATION</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="scene scene--tint " id="future" style="--photo:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 42%" aria-labelledby="future-title">
+  <div class="photo-backdrop " aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>03</b> ACADEMIC / FUTURE</div>
+      <h2 class="scene__heading reveal" id="future-title">その先の可能性を、<br>自分らしく。</h2>
+      <div class="eyebrow reveal" style="margin-top:27px">TOEFL® 受験者数</div>
+      <div class="scene__measure reveal"><strong class="scene__num ">929</strong><span class="scene__unit">名</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      <div class="scene__footnote">2025年度</div>
+      <p class="scene__body reveal">それぞれの進路へ踏み出すために。語学への挑戦と進路の選択を、学校案内の数字から紹介します。</p>
+      
+      <div class="scene__sub reveal"><strong>90<i>%</i></strong><span>内部進学率</span></div>
+      <p class="scene__footnote">※内部進学率は「約90%」。2025年度のTOEFL受験者数は学校案内の掲載値です。</p>
+    </div>
+    <figure class="scene__media ">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
+      <figcaption class="scene__photo-label">LEARNING / NEXT CHAPTER</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="scene scene--reverse " id="campus" style="--photo:url('https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=1600&q=75');--bg-position:center 46%;--photo-pos:center 46%" aria-labelledby="campus-title">
+  <div class="photo-backdrop " aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>04</b> CAMPUS / EVERYDAY LIFE</div>
+      <h2 class="scene__heading reveal" id="campus-title">学びも、暮らしも、<br>ここからはじまる。</h2>
+      <div class="eyebrow reveal" style="margin-top:27px">寮生徒数</div>
+      <div class="scene__measure reveal"><small>約</small><strong class="scene__num ">120</strong><span class="scene__unit">名</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      
+      <p class="scene__body reveal">仲間と過ごす日常も、多様な学びの時間も。学校生活を形づくる、一人ひとりの居場所があります。</p>
+      
+      <div class="scene__sub reveal"><strong>54<i>コマ</i></strong><span>同時展開授業数</span></div>
+      <p class="scene__footnote">※同時展開授業数は2026年度。</p>
+    </div>
+    <figure class="scene__media ">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
+      <figcaption class="scene__photo-label">CAMPUS / EVERYDAY MOMENTS</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="scene scene--library " id="library" style="--photo:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 50%" aria-labelledby="library-title">
+  <div class="photo-backdrop photo-backdrop--book" aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>05</b> BOOKS / COMMUNICATION CENTER</div>
+      <h2 class="scene__heading reveal" id="library-title">知りたい気持ちの、<br>その先へ。</h2>
+      <div class="eyebrow reveal" style="margin-top:27px">コミュニケーションセンター 蔵書数</div>
+      <div class="scene__measure reveal"><small>約</small><strong class="scene__num scene__num--wide">63,500</strong><span class="scene__unit">冊</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      
+      <p class="scene__body reveal">幅広いジャンルの書籍がそろう学びの場。気になる一冊から、新しい世界への扉が開いていきます。</p>
+      
+      <div class="scene__sub reveal"><strong><i>約</i>11,400<i>冊</i></strong><span>コミュニケーションセンター 洋書数</span></div>
+      <p class="scene__footnote">※蔵書数・洋書数は学校案内の掲載値です。</p>
+    </div>
+    <figure class="scene__media ">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
+      <figcaption class="scene__photo-label">KNOWLEDGE / OPEN THE WORLD</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="end" id="end" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75')" aria-labelledby="ending-title">
+  <div class="photo-backdrop" aria-hidden="true"></div>
+  <div class="end__inner">
+    <div class="eyebrow reveal">A WORLD OF POSSIBILITIES</div>
+    <h2 class="reveal" id="ending-title">まだ知らない自分に、<br><em>出会いにいこう。</em></h2>
+    <p class="reveal">違いを知ることから、未来がひらく。</p>
+    <a class="end__cta" href="https://www.intnl.doshisha.ac.jp/" target="_blank" rel="noopener">同志社国際 公式サイトへ <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+</main>
+<nav class="side-dots" aria-label="セクションナビゲーション">
+<a href="#top" class="active" aria-label="トップ"></a>
+<a href="#numbers"  aria-label="数字一覧"></a>
+<a href="#returning"  aria-label="DIVERSITY / BACKGROUND"></a>
+<a href="#languages"  aria-label="LANGUAGES / GLOBAL LEARNING"></a>
+<a href="#future"  aria-label="ACADEMIC / FUTURE"></a>
+<a href="#campus"  aria-label="CAMPUS / EVERYDAY LIFE"></a>
+<a href="#library"  aria-label="BOOKS / COMMUNICATION CENTER"></a>
+<a href="#end"  aria-label="最後"></a>
+</nav>
+<footer class="site-footer">同志社国際中学校・高等学校｜非公式デザインプレビュー<br>掲載数値はご提供の学校案内に基づいています。背景・円形写真はデザイン検討用のイメージ素材であり、学校の実際の写真ではありません。</footer>
 <script>
-(()=>{if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const targets=[...document.querySelectorAll('.reveal')];const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('shown');observer.unobserve(entry.target)}})},{threshold:.035,rootMargin:'0px 0px 60px 0px'});document.documentElement.classList.add('has-motion');targets.forEach(node=>observer.observe(node));setTimeout(()=>targets.forEach(node=>node.classList.add('shown')),3200)})();
+(()=>{
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!("IntersectionObserver"in window)||reduce)return;
+  const els=[...document.querySelectorAll(".reveal")];
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");revealObserver.unobserve(e.target)}});
+  },{threshold:.035,rootMargin:"0px 0px 80px 0px"});
+  document.documentElement.classList.add("motion");
+  els.forEach(el=>revealObserver.observe(el));
+  setTimeout(()=>els.forEach(el=>el.classList.add("visible")),2500);
+  const links=[...document.querySelectorAll(".side-dots a")];
+  const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}
+  }),{rootMargin:"-35% 0px -45% 0px"});
+  [...document.querySelectorAll("main section[id]")].forEach(el=>sectionObserver.observe(el));
+})();
 </script>
 </body>
 </html>
