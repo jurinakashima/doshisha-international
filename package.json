@@ -1,0 +1,9 @@
+{
+  "name": "doshisha-international-by-the-numbers",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "3.10.5"
+  }
+}
