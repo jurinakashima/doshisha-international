@@ -199,8 +199,6 @@ html{scroll-snap-type:y mandatory}
 .cover__shade{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 53% 37%,rgba(143,57,146,.35),transparent 59%),linear-gradient(135deg,rgba(69,26,86,.9),rgba(91,36,107,.91) 54%,rgba(60,22,77,.94))}
 .cover__grain{position:absolute;inset:0;z-index:-1;opacity:.14;background-image:radial-gradient(#fff .6px,transparent .8px);background-size:9px 9px;pointer-events:none}
 .cover__inner{width:min(100%,900px);height:100%;display:grid;place-items:center;padding:115px 24px 116px;position:relative;text-align:center;z-index:2}
-.cover__dial{width:min(68vw,68svh,640px);height:auto;aspect-ratio:1;grid-area:1/1;display:grid;place-items:center;color:#f3e8f2;opacity:.84;pointer-events:none;animation:dial-float 30s ease-in-out infinite alternate}
-.cover__dial svg{width:100%;height:100%;overflow:visible}
 .cover__content{grid-area:1/1;z-index:1;width:min(100%,700px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-shadow:0 2px 25px #31123d74;pointer-events:none}
 .cover__top{font:600 10px "DM Sans",sans-serif;letter-spacing:.26em;color:#ebd8ed;margin-bottom:28px}
 .cover h1{font-family:"Yuji Syuku","Noto Serif JP",serif;font-size:clamp(42px,5.5vw,78px);line-height:1.48;font-weight:400;letter-spacing:.025em;color:#fff;margin:0;max-width:100%;text-wrap:balance}
@@ -219,12 +217,11 @@ html{scroll-snap-type:y mandatory}
 .dot-nav a.active:after{width:12px;height:12px;background:#6b3678}
 .dot-nav--cover a:after{background:#ffffff8c}
 .dot-nav--cover a.active:after{background:#fff;box-shadow:0 0 0 4px #fff3}
-@keyframes dial-float{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+to{transform:rotate(6deg)}}
 @keyframes scroll-down{0%,100%{transform:translateY(0);opacity:.92}50%{transform:translateY(7px);opacity:.6}}
 @media(max-width:900px){.site-header--cover .site-header__brand-label,.site-header--cover .site-header__external{color:white}}
 @media(max-width:720px){
  .cover__inner{padding:110px 18px 115px}
- .cover__dial{width:min(91vw,430px);max-height:none}
  .cover__top{font-size:8px;letter-spacing:.19em;margin-bottom:20px}
  .cover h1{font-size:clamp(33px,8.7vw,49px);line-height:1.6;letter-spacing:-.035em}
  .cover__english{margin-top:20px;font-size:11px;letter-spacing:.01em}
@@ -235,7 +232,6 @@ html{scroll-snap-type:y mandatory}
  .story{scroll-snap-stop:normal}
 }
 @media(max-width:390px){
- .cover__dial{width:94vw}
  .cover h1{font-size:clamp(30px,8.2vw,36px)}
  .cover__top{margin-bottom:15px}
  .cover__description{font-size:10.5px}
@@ -243,7 +239,6 @@ html{scroll-snap-type:y mandatory}
 }
 @media(max-height:650px) and (max-width:720px){
  .cover__inner{padding-top:75px;padding-bottom:80px}
- .cover__dial{width:min(73vw,65svh,400px)}
  .cover h1{font-size:clamp(28px,7vw,40px)}
  .cover__top{margin-bottom:9px}
  .cover__description{margin-top:9px}
@@ -254,7 +249,7 @@ html{scroll-snap-type:y mandatory}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-snap-type:none!important}
- .cover__dial,.cover__scroll svg{animation:none!important}
+ .cover__scroll svg{animation:none!important}
  .story.is-in .story__rule{animation:none!important}
 }
 
@@ -303,6 +298,38 @@ html{scroll-snap-type:y mandatory}
 .epilogue__path{clip-path:none!important;opacity:1!important;transition:none!important}
 .epilogue__light{transform:none!important;opacity:1!important;transition:none!important}
 }
+
+/* V20: delicately drawn globe with generous lettering clearance. */
+.cover{background:radial-gradient(ellipse at 48% 44%,#6b3b79,#4a245d 85%)}
+.cover__globe{
+ position:absolute;z-index:-1;top:54%;right:clamp(-260px,-11vw,-100px);
+ width:clamp(490px,57vw,840px);aspect-ratio:1;pointer-events:none;
+ transform:translateY(-50%);opacity:.22;
+ -webkit-mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.24) 24%,#000 58%);
+ mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.24) 24%,#000 58%);
+ animation:cover-globe-breathe 26s ease-in-out infinite alternate
+}
+.cover__globe svg{display:block;width:100%;height:100%}
+.cover__inner{z-index:2;position:relative}
+.cover__content{position:relative;z-index:2;text-shadow:0 2px 24px #381341a1}
+@keyframes cover-globe-breathe{
+ from{transform:translateY(-50%) translateX(0) rotate(-2deg)}
+ to{transform:translateY(-50%) translateX(-16px) rotate(2deg)}
+}
+@media(max-width:900px){
+ .cover__globe{top:58%;right:-28vw;width:min(94vw,610px);opacity:.18}
+}
+@media(max-width:720px){
+ .cover__globe{
+  top:63%;right:-40vw;width:95vw;opacity:.15;
+  -webkit-mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.2) 30%,#000 62%);
+  mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.2) 30%,#000 62%)
+ }
+ .cover__content{text-shadow:0 2px 22px #351344c9}
+}
+@media(max-width:390px){.cover__globe{top:66%;right:-40vw;width:98vw;opacity:.12}}
+@media(prefers-reduced-motion:reduce){.cover__globe{animation:none!important;transform:translateY(-50%)!important}}
+
 </style>
 </head>
 <body>
@@ -316,8 +343,36 @@ html{scroll-snap-type:y mandatory}
  <div class="cover__photo" aria-hidden="true"></div>
  <div class="cover__shade" aria-hidden="true"></div>
  <div class="cover__grain" aria-hidden="true"></div>
+
+<div class="cover__globe" aria-hidden="true">
+ <svg viewBox="0 0 600 600" focusable="false" preserveAspectRatio="xMidYMid meet">
+  <defs>
+   <clipPath id="cover-globe-clip-v20"><circle cx="300" cy="300" r="238"/></clipPath>
+   <linearGradient id="cover-globe-edge-v20" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8ff"/><stop offset="1" stop-color="#d8bde6"/></linearGradient>
+  </defs>
+  <circle cx="300" cy="300" r="239" stroke="url(#cover-globe-edge-v20)" stroke-width="1.8" fill="none"/>
+  <g clip-path="url(#cover-globe-clip-v20)" stroke="#f3e4fa" fill="none" stroke-linejoin="round" stroke-linecap="round">
+   <g stroke-width="1.2" opacity=".56">
+    <ellipse cx="300" cy="300" rx="77" ry="238"/>
+    <ellipse cx="300" cy="300" rx="162" ry="238"/>
+    <path d="M61 300H539"/>
+    <path d="M78 216Q300 287 522 216M78 384Q300 313 522 384"/>
+    <path d="M105 149Q300 255 495 149M105 451Q300 345 495 451"/>
+   </g>
+   <g transform="translate(-63 -86) scale(1.5)" stroke-width="1.6" opacity=".88">
+    <path d="M98 190l36-37 39-12 31 13 26-1 15 18-12 19-29 1-21 19-24 4-7 23-19 14-23-17-17-30-19-5z"/>
+    <path d="M174 248l30-8 23 18 5 27-13 37-14 37-18-6-12-33-14-29z"/>
+    <path d="M250 167l27-18 38 5 20 10 23-1 28 18-9 21-19 5-16 23-15 2-17-11-17 12-16-9-9-30z"/>
+    <path d="M294 232l39-12 34 18-9 39-19 21-19 3-18-29z"/>
+    <path d="M367 246l33-2 20 22-12 24-27-4-17-21z"/>
+    <path d="M372 321l25-6 18 12-12 15-24 4z"/>
+    <path d="M210 127l12-7 9 9-5 8-13-2zM241 143l5-7 9 5-2 10z"/>
+   </g>
+  </g>
+  <circle cx="300" cy="300" r="242" fill="none" stroke="#f4e8fa" stroke-width=".6" opacity=".32"/>
+ </svg>
+</div>
  <div class="cover__inner">
-   <div class="cover__dial" aria-hidden="true"><svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet"><g stroke="currentColor" stroke-linecap="round"><line x1="300.00" y1="42.00" x2="300.00" y2="17.00" stroke-width="1.6" opacity="0.95"/><line x1="311.91" y1="27.26" x2="312.34" y2="17.27" stroke-width="0.85" opacity="0.65"/><line x1="323.79" y1="28.04" x2="324.67" y2="18.08" stroke-width="0.85" opacity="0.65"/><line x1="335.63" y1="29.34" x2="336.94" y2="19.42" stroke-width="0.85" opacity="0.65"/><line x1="347.41" y1="31.15" x2="349.14" y2="21.30" stroke-width="0.85" opacity="0.65"/><line x1="359.09" y1="33.47" x2="361.25" y2="23.71" stroke-width="0.85" opacity="0.65"/><line x1="369.36" y1="41.13" x2="373.25" y2="26.64" stroke-width="0.85" opacity="0.65"/><line x1="382.09" y1="39.64" x2="385.10" y2="30.10" stroke-width="0.85" opacity="0.65"/><line x1="393.37" y1="43.46" x2="396.79" y2="34.07" stroke-width="0.85" opacity="0.65"/><line x1="404.47" y1="47.78" x2="408.30" y2="38.54" stroke-width="0.85" opacity="0.65"/><line x1="415.37" y1="52.58" x2="419.60" y2="43.51" stroke-width="0.85" opacity="0.65"/><line x1="426.06" y1="57.85" x2="430.67" y2="48.98" stroke-width="0.85" opacity="0.65"/><line x1="429.00" y1="76.57" x2="441.50" y2="54.91" stroke-width="1.6" opacity="0.95"/><line x1="446.68" y1="69.75" x2="452.06" y2="61.32" stroke-width="0.85" opacity="0.65"/><line x1="456.59" y1="76.37" x2="462.32" y2="68.18" stroke-width="0.85" opacity="0.65"/><line x1="466.19" y1="83.41" x2="472.28" y2="75.48" stroke-width="0.85" opacity="0.65"/><line x1="475.48" y1="90.87" x2="481.91" y2="83.21" stroke-width="0.85" opacity="0.65"/><line x1="484.44" y1="98.72" x2="491.19" y2="91.35" stroke-width="0.85" opacity="0.65"/><line x1="489.50" y1="110.50" x2="500.11" y2="99.89" stroke-width="0.85" opacity="0.65"/><line x1="501.28" y1="115.56" x2="508.65" y2="108.81" stroke-width="0.85" opacity="0.65"/><line x1="509.13" y1="124.52" x2="516.79" y2="118.09" stroke-width="0.85" opacity="0.65"/><line x1="516.59" y1="133.81" x2="524.52" y2="127.72" stroke-width="0.85" opacity="0.65"/><line x1="523.63" y1="143.41" x2="531.82" y2="137.68" stroke-width="0.85" opacity="0.65"/><line x1="530.25" y1="153.32" x2="538.68" y2="147.94" stroke-width="0.85" opacity="0.65"/><line x1="523.43" y1="171.00" x2="545.09" y2="158.50" stroke-width="1.6" opacity="0.95"/><line x1="542.15" y1="173.94" x2="551.02" y2="169.33" stroke-width="0.85" opacity="0.65"/><line x1="547.42" y1="184.63" x2="556.49" y2="180.40" stroke-width="0.85" opacity="0.65"/><line x1="552.22" y1="195.53" x2="561.46" y2="191.70" stroke-width="0.85" opacity="0.65"/><line x1="556.54" y1="206.63" x2="565.93" y2="203.21" stroke-width="0.85" opacity="0.65"/><line x1="560.36" y1="217.91" x2="569.90" y2="214.90" stroke-width="0.85" opacity="0.65"/><line x1="558.87" y1="230.64" x2="573.36" y2="226.75" stroke-width="0.85" opacity="0.65"/><line x1="566.53" y1="240.91" x2="576.29" y2="238.75" stroke-width="0.85" opacity="0.65"/><line x1="568.85" y1="252.59" x2="578.70" y2="250.86" stroke-width="0.85" opacity="0.65"/><line x1="570.66" y1="264.37" x2="580.58" y2="263.06" stroke-width="0.85" opacity="0.65"/><line x1="571.96" y1="276.21" x2="581.92" y2="275.33" stroke-width="0.85" opacity="0.65"/><line x1="572.74" y1="288.09" x2="582.73" y2="287.66" stroke-width="0.85" opacity="0.65"/><line x1="558.00" y1="300.00" x2="583.00" y2="300.00" stroke-width="1.6" opacity="0.95"/><line x1="572.74" y1="311.91" x2="582.73" y2="312.34" stroke-width="0.85" opacity="0.65"/><line x1="571.96" y1="323.79" x2="581.92" y2="324.67" stroke-width="0.85" opacity="0.65"/><line x1="570.66" y1="335.63" x2="580.58" y2="336.94" stroke-width="0.85" opacity="0.65"/><line x1="568.85" y1="347.41" x2="578.70" y2="349.14" stroke-width="0.85" opacity="0.65"/><line x1="566.53" y1="359.09" x2="576.29" y2="361.25" stroke-width="0.85" opacity="0.65"/><line x1="558.87" y1="369.36" x2="573.36" y2="373.25" stroke-width="0.85" opacity="0.65"/><line x1="560.36" y1="382.09" x2="569.90" y2="385.10" stroke-width="0.85" opacity="0.65"/><line x1="556.54" y1="393.37" x2="565.93" y2="396.79" stroke-width="0.85" opacity="0.65"/><line x1="552.22" y1="404.47" x2="561.46" y2="408.30" stroke-width="0.85" opacity="0.65"/><line x1="547.42" y1="415.37" x2="556.49" y2="419.60" stroke-width="0.85" opacity="0.65"/><line x1="542.15" y1="426.06" x2="551.02" y2="430.67" stroke-width="0.85" opacity="0.65"/><line x1="523.43" y1="429.00" x2="545.09" y2="441.50" stroke-width="1.6" opacity="0.95"/><line x1="530.25" y1="446.68" x2="538.68" y2="452.06" stroke-width="0.85" opacity="0.65"/><line x1="523.63" y1="456.59" x2="531.82" y2="462.32" stroke-width="0.85" opacity="0.65"/><line x1="516.59" y1="466.19" x2="524.52" y2="472.28" stroke-width="0.85" opacity="0.65"/><line x1="509.13" y1="475.48" x2="516.79" y2="481.91" stroke-width="0.85" opacity="0.65"/><line x1="501.28" y1="484.44" x2="508.65" y2="491.19" stroke-width="0.85" opacity="0.65"/><line x1="489.50" y1="489.50" x2="500.11" y2="500.11" stroke-width="0.85" opacity="0.65"/><line x1="484.44" y1="501.28" x2="491.19" y2="508.65" stroke-width="0.85" opacity="0.65"/><line x1="475.48" y1="509.13" x2="481.91" y2="516.79" stroke-width="0.85" opacity="0.65"/><line x1="466.19" y1="516.59" x2="472.28" y2="524.52" stroke-width="0.85" opacity="0.65"/><line x1="456.59" y1="523.63" x2="462.32" y2="531.82" stroke-width="0.85" opacity="0.65"/><line x1="446.68" y1="530.25" x2="452.06" y2="538.68" stroke-width="0.85" opacity="0.65"/><line x1="429.00" y1="523.43" x2="441.50" y2="545.09" stroke-width="1.6" opacity="0.95"/><line x1="426.06" y1="542.15" x2="430.67" y2="551.02" stroke-width="0.85" opacity="0.65"/><line x1="415.37" y1="547.42" x2="419.60" y2="556.49" stroke-width="0.85" opacity="0.65"/><line x1="404.47" y1="552.22" x2="408.30" y2="561.46" stroke-width="0.85" opacity="0.65"/><line x1="393.37" y1="556.54" x2="396.79" y2="565.93" stroke-width="0.85" opacity="0.65"/><line x1="382.09" y1="560.36" x2="385.10" y2="569.90" stroke-width="0.85" opacity="0.65"/><line x1="369.36" y1="558.87" x2="373.25" y2="573.36" stroke-width="0.85" opacity="0.65"/><line x1="359.09" y1="566.53" x2="361.25" y2="576.29" stroke-width="0.85" opacity="0.65"/><line x1="347.41" y1="568.85" x2="349.14" y2="578.70" stroke-width="0.85" opacity="0.65"/><line x1="335.63" y1="570.66" x2="336.94" y2="580.58" stroke-width="0.85" opacity="0.65"/><line x1="323.79" y1="571.96" x2="324.67" y2="581.92" stroke-width="0.85" opacity="0.65"/><line x1="311.91" y1="572.74" x2="312.34" y2="582.73" stroke-width="0.85" opacity="0.65"/><line x1="300.00" y1="558.00" x2="300.00" y2="583.00" stroke-width="1.6" opacity="0.95"/><line x1="288.09" y1="572.74" x2="287.66" y2="582.73" stroke-width="0.85" opacity="0.65"/><line x1="276.21" y1="571.96" x2="275.33" y2="581.92" stroke-width="0.85" opacity="0.65"/><line x1="264.37" y1="570.66" x2="263.06" y2="580.58" stroke-width="0.85" opacity="0.65"/><line x1="252.59" y1="568.85" x2="250.86" y2="578.70" stroke-width="0.85" opacity="0.65"/><line x1="240.91" y1="566.53" x2="238.75" y2="576.29" stroke-width="0.85" opacity="0.65"/><line x1="230.64" y1="558.87" x2="226.75" y2="573.36" stroke-width="0.85" opacity="0.65"/><line x1="217.91" y1="560.36" x2="214.90" y2="569.90" stroke-width="0.85" opacity="0.65"/><line x1="206.63" y1="556.54" x2="203.21" y2="565.93" stroke-width="0.85" opacity="0.65"/><line x1="195.53" y1="552.22" x2="191.70" y2="561.46" stroke-width="0.85" opacity="0.65"/><line x1="184.63" y1="547.42" x2="180.40" y2="556.49" stroke-width="0.85" opacity="0.65"/><line x1="173.94" y1="542.15" x2="169.33" y2="551.02" stroke-width="0.85" opacity="0.65"/><line x1="171.00" y1="523.43" x2="158.50" y2="545.09" stroke-width="1.6" opacity="0.95"/><line x1="153.32" y1="530.25" x2="147.94" y2="538.68" stroke-width="0.85" opacity="0.65"/><line x1="143.41" y1="523.63" x2="137.68" y2="531.82" stroke-width="0.85" opacity="0.65"/><line x1="133.81" y1="516.59" x2="127.72" y2="524.52" stroke-width="0.85" opacity="0.65"/><line x1="124.52" y1="509.13" x2="118.09" y2="516.79" stroke-width="0.85" opacity="0.65"/><line x1="115.56" y1="501.28" x2="108.81" y2="508.65" stroke-width="0.85" opacity="0.65"/><line x1="110.50" y1="489.50" x2="99.89" y2="500.11" stroke-width="0.85" opacity="0.65"/><line x1="98.72" y1="484.44" x2="91.35" y2="491.19" stroke-width="0.85" opacity="0.65"/><line x1="90.87" y1="475.48" x2="83.21" y2="481.91" stroke-width="0.85" opacity="0.65"/><line x1="83.41" y1="466.19" x2="75.48" y2="472.28" stroke-width="0.85" opacity="0.65"/><line x1="76.37" y1="456.59" x2="68.18" y2="462.32" stroke-width="0.85" opacity="0.65"/><line x1="69.75" y1="446.68" x2="61.32" y2="452.06" stroke-width="0.85" opacity="0.65"/><line x1="76.57" y1="429.00" x2="54.91" y2="441.50" stroke-width="1.6" opacity="0.95"/><line x1="57.85" y1="426.06" x2="48.98" y2="430.67" stroke-width="0.85" opacity="0.65"/><line x1="52.58" y1="415.37" x2="43.51" y2="419.60" stroke-width="0.85" opacity="0.65"/><line x1="47.78" y1="404.47" x2="38.54" y2="408.30" stroke-width="0.85" opacity="0.65"/><line x1="43.46" y1="393.37" x2="34.07" y2="396.79" stroke-width="0.85" opacity="0.65"/><line x1="39.64" y1="382.09" x2="30.10" y2="385.10" stroke-width="0.85" opacity="0.65"/><line x1="41.13" y1="369.36" x2="26.64" y2="373.25" stroke-width="0.85" opacity="0.65"/><line x1="33.47" y1="359.09" x2="23.71" y2="361.25" stroke-width="0.85" opacity="0.65"/><line x1="31.15" y1="347.41" x2="21.30" y2="349.14" stroke-width="0.85" opacity="0.65"/><line x1="29.34" y1="335.63" x2="19.42" y2="336.94" stroke-width="0.85" opacity="0.65"/><line x1="28.04" y1="323.79" x2="18.08" y2="324.67" stroke-width="0.85" opacity="0.65"/><line x1="27.26" y1="311.91" x2="17.27" y2="312.34" stroke-width="0.85" opacity="0.65"/><line x1="42.00" y1="300.00" x2="17.00" y2="300.00" stroke-width="1.6" opacity="0.95"/><line x1="27.26" y1="288.09" x2="17.27" y2="287.66" stroke-width="0.85" opacity="0.65"/><line x1="28.04" y1="276.21" x2="18.08" y2="275.33" stroke-width="0.85" opacity="0.65"/><line x1="29.34" y1="264.37" x2="19.42" y2="263.06" stroke-width="0.85" opacity="0.65"/><line x1="31.15" y1="252.59" x2="21.30" y2="250.86" stroke-width="0.85" opacity="0.65"/><line x1="33.47" y1="240.91" x2="23.71" y2="238.75" stroke-width="0.85" opacity="0.65"/><line x1="41.13" y1="230.64" x2="26.64" y2="226.75" stroke-width="0.85" opacity="0.65"/><line x1="39.64" y1="217.91" x2="30.10" y2="214.90" stroke-width="0.85" opacity="0.65"/><line x1="43.46" y1="206.63" x2="34.07" y2="203.21" stroke-width="0.85" opacity="0.65"/><line x1="47.78" y1="195.53" x2="38.54" y2="191.70" stroke-width="0.85" opacity="0.65"/><line x1="52.58" y1="184.63" x2="43.51" y2="180.40" stroke-width="0.85" opacity="0.65"/><line x1="57.85" y1="173.94" x2="48.98" y2="169.33" stroke-width="0.85" opacity="0.65"/><line x1="76.57" y1="171.00" x2="54.91" y2="158.50" stroke-width="1.6" opacity="0.95"/><line x1="69.75" y1="153.32" x2="61.32" y2="147.94" stroke-width="0.85" opacity="0.65"/><line x1="76.37" y1="143.41" x2="68.18" y2="137.68" stroke-width="0.85" opacity="0.65"/><line x1="83.41" y1="133.81" x2="75.48" y2="127.72" stroke-width="0.85" opacity="0.65"/><line x1="90.87" y1="124.52" x2="83.21" y2="118.09" stroke-width="0.85" opacity="0.65"/><line x1="98.72" y1="115.56" x2="91.35" y2="108.81" stroke-width="0.85" opacity="0.65"/><line x1="110.50" y1="110.50" x2="99.89" y2="99.89" stroke-width="0.85" opacity="0.65"/><line x1="115.56" y1="98.72" x2="108.81" y2="91.35" stroke-width="0.85" opacity="0.65"/><line x1="124.52" y1="90.87" x2="118.09" y2="83.21" stroke-width="0.85" opacity="0.65"/><line x1="133.81" y1="83.41" x2="127.72" y2="75.48" stroke-width="0.85" opacity="0.65"/><line x1="143.41" y1="76.37" x2="137.68" y2="68.18" stroke-width="0.85" opacity="0.65"/><line x1="153.32" y1="69.75" x2="147.94" y2="61.32" stroke-width="0.85" opacity="0.65"/><line x1="171.00" y1="76.57" x2="158.50" y2="54.91" stroke-width="1.6" opacity="0.95"/><line x1="173.94" y1="57.85" x2="169.33" y2="48.98" stroke-width="0.85" opacity="0.65"/><line x1="184.63" y1="52.58" x2="180.40" y2="43.51" stroke-width="0.85" opacity="0.65"/><line x1="195.53" y1="47.78" x2="191.70" y2="38.54" stroke-width="0.85" opacity="0.65"/><line x1="206.63" y1="43.46" x2="203.21" y2="34.07" stroke-width="0.85" opacity="0.65"/><line x1="217.91" y1="39.64" x2="214.90" y2="30.10" stroke-width="0.85" opacity="0.65"/><line x1="230.64" y1="41.13" x2="226.75" y2="26.64" stroke-width="0.85" opacity="0.65"/><line x1="240.91" y1="33.47" x2="238.75" y2="23.71" stroke-width="0.85" opacity="0.65"/><line x1="252.59" y1="31.15" x2="250.86" y2="21.30" stroke-width="0.85" opacity="0.65"/><line x1="264.37" y1="29.34" x2="263.06" y2="19.42" stroke-width="0.85" opacity="0.65"/><line x1="276.21" y1="28.04" x2="275.33" y2="18.08" stroke-width="0.85" opacity="0.65"/><line x1="288.09" y1="27.26" x2="287.66" y2="17.27" stroke-width="0.85" opacity="0.65"/></g><circle cx="300" cy="300" r="247" fill="none" stroke="currentColor" stroke-width=".75" opacity=".22"/></svg></div>
    <div class="cover__content">
      <div class="cover__top">DOSHISHA INTERNATIONAL</div>
      <h1 id="cover-title">世界が集まる。<br><span>ここから、未来へ。</span></h1>
@@ -554,7 +609,7 @@ html{scroll-snap-type:y mandatory}
   </div>
   <div class="epilogue__chapter">DOSHISHA INTERNATIONAL / 05</div>
 </section>
-<footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値は学校案内2026および学校法人・学校公式Webサイトの掲載内容に基づきます。出典は各章に記載。背景は学校の実際の写真ではなく、イメージ素材です。</footer>
+<footer class="site-footer">同志社国際中学校・高等学校｜数字でわかる同志社国際<br>掲載データの出典は各セクションに記載しています。背景写真はイメージです。</footer>
 <script>
 (function(){
   "use strict";
