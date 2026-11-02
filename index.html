@@ -330,6 +330,16 @@ to{transform:rotate(6deg)}}
 @media(max-width:390px){.cover__globe{top:66%;right:-40vw;width:98vw;opacity:.12}}
 @media(prefers-reduced-motion:reduce){.cover__globe{animation:none!important;transform:translateY(-50%)!important}}
 
+
+/* V21: orthographic globe rotation. Earth's longitudes and landmasses move,
+   not the SVG image itself, so it reads as a rotating globe rather than a dial. */
+.cover__globe{animation:none;transform:translateY(-50%)}
+.cover__globe #cover-globe-live{fill:none;stroke:#f5eafa;stroke-linecap:round;stroke-linejoin:round}
+.cover__globe #cover-globe-live .globe-parallels{stroke-width:1.2;opacity:.55}
+.cover__globe #cover-globe-live .globe-coastlines{stroke-width:1.8;opacity:.86}
+@media(prefers-reduced-motion:reduce){
+  .cover__globe{animation:none!important;transform:translateY(-50%)!important}
+}
 </style>
 </head>
 <body>
@@ -351,7 +361,7 @@ to{transform:rotate(6deg)}}
    <linearGradient id="cover-globe-edge-v20" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8ff"/><stop offset="1" stop-color="#d8bde6"/></linearGradient>
   </defs>
   <circle cx="300" cy="300" r="239" stroke="url(#cover-globe-edge-v20)" stroke-width="1.8" fill="none"/>
-  <g clip-path="url(#cover-globe-clip-v20)" stroke="#f3e4fa" fill="none" stroke-linejoin="round" stroke-linecap="round">
+  <g class="cover-globe-static" clip-path="url(#cover-globe-clip-v20)" stroke="#f3e4fa" fill="none" stroke-linejoin="round" stroke-linecap="round">
    <g stroke-width="1.2" opacity=".56">
     <ellipse cx="300" cy="300" rx="77" ry="238"/>
     <ellipse cx="300" cy="300" rx="162" ry="238"/>
@@ -369,6 +379,7 @@ to{transform:rotate(6deg)}}
     <path d="M210 127l12-7 9 9-5 8-13-2zM241 143l5-7 9 5-2 10z"/>
    </g>
   </g>
+  <g id="cover-globe-live" clip-path="url(#cover-globe-clip-v20)" style="display:none"></g>
   <circle cx="300" cy="300" r="242" fill="none" stroke="#f4e8fa" stroke-width=".6" opacity=".32"/>
  </svg>
 </div>
@@ -694,6 +705,132 @@ to{transform:rotate(6deg)}}
   // Trigger counters on loaded deep links without waiting for a future scroll.
   const anchor=window.location.hash?document.querySelector(window.location.hash):null;
   if(anchor&&anchor.matches(".story"))showChapter(anchor);
+})();
+</script>
+<script>
+/* Low-motion, self-contained orthographic rotation. Static SVG remains the no-JS fallback. */
+(function(){
+ "use strict";
+ const globe=document.querySelector(".cover__globe");
+ if(!globe)return;
+ const svg=globe.querySelector("svg");
+ const fallback=svg&&svg.querySelector(".cover-globe-static");
+ const live=svg&&svg.querySelector("#cover-globe-live");
+ if(!fallback||!live)return;
+ const motion=window.matchMedia("(prefers-reduced-motion: reduce)");
+ if(motion.matches)return;
+ const ns="http://www.w3.org/2000/svg";
+ const graticule=document.createElementNS(ns,"path");
+ graticule.setAttribute("class","globe-parallels");
+ const coast=document.createElementNS(ns,"path");
+ coast.setAttribute("class","globe-coastlines");
+ live.append(graticule,coast);
+
+ // Deliberately simplified coastline outlines (latitude/longitude degrees).
+ // The graphic is decorative, not intended as a geographic reference map.
+ const lands=[
+  [[-168,66],[-155,69],[-147,66],[-140,59],[-132,56],[-129,51],[-124,49],[-124,42],[-119,36],[-113,32],[-108,30],[-103,25],[-97,24],[-90,19],[-86,17],[-83,10],[-78,9],[-77,13],[-81,18],[-85,21],[-81,25],[-81,30],[-78,34],[-74,41],[-68,45],[-65,49],[-60,53],[-54,52],[-52,58],[-62,62],[-72,63],[-78,59],[-81,64],[-94,70],[-110,73],[-124,70],[-138,72],[-150,71]],
+  [[-79,10],[-74,12],[-69,12],[-62,11],[-56,7],[-51,4],[-47,-1],[-42,-3],[-36,-6],[-35,-10],[-39,-19],[-43,-23],[-46,-26],[-48,-29],[-54,-34],[-58,-39],[-64,-46],[-68,-53],[-73,-55],[-76,-47],[-73,-39],[-72,-32],[-70,-23],[-76,-12],[-80,-4],[-79,4]],
+  [[-11,36],[-9,43],[-5,49],[2,51],[8,54],[16,56],[23,58],[30,60],[27,67],[35,71],[43,70],[53,68],[62,71],[82,73],[96,76],[116,75],[138,71],[156,66],[170,61],[177,55],[167,51],[156,51],[148,46],[143,42],[140,36],[135,34],[130,36],[127,39],[125,35],[122,29],[121,23],[116,22],[111,19],[108,15],[105,11],[104,4],[108,-2],[115,-5],[116,-8],[111,-8],[106,-5],[102,0],[100,7],[97,13],[93,18],[89,21],[88,25],[83,27],[79,29],[77,35],[70,39],[64,40],[60,45],[53,48],[47,43],[41,42],[36,40],[33,37],[30,40],[25,38],[24,34],[18,36],[12,43],[8,44],[3,42],[-2,43],[-8,36]],
+  [[-17,36],[-7,36],[2,37],[10,37],[19,33],[25,32],[30,31],[33,26],[34,20],[39,14],[44,12],[50,11],[51,6],[45,-2],[42,-10],[40,-16],[35,-22],[32,-27],[28,-31],[23,-35],[18,-34],[15,-28],[12,-21],[10,-14],[9,-8],[5,-1],[1,5],[-5,5],[-10,10],[-16,14],[-17,24],[-15,30]],
+  [[113,-22],[115,-15],[122,-12],[130,-11],[136,-12],[142,-15],[148,-20],[153,-27],[151,-34],[146,-38],[138,-39],[131,-35],[124,-34],[117,-31],[113,-26]],
+  [[-52,59],[-45,60],[-41,65],[-37,68],[-41,77],[-49,83],[-58,82],[-60,74],[-52,67]],
+  [[132,33],[135,35],[138,37],[140,40],[141,43],[145,45],[146,43],[143,39],[139,35]],
+  [[47,-13],[49,-16],[49,-23],[46,-26],[44,-24],[44,-18]],
+  [[-8,50],[-4,50],[1,52],[0,57],[-5,59],[-6,54]],
+  [[121,14],[122,18],[126,18],[125,12],[122,7],[120,9]],
+  [[166,-34],[172,-39],[175,-43],[171,-46],[169,-41]]
+ ];
+ const deg=Math.PI/180;
+ const latitudeTilt=15*deg;
+ const sinTilt=Math.sin(latitudeTilt), cosTilt=Math.cos(latitudeTilt);
+ function point(lon,lat,centerLon){
+   const phi=lat*deg,dl=(lon-centerLon)*deg;
+   const cos=Math.cos(phi), visible=sinTilt*Math.sin(phi)+cosTilt*cos*Math.cos(dl);
+   if(visible<=.001)return null;
+   const x=300+238*cos*Math.sin(dl);
+   const y=300-238*(cosTilt*Math.sin(phi)-sinTilt*cos*Math.cos(dl));
+   return [Math.round(x*10)/10,Math.round(y*10)/10];
+ }
+ function shapePath(coords,centerLon,closed){
+   let out="",drawing=false;
+   const edges=closed?coords.length:coords.length-1;
+   for(let i=0;i<edges;i++){
+     const a=coords[i],b=coords[(i+1)%coords.length];
+     let dlon=b[0]-a[0];
+     if(dlon>180)dlon-=360;
+     if(dlon< -180)dlon+=360;
+     const dlat=b[1]-a[1];
+     const steps=Math.max(1,Math.ceil(Math.max(Math.abs(dlon),Math.abs(dlat))/4));
+     for(let j=i?1:0;j<=steps;j++){
+       const fraction=j/steps;
+       const p=point(a[0]+fraction*dlon,a[1]+fraction*dlat,centerLon);
+       if(!p){drawing=false;continue;}
+       out+=(drawing?"L":"M")+p[0]+" "+p[1];
+       drawing=true;
+     }
+   }
+   return out;
+ }
+ const parallels=[];
+ for(const lat of [-60,-30,0,30,60]){
+   const coords=[];
+   for(let lon=-180;lon<=180;lon+=4)coords.push([lon,lat]);
+   parallels.push(coords);
+ }
+ for(let lon=-180;lon<180;lon+=30){
+   const coords=[];
+   for(let lat=-88;lat<=88;lat+=4)coords.push([lon,lat]);
+   parallels.push(coords);
+ }
+ function draw(longitude){
+   graticule.setAttribute("d",parallels.map(line=>shapePath(line,longitude,false)).join(""));
+   coast.setAttribute("d",lands.map(line=>shapePath(line,longitude,true)).join(""));
+ }
+ let elapsed=0,lastTime=0,lastPaint=0,frameId=0,playing=false,visible=false;
+ const revolution=56000; // One slow rotation in 56 seconds.
+ function frame(now){
+   if(!playing)return;
+   if(lastTime)elapsed+=Math.min(now-lastTime,90);
+   lastTime=now;
+   if(now-lastPaint>55){
+     draw(25+elapsed*360/revolution);
+     lastPaint=now;
+   }
+   frameId=requestAnimationFrame(frame);
+ }
+ function start(){
+   if(playing||motion.matches||!visible||document.hidden)return;
+   try{
+     if(live.style.display==="none"){
+       draw(25+elapsed*360/revolution);
+       live.style.display="";
+       fallback.style.display="none";
+     }
+   }catch(e){live.style.display="none";fallback.style.display="";return;}
+   playing=true;lastTime=0;frameId=requestAnimationFrame(frame);
+ }
+ function stop(){
+   playing=false;cancelAnimationFrame(frameId);lastTime=0;
+ }
+ function refresh(){
+   if(motion.matches){
+     stop();live.style.display="none";fallback.style.display="";
+   }else if(visible&&!document.hidden)start();
+   else stop();
+ }
+ if("IntersectionObserver" in window){
+   const observer=new IntersectionObserver(entries=>{
+     visible=entries.some(e=>e.isIntersecting);
+     refresh();
+   },{rootMargin:"150px 0px 150px 0px",threshold:0});
+   observer.observe(document.querySelector(".cover"));
+ }else{
+   visible=true;refresh();
+ }
+ document.addEventListener("visibilitychange",refresh,{passive:true});
+ if(typeof motion.addEventListener==="function")motion.addEventListener("change",refresh);
+ else if(typeof motion.addListener==="function")motion.addListener(refresh);
 })();
 </script>
 </body>
