@@ -1,443 +1,324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f7f4">
-<meta name="description" content="数字でわかる同志社国際中学校・高等学校。国際性、語学、進路、学習環境の4つの数字から魅力を紹介するデザインプレビュー。">
-<title>数字でわかる同志社国際 | Doshisha International by the Numbers</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f8f7f3">
+<title>数字でわかる同志社国際｜Doshisha International by the Numbers</title>
+<meta name="description" content="同志社国際中学校・高等学校を4つの数字で紹介。国際性、語学、進路、学びの環境を、わかりやすいグラフィックとともに。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --plum:#663874;--dark:#3b2742;--ink:#353238;--slate:#6f6b70;
-  --paper:#f8f7f4;--white:#fff;--mist:#efeeec;--bluegrey:#91a7af;
-  --hairline:rgba(79,61,82,.23);--serif:"Cormorant Garamond",Georgia,serif;
-  --jpserif:"Noto Serif JP","Yu Mincho",serif;--sans:"Noto Sans JP",sans-serif;
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}button{font:inherit}img{display:block;max-width:100%}
-:focus-visible{outline:2px solid var(--plum);outline-offset:4px}
-.site-header{position:absolute;top:0;left:0;right:0;height:92px;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(25px,6vw,94px);gap:15px}
-.site-header__name{font-size:clamp(11px,1.05vw,13px);font-weight:700;line-height:1.65;letter-spacing:.03em;text-decoration:none;color:var(--dark)}
-.site-header__name small{display:block;font:500 9px "DM Sans",sans-serif;letter-spacing:.14em;color:#776c79}
-.site-header__menu{display:inline-flex;align-items:center;gap:14px;min-height:44px;font:700 10px "DM Sans",sans-serif;letter-spacing:.13em;text-decoration:none;color:var(--plum)}
-.site-header__menu:after{content:"";display:block;width:37px;height:37px;border:1px solid var(--plum);border-radius:50%;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 7v18m-6-6 6 6 6-6' stroke='%23663874' fill='none' stroke-width='1.4'/%3E%3C/svg%3E") center/17px no-repeat}
-.eyebrow{font:700 10px "DM Sans",sans-serif;letter-spacing:.18em;color:var(--plum)}
-.fine-rule{height:1px;background:var(--plum);transform-origin:left;position:relative}
-.fine-rule:after{content:"";position:absolute;right:0;top:-4px;width:1px;height:9px;background:var(--plum)}
-.photo-backdrop{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;background:linear-gradient(135deg,#eeede9,#dedbdc)}
-.photo-backdrop:before{content:"";position:absolute;inset:-30px;background-image:var(--photo);background-size:cover;background-position:var(--bg-position,center);filter:blur(18px) saturate(.42) contrast(.83) brightness(1.1);transform:scale(1.05);opacity:.61}
-.photo-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(248,247,244,.93),rgba(248,247,244,.83) 44%,rgba(248,247,244,.74))}
-.photo-backdrop--strong:after{background:linear-gradient(100deg,rgba(248,247,244,.92),rgba(248,247,244,.67))}
-.photo-backdrop--book:after{background:linear-gradient(100deg,rgba(247,245,241,.94),rgba(247,245,241,.76))}
-.hero{min-height:720px;min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;isolation:isolate}
-.hero .photo-backdrop{z-index:-1}
-.hero:before{content:"";position:absolute;top:0;left:0;right:0;border-top:3px solid var(--plum);z-index:20}
-.hero__inner{width:min(100%,1350px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:2vw;padding:125px clamp(30px,7vw,115px) 105px;z-index:2}
-.hero__counter{font:600 12px "DM Sans",sans-serif;letter-spacing:.17em;color:var(--plum);margin-bottom:33px;display:flex;gap:14px;align-items:center}
-.hero__counter:before{content:"";width:33px;height:1px;background:var(--plum)}
-.hero h1{font:500 clamp(47px,5.4vw,77px)/1.55 var(--jpserif);color:var(--dark);letter-spacing:-.06em;margin:0}
-.hero h1 em{font-style:normal;color:var(--plum)}
-.hero__en{font:500 clamp(24px,2.5vw,37px)/1.16 var(--serif);color:var(--plum);letter-spacing:.015em;margin:22px 0 0}
-.hero__body{max-width:390px;font:400 13px/2.25 var(--sans);color:#655b66;margin:32px 0 0;letter-spacing:.015em}
-.hero__media{align-self:center;position:relative;padding:30px 0 35px}
-.hero__circle{width:min(32vw,430px);height:min(32vw,430px);border-radius:50%;overflow:hidden;position:relative;margin:auto;background:#ddd5dd;box-shadow:0 0 0 14px #ffffff9c}
-.hero__circle img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.68) contrast(.91)}
-.hero__media:before{content:"";position:absolute;left:-42%;right:-9%;height:1px;background:var(--plum);top:52%;z-index:-1}
-.hero__media:after{content:"01 — 05";position:absolute;right:0;bottom:8px;font:500 15px var(--serif);letter-spacing:.1em;color:var(--plum)}
-.hero__photo-label{margin:22px auto 0;text-align:center;font:500 11px "DM Sans",sans-serif;letter-spacing:.14em;color:var(--slate)}
-.hero__bottom{position:absolute;bottom:30px;left:clamp(30px,7vw,115px);right:clamp(30px,7vw,115px);display:flex;justify-content:space-between;align-items:center;gap:20px;font:700 10px "DM Sans",sans-serif;letter-spacing:.15em;color:var(--plum)}
-.hero__bottom:after{content:"";display:block;width:54%;height:1px;background:#a68caa87}
-.summary{background:#fff;padding:112px 6% 94px;position:relative}
-.summary__intro{text-align:center}
-.summary__intro h2{font:500 clamp(34px,4vw,58px)/1.6 var(--jpserif);color:var(--dark);margin:22px 0 0;letter-spacing:-.055em}
-.summary__intro p{font-size:13px;line-height:2.25;color:var(--slate);margin:23px 0 0}
-.summary__grid{width:min(100%,1160px);margin:75px auto 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--hairline);border-left:1px solid transparent}
-.summary__stat{padding:20px 12px 24px;min-width:0;position:relative;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline);text-align:center}
-.summary__stat:nth-child(5n){border-right:0}
-.summary__stat strong{font:500 clamp(42px,5.5vw,70px)/1.08 var(--serif);letter-spacing:-.065em;color:var(--plum);display:block;white-space:nowrap}
-.summary__stat:nth-child(9) strong,.summary__stat:nth-child(10) strong{font-size:clamp(33px,4.1vw,56px)}.summary__stat span{font:500 11px/1.65 var(--sans);color:var(--slate);display:block;margin-top:7px}
-.summary__note{font-size:11px;line-height:1.95;max-width:900px;text-align:center;color:#827e83;margin:25px auto 0}
-.scene{position:relative;overflow:hidden;isolation:isolate;min-height:790px;display:grid;align-items:center}
-.scene .photo-backdrop{z-index:-1}
-.scene--tint .photo-backdrop:after{background:linear-gradient(110deg,rgba(239,239,236,.91),rgba(239,239,236,.74))}
-.scene__container{width:min(100%,1370px);margin:0 auto;padding:100px clamp(26px,6vw,95px);display:grid;grid-template-columns:1fr .88fr;align-items:center;gap:6vw}
-.scene--reverse .scene__container{grid-template-columns:.88fr 1fr}
-.scene--reverse .scene__media{order:-1}
-.scene__copy{position:relative;z-index:4;min-width:0}
-.scene__index{display:flex;align-items:center;gap:15px;font:700 11px "DM Sans",sans-serif;letter-spacing:.16em;color:#84628b;margin-bottom:42px}
-.scene__index b{font:500 29px var(--serif);letter-spacing:0;color:var(--plum)}
-.scene__heading{font:500 clamp(28px,2.4vw,38px)/1.6 var(--jpserif);letter-spacing:-.04em;color:var(--dark);margin:0 0 2px}
-.scene__measure{display:flex;align-items:baseline;gap:15px;white-space:nowrap;margin:3px 0 10px;position:relative}
-.scene__measure small{font:500 13px var(--sans);color:var(--plum);letter-spacing:.1em}
-.scene__num{font:400 clamp(155px,16.6vw,255px)/.93 var(--serif);letter-spacing:-.075em;color:var(--plum);display:block}
-.scene__num--wide{font-size:clamp(105px,11.3vw,177px);letter-spacing:-.08em}
-.scene__unit{font:500 clamp(18px,1.7vw,24px) var(--jpserif);color:var(--plum)}
-.scene__rule{height:1px;background:var(--plum);width:calc(100% + 9vw);position:relative;z-index:0;transform-origin:left}
-.scene__rule:before,.scene__rule:after{content:"";position:absolute;width:1px;height:10px;background:var(--plum);top:-5px}
-.scene__rule:before{left:0}.scene__rule:after{right:0}
-.scene--reverse .scene__rule{transform-origin:right;transform:translateX(-9vw);width:calc(100% + 9vw)}
-.scene__body{font:400 13px/2.25 var(--sans);max-width:430px;color:#5e585f;margin:25px 0}
-.scene__sub{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:18px;margin:12px 0 0}
-.scene__sub strong{font:500 clamp(63px,7.5vw,103px)/1 var(--serif);letter-spacing:-.06em;color:var(--plum);white-space:nowrap}
-.scene__sub strong i{font:500 17px var(--jpserif);font-style:normal;letter-spacing:0;margin-left:5px}
-.scene__sub span{font-size:12px;line-height:1.9;font-weight:600;color:var(--ink)}
-.scene__footnote{font-size:11px;line-height:1.9;color:var(--slate);margin:20px 0 0}
-.scene__media{position:relative;z-index:2;min-width:0;display:grid;place-items:center;align-self:center}
-.scene__photo{width:min(32vw,435px);height:min(32vw,435px);border-radius:50%;overflow:hidden;background:#ddd7dd;box-shadow:0 0 0 12px #fff8;position:relative}
-.scene__photo img{width:100%;height:100%;object-fit:cover;object-position:var(--photo-pos,center);filter:saturate(.65) contrast(.92) sepia(.07)}
-.scene__photo:after{content:"";position:absolute;inset:0;border:1px solid #ffffffbb;border-radius:50%;pointer-events:none}
-.scene__photo-label{position:relative;text-align:center;background:#ffffffd9;margin-top:-16px;padding:13px 26px;color:#675a68;font:500 11px var(--sans);z-index:3;letter-spacing:.03em;max-width:90%}
-.scene__media--map:before{content:"";position:absolute;left:-8%;top:-2%;width:90%;aspect-ratio:1;border:1px dotted #957b9b9e;border-radius:50%;z-index:-2}
-.scene__media--map:after{content:"";position:absolute;right:-2%;bottom:1%;height:8px;width:8px;background:var(--plum);border-radius:50%;z-index:0}
-.scene__languages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px;max-width:510px}
-.scene__languages span{display:block;border-top:1px solid #a899ac8a;padding:9px 2px;font:600 11px/1.3 "DM Sans",sans-serif;color:#726477;letter-spacing:.07em;text-align:left}
-.scene__sub--wide{grid-template-columns:1fr;gap:4px}
-.scene__sub--wide strong{font-size:clamp(65px,8vw,117px)}
-.scene__sub--wide span{margin-bottom:4px}
-.scene--library .scene__num--wide{font-size:clamp(99px,10.1vw,153px)}
-.scene--library .scene__sub strong{font-size:clamp(65px,8vw,112px)}
-.scene--library .scene__sub{grid-template-columns:1fr;gap:3px}
-.scene--library .scene__photo-label{margin-top:-19px}
-.scene__deco{position:absolute;left:4vw;top:11%;width:200px;height:200px;opacity:.07;z-index:0;pointer-events:none}
-.scene__deco svg{width:100%;height:100%}
-.end{position:relative;min-height:580px;background:#f8f7f4;display:grid;place-items:center;text-align:center;isolation:isolate;overflow:hidden}
-.end .photo-backdrop{z-index:-1}
-.end .photo-backdrop:before{filter:blur(13px) saturate(.45) contrast(.84) brightness(1.1)}
-.end__inner{width:100%;position:relative;z-index:2;padding:110px 20px}
-.end h2{font:500 clamp(38px,5vw,69px)/1.65 var(--jpserif);letter-spacing:-.05em;color:var(--dark);margin:25px auto}
-.end h2 em{color:var(--plum);font-style:normal}
-.end p{font-size:13px;color:var(--slate);line-height:2.1}
-.end__cta{display:inline-flex;align-items:center;justify-content:space-between;gap:36px;background:var(--plum);color:white;min-height:55px;padding:0 24px;text-decoration:none;font-size:12px;font-weight:700;margin-top:25px;transition:transform .25s,background .25s}
-.end__cta:hover{transform:translateY(-2px);background:var(--dark)}
-.end__cta span{font-size:22px;font-weight:400}
-.site-footer{font-size:11px;line-height:2.1;color:#7c777d;text-align:center;padding:30px 22px 42px;background:#fff}
-.side-dots{position:fixed;z-index:28;right:23px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;align-items:center}
-.side-dots a{display:grid;place-items:center;width:26px;height:26px;position:relative;text-decoration:none}
-.side-dots a:after{content:"";width:5px;height:5px;background:#a6a0a8;border-radius:50%;transition:all .25s}
-.side-dots a.active:after{width:12px;height:12px;background:var(--plum);box-shadow:0 0 0 5px #ffffffb4}
-.side-dots a:focus-visible{outline-offset:0}
-.motion .reveal{opacity:.78;transform:translateY(13px);transition:opacity .62s ease,transform .62s ease}
-.motion .reveal.visible{opacity:1;transform:translateY(0)}
-.motion .scene__rule{transform:scaleX(.8);opacity:.7;transition:transform .7s ease,opacity .7s ease}
-.motion .scene__rule.visible{transform:scaleX(1);opacity:1}
-.motion .scene--reverse .scene__rule{transform:translateX(-9vw) scaleX(.8)}
-.motion .scene--reverse .scene__rule.visible{transform:translateX(-9vw) scaleX(1)}
-@media(max-width:1050px){
- .hero__inner{grid-template-columns:1.05fr .95fr;padding-left:5%;padding-right:5%}
- .hero__circle,.scene__photo{width:min(36vw,370px);height:min(36vw,370px)}
- .scene__container{gap:3vw;padding-left:5%;padding-right:5%}
- .scene__num{font-size:clamp(130px,18vw,210px)}
- .scene__num--wide{font-size:clamp(95px,12vw,145px)}
- .scene--library .scene__num--wide{font-size:clamp(85px,10.5vw,130px)}
- .summary__stat strong{font-size:clamp(40px,5vw,55px)}
+:root{--plum:#6b3678;--plum-deep:#4c285b;--text:#38323a;--body:#68646b;--paper:#f8f7f3;--line:#bb9dbd;--bgwhite:#fffdfb;--ocean:#198eaa}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px}
+.site-header{height:72px;position:fixed;inset:0 0 auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:12px clamp(24px,5vw,86px);background:linear-gradient(to bottom,rgba(249,248,245,.94),rgba(249,248,245,.58) 70%,transparent);pointer-events:none}
+.site-header>*{pointer-events:auto}
+.site-header__brand{font-size:10px;letter-spacing:.075em;color:#69566e;font-weight:600;text-decoration:none;max-width:200px}
+.site-header__center{position:absolute;left:50%;top:19px;transform:translateX(-50%);text-align:center;white-space:nowrap;font:500 12px/1.3 "DM Sans",sans-serif;letter-spacing:.055em;color:#6b6269;pointer-events:none}
+.site-header__center span{display:block;font:600 9px/1.6 "Noto Sans JP",sans-serif;letter-spacing:.15em;color:var(--plum)}
+.site-header__external{font:700 10px "DM Sans",sans-serif;letter-spacing:.12em;text-decoration:none;color:var(--plum);white-space:nowrap;min-height:44px;display:flex;align-items:center;gap:9px}
+.site-header__external span{font-size:15px}
+.story{position:relative;isolation:isolate;min-height:820px;min-height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f7f5f0}
+.story--language{background:#f3f3f1}
+.story--future{background:#f4f3f0}
+.story--library{background:#f4f2ee}
+.story__ambient{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.story__ambient:before{content:"";position:absolute;inset:-48px;background-image:var(--scene-photo);background-position:var(--scene-position,center);background-size:cover;filter:blur(20px) saturate(.55) contrast(.78) brightness(1.1);opacity:.5;transform:scale(1.02)}
+.story__ambient:after{content:"";position:absolute;inset:0;background:linear-gradient(99deg,rgba(250,248,243,.95),rgba(250,248,243,.83) 50%,rgba(250,248,243,.71))}
+.story__ambient--map{background:linear-gradient(135deg,#e8e7df,#f8f3e4 55%,#e6ebec)}
+.story__ambient--map:before{display:none}
+.story__ambient--map:after{background:rgba(248,248,244,.43)}
+.background-map{position:absolute;inset:-7%;width:114%;height:114%;filter:blur(3px);opacity:.83}
+.story__inner{width:min(100%,1370px);padding:125px clamp(34px,8.5vw,140px) 87px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:2.5vw;align-items:center;position:relative;z-index:1}
+.story__copy{min-width:0;position:relative;z-index:1}
+.story__topline{font:600 11px "DM Sans",sans-serif;color:#8d758b;letter-spacing:.18em;margin-bottom:53px;display:flex;align-items:center;gap:18px}
+.story__topline strong{font:400 28px "Cormorant Garamond",serif;letter-spacing:0;color:var(--plum)}
+.story__topline:after{content:"";display:block;width:46px;height:1px;background:#a78ca9}
+.story__label{font:500 clamp(22px,2vw,28px) "Noto Serif JP",serif;letter-spacing:-.03em;color:var(--plum-deep);margin:0}
+.story__metric{display:flex;align-items:baseline;gap:14px;white-space:nowrap;margin:0 0 3px;line-height:1}
+.story__prefix{font:500 clamp(22px,2.4vw,31px) "Noto Serif JP",serif;letter-spacing:-.03em;color:var(--plum)}
+.story__metric strong{font:400 clamp(175px,18vw,267px)/1 "Cormorant Garamond",Georgia,serif;letter-spacing:-.075em;color:var(--plum);font-variant-numeric:lining-nums}
+.story--library .story__metric strong{font-size:clamp(110px,11.8vw,176px);letter-spacing:-.085em}
+.story__unit{font:500 clamp(26px,3.2vw,43px) "Noto Serif JP",serif;color:var(--plum);margin-left:-5px}
+.story__rule{position:relative;width:calc(100% + 24vw);height:3px;background:var(--plum);margin:0 0 26px;z-index:0;transform-origin:left}
+.story__rule:before,.story__rule:after{content:"";position:absolute;top:-6px;width:2px;height:15px;background:var(--plum)}
+.story__rule:before{left:0}
+.story__rule:after{right:0}
+.story__description{margin:0;max-width:495px;font:400 14px/2.1 "Noto Sans JP",sans-serif;letter-spacing:.012em;color:#5f5c62}
+.story__source{font:500 10px/1.7 "DM Sans",sans-serif;letter-spacing:.1em;color:#8e858d;margin:20px 0 0}
+.story__visual{position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 -2vw 0 0}
+.story__disc{width:min(31vw,440px);aspect-ratio:1;background:var(--bgwhite);border-radius:50%;display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 4px 48px rgba(84,68,90,.045);border:1px solid #ffffffa8}
+.story__disc svg{width:94%;height:94%}
+.story__art-caption{font:500 10px "DM Sans",sans-serif;color:#87818a;letter-spacing:.14em;margin-top:20px;text-align:center}
+.story__corner{position:absolute;bottom:35px;left:clamp(34px,8.5vw,140px);font:600 10px "DM Sans",sans-serif;letter-spacing:.16em;color:#8c7b8b;display:flex;gap:13px;align-items:center}
+.story__corner:before{content:"";width:32px;height:1px;background:#94769a}
+.story__feature{position:absolute;right:clamp(34px,8.5vw,140px);bottom:34px;font:500 10px "DM Sans",sans-serif;letter-spacing:.1em;color:#928892}
+.story--language .story__disc{border-color:#ffffffd0}
+.story--future .story__disc{background:#fffdfa}
+.story--library .story__disc{background:#fffefa}
+.dot-nav{position:fixed;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:30}
+.dot-nav a{width:34px;height:34px;display:grid;place-items:center;text-decoration:none}
+.dot-nav a:after{content:"";width:5px;height:5px;border-radius:50%;background:#afa8b0;transition:background .25s,width .25s,height .25s}
+.dot-nav a.active:after{background:var(--plum);width:13px;height:13px}
+.closing{background:#fffdfb;border-top:1px solid #eae6e8;max-width:none;padding:55px clamp(24px,8.5vw,140px) 65px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.closing__text{font:500 clamp(20px,2.1vw,29px)/1.65 "Noto Serif JP",serif;letter-spacing:-.045em;color:var(--plum-deep);margin:0}
+.closing__text small{font:600 10px "DM Sans",sans-serif;letter-spacing:.15em;color:#8a788c;display:block;margin-bottom:9px}
+.closing__link{display:inline-flex;min-height:51px;align-items:center;gap:35px;padding:12px 20px;background:var(--plum);color:white;text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:background .2s}
+.closing__link:hover{background:#482456}
+.closing__link span{font-size:21px;line-height:1}
+.site-footer{background:#fffdfb;padding:16px 26px 30px;font:400 10px/1.9 "Noto Sans JP",sans-serif;text-align:center;color:#8e858b}
+.story.is-in .story__metric{animation:rise .64s ease-out both}
+.story.is-in .story__description{animation:rise .62s .17s ease-out both}
+.story.is-in .story__disc{animation:rise .65s .1s ease-out both}
+.story.is-in .story__rule{animation:extend .8s .08s ease-out both}
+@keyframes rise{from{opacity:.1;transform:translateY(17px)}to{opacity:1;transform:none}}
+@keyframes extend{from{transform:scaleX(.05);opacity:.6}to{transform:scaleX(1);opacity:1}}
+@media(max-width:1150px){
+ .story__inner{padding-left:5.5vw;padding-right:5.5vw;gap:2vw}
+ .story__metric strong{font-size:clamp(155px,19vw,215px)}
+ .story--library .story__metric strong{font-size:clamp(91px,11.8vw,139px)}
+ .story__disc{width:min(35vw,380px)}
 }
 @media(max-width:720px){
- .site-header{height:70px;padding:0 23px}
- .site-header__name{font-size:10px}.site-header__name small{font-size:7px;letter-spacing:.08em}
- .site-header__menu{font-size:9px;gap:5px}.site-header__menu:after{width:32px;height:32px}
- .hero{min-height:740px;min-height:100svh;display:block}
- .hero__inner{display:flex;flex-direction:column;align-items:stretch;padding:120px 24px 77px;gap:0}
- .hero__counter{font-size:9px;margin-bottom:16px;letter-spacing:.12em}
- .hero h1{font-size:clamp(37px,9.6vw,55px);line-height:1.55}
- .hero__en{font-size:26px;margin:17px 0 0}
- .hero__body{font-size:11px;line-height:2.2;margin-top:21px}
- .hero__media{margin:17px auto 0;padding:0;width:100%}
- .hero__circle{width:min(60vw,260px);height:min(60vw,260px)}
- .hero__media:before{left:0;right:0;top:45%}
- .hero__media:after{font-size:12px;right:7%;bottom:-14px}
- .hero__photo-label{font-size:9px;margin-top:12px}
- .hero__bottom{left:24px;right:24px;bottom:19px;font-size:9px}
- .hero__bottom:after{width:28%}
- .summary{padding:84px 24px 70px}
- .summary__intro h2{font-size:clamp(31px,7.4vw,43px)}
- .summary__intro p{font-size:11px}
- .summary__grid{margin-top:45px;grid-template-columns:repeat(2,minmax(0,1fr))}
- .summary__stat{padding:18px 6px 20px;min-height:90px}
- .summary__stat:nth-child(5n){border-right:1px solid var(--hairline)}
- .summary__stat:nth-child(2n){border-right:0}
- .summary__stat strong{font-size:clamp(40px,11vw,59px)}.summary__stat:nth-child(9) strong,.summary__stat:nth-child(10) strong{font-size:clamp(33px,9.3vw,45px)}
- .summary__stat span{font-size:10px}
- .summary__note{font-size:10px;margin-top:22px}
- .scene{min-height:0}
- .scene__container,.scene--reverse .scene__container{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:72px 24px 76px}
- .scene--reverse .scene__media{order:1}
- .scene__copy{order:0}
- .scene__index{font-size:10px;margin-bottom:26px}
- .scene__index b{font-size:25px}
- .scene__heading{font-size:clamp(27px,7vw,37px);line-height:1.5}
- .scene__measure{margin:5px 0 10px;gap:9px}
- .scene__num{font-size:clamp(128px,39vw,190px)}
- .scene__num--wide{font-size:clamp(86px,24vw,130px)}
- .scene--library .scene__num--wide{font-size:clamp(79px,22vw,125px)}
- .scene__unit{font-size:17px}
- .scene__rule{width:100%}
- .scene--reverse .scene__rule{transform:none;width:100%}
- .motion .scene--reverse .scene__rule{transform:scaleX(.8)}
- .motion .scene--reverse .scene__rule.visible{transform:scaleX(1)}
- .scene__body{font-size:11px;line-height:2.2;margin:23px 0}
- .scene__sub{margin-top:8px;gap:13px}
- .scene__sub strong{font-size:80px}
- .scene__sub strong i{font-size:14px}
- .scene__sub span{font-size:11px}
- .scene__footnote{font-size:10px;margin-top:15px}
- .scene__media{order:1;margin:35px auto 0;width:100%}
- .scene__photo{width:min(66vw,285px);height:min(66vw,285px)}
- .scene__photo-label{font-size:9px;margin-top:-12px;padding:11px 16px}
- .scene__languages{gap:7px 10px;margin-top:12px}
- .scene__languages span{font-size:9px;padding-top:7px}
- .scene--library .scene__sub strong{font-size:76px}
- .side-dots{display:none}
- .end{min-height:520px}
- .end__inner{padding:94px 24px}
- .end h2{font-size:clamp(35px,8.7vw,49px)}
- .end p{font-size:11px}
- .end__cta{font-size:11px;padding:0 21px}
- .site-footer{font-size:10px}
+ .site-header{height:70px;justify-content:center;padding:8px 12px;background:linear-gradient(to bottom,rgba(249,248,245,.96),rgba(249,248,245,.80) 82%,transparent)}
+ .site-header__brand,.site-header__external{display:none}
+ .site-header__center{top:14px;font-size:11px}
+ .site-header__center span{font-size:9px}
+ .story{min-height:100svh;display:block}
+ .story__inner{padding:96px 24px 55px;display:flex;flex-direction:column;align-items:stretch;gap:0}
+ .story__topline{font-size:10px;margin-bottom:22px;gap:12px}
+ .story__topline strong{font-size:24px}
+ .story__topline:after{width:28px}
+ .story__label{font-size:clamp(20px,5.3vw,25px)}
+ .story__metric{gap:7px;margin:1px 0 7px}
+ .story__metric strong{font-size:clamp(135px,37vw,175px)}
+ .story--library .story__metric strong{font-size:clamp(68px,20.5vw,100px)}
+ .story__prefix{font-size:20px}
+ .story__unit{font-size:clamp(19px,6vw,27px);margin-left:-3px}
+ .story__rule{width:100%;height:2px;margin:7px 0 17px}
+ .story__rule:before,.story__rule:after{top:-4px;height:10px;width:1px}
+ .story__description{font-size:12px;line-height:2;max-width:400px}
+ .story__source{font-size:9px;margin-top:12px}
+ .story__visual{margin:22px 0 0;z-index:1}
+ .story__disc{width:min(72vw,310px)}
+ .story__art-caption{font-size:9px;margin-top:9px}
+ .story__corner{left:24px;bottom:17px;font-size:9px}
+ .story__feature{right:24px;bottom:17px;font-size:9px}
+ .story__ambient:before{filter:blur(17px) saturate(.5) brightness(1.12);opacity:.42}
+ .story__ambient:after{background:linear-gradient(to bottom,rgba(250,248,244,.89),rgba(250,248,244,.79))}
+ .background-map{width:138%;height:110%;inset:-5% -19%}
+ .dot-nav{display:none}
+ .closing{padding:46px 24px 42px;display:block}
+ .closing__text{font-size:24px}
+ .closing__link{margin-top:26px;font-size:11px}
+ .site-footer{font-size:10px;padding:13px 22px 28px}
 }
 @media(max-width:390px){
- .hero__inner{padding-top:102px}.hero h1{font-size:35px}.hero__en{font-size:23px}
- .hero__circle{width:215px;height:215px}.hero__media{margin-top:13px}
- .scene__num{font-size:124px}
- .scene__num--wide{font-size:81px}
- .scene--library .scene__num--wide{font-size:76px}
- .scene--library .scene__sub strong{font-size:70px}
- .scene__sub strong{font-size:74px}
- .scene__languages span{letter-spacing:0}
+ .story__inner{padding:91px 21px 53px}
+ .story__label{font-size:21px}
+ .story__metric strong{font-size:130px}
+ .story--library .story__metric strong{font-size:clamp(68px,19.9vw,80px)}
+ .story__prefix{font-size:18px}
+ .story__unit{font-size:19px}
+ .story__description{font-size:11.5px}
+ .story__disc{width:min(70vw,275px)}
+ .story__corner{left:21px}.story__feature{right:21px}
 }
 @media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto!important}
- *,*:before,*:after{animation:none!important;transition:none!important}
- .motion .reveal{opacity:1!important;transform:none!important}
- .motion .scene__rule{opacity:1!important;transform:none!important}
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
-
-/* V13: Curated editorial narrative. Four themes, five brochure figures. */
-.curated-intro{background:#fff;padding:113px clamp(26px,6vw,92px) 88px}
-.curated-intro__container{max-width:1200px;margin:0 auto}
-.curated-intro__title{font:500 clamp(35px,3.85vw,57px)/1.66 var(--jpserif);letter-spacing:-.055em;color:var(--dark);margin:20px 0 0}
-.curated-intro__description{font:400 13px/2.2 var(--sans);color:var(--slate);margin:20px 0 0}
-.curated-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:67px;border-top:1px solid var(--hairline)}
-.curated-index a{display:grid;gap:5px;grid-template-columns:auto 1fr;align-content:start;text-decoration:none;min-height:114px;padding:20px clamp(12px,2vw,29px);border-right:1px solid var(--hairline);transition:background .25s}
-.curated-index a:first-child{padding-left:0}.curated-index a:last-child{border:0}
-.curated-index a:hover{background:#f7f4f7}
-.curated-index a span{grid-row:span 2;font:500 31px/.9 var(--serif);color:var(--plum);margin-right:13px}
-.curated-index a strong{font:600 16px/1.6 var(--jpserif);color:var(--dark)}
-.curated-index a small{font:700 9px "DM Sans",sans-serif;letter-spacing:.15em;color:var(--slate)}
-.scene__metric-label{margin-top:27px}
-.scene--feature .scene__num{font-size:clamp(170px,19vw,285px)}
-.scene__sub small{font-size:11px;line-height:1.7;color:var(--slate);font-weight:400}
-.scene--language-minimal .scene__media{margin:0}
-.language-typography{display:block;width:100%;max-width:510px;border-top:1px solid var(--plum);border-bottom:1px solid var(--plum);padding:18px 0 20px;align-self:center}
-.language-typography__head{font:700 10px "DM Sans",sans-serif;letter-spacing:.18em;color:var(--plum);padding:0 8px 23px}
-.language-typography__grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
-.language-typography__grid span{font:500 clamp(25px,3.3vw,47px)/1.3 var(--serif);letter-spacing:-.02em;color:var(--plum);padding:17px 9px;border-top:1px solid var(--hairline)}
-.language-typography__grid span:nth-child(n+5){font-family:var(--jpserif);font-size:clamp(22px,2.7vw,35px);line-height:1.6}
-.language-typography__footer{font:700 9px "DM Sans",sans-serif;letter-spacing:.16em;color:var(--slate);margin-top:18px;padding-left:8px}
-.scene--future-minimal .scene__num{font-size:clamp(175px,20vw,290px)}
-.scene--future-minimal .scene__unit{font:500 clamp(38px,4vw,63px)/1 var(--serif)}
-.scene--book-minimal .scene__num--wide{font-size:clamp(97px,10.5vw,164px)}
-.scene--book-minimal .scene__measure{gap:8px}
-.scene__photo--rectangle{width:min(33vw,460px);height:min(29vw,400px);border-radius:0;box-shadow:15px 15px 0 #ffffffa0}
-.scene__photo--rectangle:after{border-radius:0}
-.scene--book-minimal .scene__media{padding-bottom:20px}
-.scene--book-minimal .scene__photo-label{margin-top:-4px}
-@media(max-width:1050px){
-.curated-index a{padding:18px 12px}
-.scene--feature .scene__num{font-size:clamp(145px,18vw,235px)}
-.scene--future-minimal .scene__num{font-size:clamp(145px,18vw,250px)}
-.scene--book-minimal .scene__num--wide{font-size:clamp(85px,10vw,130px)}
-}
-@media(max-width:720px){
-.curated-intro{padding:82px 24px 68px}
-.curated-intro__title{font-size:clamp(32px,7.8vw,43px);line-height:1.62}
-.curated-intro__description{font-size:11px}
-.curated-index{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:38px}
-.curated-index a{min-height:92px;padding:17px 10px 16px;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline)}
-.curated-index a:first-child{padding-left:0}
-.curated-index a:nth-child(2){border-right:0}
-.curated-index a:nth-child(3){padding-left:0}
-.curated-index a:last-child{border-bottom:1px solid var(--hairline)}
-.curated-index a span{font-size:27px;margin-right:10px}
-.curated-index a strong{font-size:14px}
-.curated-index a small{font-size:9px}
-.scene--feature .scene__num{font-size:clamp(140px,41vw,190px)}
-.scene--future-minimal .scene__num{font-size:clamp(140px,41vw,190px)}
-.scene--future-minimal .scene__unit{font-size:40px}
-.scene__measure small{font-size:12px}
-.language-typography{margin:35px auto 0!important;width:100%;max-width:430px}
-.language-typography__grid span{font-size:clamp(28px,8vw,40px);padding:12px 6px}
-.language-typography__grid span:nth-child(n+5){font-size:24px}
-.scene__photo--rectangle{width:min(76vw,350px);height:min(65vw,300px)}
-.scene--book-minimal .scene__num--wide{font-size:clamp(75px,21.5vw,125px)}
-.scene--book-minimal .scene__unit{font-size:16px}
-}
-@media(max-width:390px){
-.scene--book-minimal .scene__num--wide{font-size:clamp(70px,20.5vw,91px)}
-.scene--book-minimal .scene__measure{gap:4px}
-.scene--future-minimal .scene__num,.scene--feature .scene__num{font-size:138px}
-}
-
 </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="site-header__name" href="#top">同志社国際中学校・高等学校<small>DOSHISHA INTERNATIONAL JUNIOR / SENIOR HIGH SCHOOL</small></a>
-  <a class="site-header__menu" href="#numbers">EXPLORE</a>
-</header>
-<main>
-<section class="hero" id="top" style="--photo:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=75')" aria-labelledby="hero-title">
-  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <div class="hero__counter">FOUR STORIES OF DOSHISHA INTERNATIONAL</div>
-      <h1 id="hero-title">数字でわかる<br>同志社国際</h1>
-      <p class="hero__en">Doshisha International<br>by the Numbers.</p>
-      <p class="hero__body">国際色豊かな本校には、さまざまなバックグラウンドを持つ生徒たちが集まります。その魅力を、学校案内に掲載された数字とともに。</p>
-    </div>
-    <div class="hero__media">
-      <div class="hero__circle"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を伝えるイメージ写真（実際の校舎ではありません）" fetchpriority="high" decoding="async"></div>
-      <div class="hero__photo-label">A WORLD OF POSSIBILITIES</div>
-    </div>
+<header class="site-header"><a class="site-header__brand" href="#world">同志社国際中学校・高等学校</a>
+<div class="site-header__center">Doshisha International by the Numbers<span>数字でわかる同志社国際</span></div>
+<a class="site-header__external" href="https://www.intnl.doshisha.ac.jp/" rel="noopener" target="_blank">OFFICIAL SITE <span aria-hidden="true">↗</span></a></header>
+<main id="main">
+<section class="story story--world" id="world" aria-labelledby="world-title">
+<div class="story__ambient story__ambient--map" aria-hidden="true">
+<svg class="background-map" viewBox="0 0 1280 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><filter id="worldBlur14" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+<g filter="url(#worldBlur14)" fill="#bcb7aa" opacity=".56">
+<path d="M80 220l98-92 113-14 68 52 53 2 18 64-67 45-46 62-94-6-59 56-66-59-22-76z"/>
+<path d="M295 363l86-20 65 48-19 115-48 84-52-34-21-89-37-53z"/>
+</g>
+<g filter="url(#worldBlur14)" fill="#b0c0c3" opacity=".48">
+<path d="M530 190l80-60 102-17 55 31 90-15 105 63 42 92-68 51-74-27-47 73-68 8-38-55-64 30-67-81z"/>
+<path d="M643 372l90-26 87 57-30 114-56 75-52-50-19-86z"/>
+<path d="M989 367l117-34 96 57-22 97-115 37-70-51z"/>
+</g>
+<g fill="none" stroke="#c4c2bb" stroke-width="2" opacity=".34" filter="url(#worldBlur14)">
+<path d="M24 330q595-280 1220 0M42 445q590 210 1215-20M660 0q-180 350 30 680"/>
+</g>
+</svg></div>
+<div class="story__inner">
+  <div class="story__copy">
+    <div class="story__topline"><strong>01 / 04</strong>GLOBAL BACKGROUND</div>
+    <h1 class="story__label" id="world-title">海外滞在国</h1>
+    <div class="story__metric"><span class="story__prefix">約</span><strong>70</strong><span class="story__unit">ヶ国</span></div>
+    <div class="story__rule" aria-hidden="true"></div>
+    <p class="story__description">さまざまな国や地域で暮らした経験が、ひとつの学校で交わる。<br>その違いが、新しい気づきと学びを生み出します。</p>
+    <p class="story__source">※ 学校パンフレット掲載値</p>
   </div>
-  <div class="hero__bottom"><span>SCROLL TO DISCOVER</span><span>01 — 04 / OUR STORIES</span></div>
+  <div class="story__visual">
+    <div class="story__disc">
+<svg viewBox="0 0 480 480" role="img" aria-label="地球儀と複数の地点を示すマーカー、飛行機のグラフィック">
+<defs>
+ <linearGradient id="oceanV14" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#36abc2"/><stop offset="1" stop-color="#067c9e"/></linearGradient>
+ <clipPath id="earthClipV14"><circle cx="242" cy="257" r="145"/></clipPath>
+</defs>
+<path d="M55 106Q145 37 245 58" stroke="#bfc9cb" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 11" fill="none"/>
+<path d="M263 55l-15 2 7 13" fill="none" stroke="#bfc9cb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(114 100) rotate(-18)"><path d="M0 0l50 10 48-32 12 6-33 40 20 29-9 8-33-28-38-4-10 20-8-3 1-31-27-7z" fill="#c2cacd"/><path d="M0 0l50 10" fill="none" stroke="#99a8ad" stroke-width="2"/></g>
+<circle cx="242" cy="257" r="151" fill="#eff5f6"/>
+<circle cx="242" cy="257" r="145" fill="url(#oceanV14)"/>
+<g clip-path="url(#earthClipV14)">
+ <g stroke="#f9fcfc" stroke-width="1" opacity=".33" fill="none">
+ <ellipse cx="242" cy="257" rx="57" ry="145"/><ellipse cx="242" cy="257" rx="111" ry="145"/>
+ <path d="M96 257h292M110 203h264M109 308h264"/>
+ </g>
+ <g fill="#f5faf9">
+<path d="M98 190l36-37 39-12 31 13 26-1 15 18-12 19-29 1-21 19-24 4-7 23-19 14-23-17-17-30-19-5z"/>
+<path d="M174 248l30-8 23 18 5 27-13 37-14 37-18-6-12-33-14-29z"/>
+<path d="M250 167l27-18 38 5 20 10 23-1 28 18-9 21-19 5-16 23-15 2-17-11-17 12-16-9-9-30z"/>
+<path d="M294 232l39-12 34 18-9 39-19 21-19 3-18-29z"/>
+<path d="M367 246l33-2 20 22-12 24-27-4-17-21z"/>
+<path d="M372 321l25-6 18 12-12 15-24 4z"/></g>
+ <g fill="#d7edf0"><path d="M115 191l14-13 24 8 9 20-16 15-23-11z"/><path d="M300 167l27-6 24 15-12 18-22-8z"/><path d="M330 245l17-8 14 16-10 21-18-9z"/></g>
+</g>
+<g transform="translate(135 187) scale(0.52)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(164 218) scale(0.55)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(205 289) scale(0.55)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(284 183) scale(0.6)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(309 204) scale(0.53)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(347 224) scale(0.6)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(355 273) scale(0.55)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(385 265) scale(0.53)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g><g transform="translate(340 307) scale(0.53)"><path d="M0-14C-9-14-15-8-15 1c0 10 15 27 15 27S15 11 15 1C15-8 9-14 0-14Z" fill="#743d83"/><circle cx="0" cy="1" r="6" fill="#fff"/></g>
+<path d="M125 395q116 52 237-9" stroke="#d4dee0" stroke-width="2" fill="none" stroke-dasharray="2 9"/>
+<circle cx="106" cy="347" r="3" fill="#aa8eb0"/><circle cx="404" cy="180" r="4" fill="#aa8eb0"/>
+</svg></div>
+    <div class="story__art-caption">GLOBAL EXPERIENCES · ONE CAMPUS</div>
+  </div>
+</div>
+<div class="story__corner">DOSHISHA INTERNATIONAL</div>
+<div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
-
-<section class="curated-intro" id="numbers" aria-label="4つの数字で知る同志社国際">
-  <div class="curated-intro__container">
-    <div class="eyebrow reveal">FOUR STORIES. ONE SCHOOL.</div>
-    <h2 class="curated-intro__title reveal">数字は、学校の魅力を知る<br>ひとつの入り口。</h2>
-    <p class="curated-intro__description reveal">たくさんの数字を並べるのではなく、<br>同志社国際らしさが伝わる4つのテーマを選びました。</p>
-    <nav class="curated-index reveal" aria-label="数字で見る4つのテーマ">
-      <a href="#returning"><span>01</span><strong>国際性</strong><small>DIVERSITY</small></a>
-      <a href="#languages"><span>02</span><strong>語学</strong><small>LANGUAGES</small></a>
-      <a href="#future"><span>03</span><strong>進路</strong><small>FUTURE</small></a>
-      <a href="#library"><span>04</span><strong>学習環境</strong><small>KNOWLEDGE</small></a>
-    </nav>
+<section class="story story--languages" id="languages" aria-labelledby="languages-title">
+<div class="story__ambient" style="--scene-photo:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=78');--scene-position:center 50%" aria-hidden="true"></div>
+<div class="story__inner">
+  <div class="story__copy">
+    <div class="story__topline"><strong>02 / 04</strong>MULTILINGUAL LEARNING</div>
+    <h2 class="story__label" id="languages-title">学べる外国語</h2>
+    <div class="story__metric"><strong>6</strong><span class="story__unit">ヶ国語</span></div>
+    <div class="story__rule" aria-hidden="true"></div>
+    <p class="story__description">言語を学ぶことは、文化を知ること。<br>異なる価値観に触れる経験が、世界への扉を開きます。</p>
+    <p class="story__source">※ 科目・履修条件は学校の最新案内をご確認ください</p>
   </div>
+  <div class="story__visual">
+    <div class="story__disc">
+<svg viewBox="0 0 480 480" role="img" aria-label="開いた本と6言語を表す文字のグラフィック">
+<defs><linearGradient id="pagesV14" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eee8ed"/></linearGradient></defs>
+<g fill="none" stroke="#c8bac8" stroke-width="1"><circle cx="238" cy="241" r="180" stroke-dasharray="2 8"/><circle cx="238" cy="241" r="143" opacity=".5"/></g>
+<path d="M84 278Q153 229 237 272Q330 229 396 278l-7 83q-78-33-152 4-82-39-146-4z" fill="#cfced1" opacity=".55"/>
+<path d="M92 239q72-47 145-2v117q-70-45-145-8z" fill="url(#pagesV14)" stroke="#774a84" stroke-width="2"/>
+<path d="M237 237q77-44 151 2v107q-77-37-151 8z" fill="url(#pagesV14)" stroke="#774a84" stroke-width="2"/>
+<path d="M237 241v112M111 258q56-20 104 10M112 283q51-18 101 12M112 312q52-13 101 14M257 269q50-23 107-9M258 296q56-19 109-12M259 324q52-16 109-10" stroke="#bfafc4" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<path d="M97 351q66-20 140 19 78-41 146-19" stroke="#774a84" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g font-family="Cormorant Garamond,Georgia,serif" font-size="41" fill="#653775" text-anchor="middle">
+<text x="112" y="126">A</text><text x="247" y="87">B</text><text x="364" y="136">C</text>
+<text x="80" y="237" font-size="29">文</text><text x="399" y="256" font-size="29">한</text><text x="242" y="421">ñ</text>
+</g>
+<g stroke="#ad9bae" fill="none" stroke-width="1.3">
+<path d="M121 142q34 29 40 63M248 105v97M350 148q-18 35-28 53M88 251q41-10 65-8M386 269q-30-13-57-15M244 384v23" stroke-dasharray="2 7"/>
+</g>
+<circle cx="163" cy="205" r="3" fill="#8b9da4"/><circle cx="248" cy="201" r="3" fill="#8b9da4"/><circle cx="325" cy="201" r="3" fill="#8b9da4"/>
+</svg></div>
+    <div class="story__art-caption">LANGUAGES · CULTURES · DISCOVERY</div>
+  </div>
+</div>
+<div class="story__corner">DOSHISHA INTERNATIONAL</div>
+<div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
-
-<section class="scene scene--feature" id="returning" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 44%" aria-labelledby="returning-title">
-  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>01</b> GLOBAL COMMUNITY / 国際性</div>
-      <h2 class="scene__heading reveal" id="returning-title">世界中の経験が、<br>この教室に集まる。</h2>
-      <div class="eyebrow reveal scene__metric-label">海外滞在国</div>
-      <div class="scene__measure reveal"><small>約</small><strong class="scene__num">70</strong><span class="scene__unit">ヶ国</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      <p class="scene__body reveal">異なる国や地域での生活経験を持つ生徒が、一緒に学び合う。多様なバックグラウンドが、この学校の日常をつくっています。</p>
-      <div class="scene__sub reveal"><strong>682<i>名</i></strong><span>帰国生徒数<br><small>全校生徒1,215名のうち（2026年度）</small></span></div>
-      <p class="scene__footnote">※学校案内の掲載値に基づきます。</p>
-    </div>
-    <figure class="scene__media scene__media--feature">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=75" alt="学生たちの交流を表すイメージ写真。同志社国際の生徒の写真ではありません。"></div>
-      <figcaption class="scene__photo-label">ONE CAMPUS · MANY STORIES</figcaption>
-    </figure>
+<section class="story story--future" id="future" aria-labelledby="future-title">
+<div class="story__ambient" style="--scene-photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=78');--scene-position:center 48%" aria-hidden="true"></div>
+<div class="story__inner">
+  <div class="story__copy">
+    <div class="story__topline"><strong>03 / 04</strong>FUTURE PATHWAYS</div>
+    <h2 class="story__label" id="future-title">内部進学率</h2>
+    <div class="story__metric"><span class="story__prefix">約</span><strong>90</strong><span class="story__unit">%</span></div>
+    <div class="story__rule" aria-hidden="true"></div>
+    <p class="story__description">仲間と学んだ時間を、その先の進路へ。<br>ひとりひとりが、自分らしい未来を描いていきます。</p>
+    <p class="story__source">※ 学校パンフレット掲載値</p>
   </div>
+  <div class="story__visual">
+    <div class="story__disc">
+<svg viewBox="0 0 480 480" role="img" aria-label="10人の人物のうち9人を紫色、1人を灰色で示した図解">
+<path d="M65 113h350M65 375h350" stroke="#d8d1d9" stroke-width="1.5"/>
+<g transform="translate(51 134)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(130 134)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(209 134)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(288 134)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(367 134)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(51 252)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(130 252)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(209 252)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(288 252)" fill="#70427d"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g><g transform="translate(367 252)" fill="#c9c8ca"><circle cx="25" cy="16" r="13"/><path d="M14 40Q25 34 36 40L48 57L44 65L39 60L37 94Q25 102 13 94L11 60L6 65L2 57z"/></g>
+<path d="M90 389h300" stroke="#b8a8bd" stroke-width="1" stroke-dasharray="3 7"/>
+<text x="240" y="103" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#806189">STUDENT PATHWAYS</text>
+</svg></div>
+    <div class="story__art-caption">YOUR PATH · YOUR FUTURE</div>
+  </div>
+</div>
+<div class="story__corner">DOSHISHA INTERNATIONAL</div>
+<div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
-
-<section class="scene scene--reverse scene--language-minimal" id="languages" style="--photo:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=75');--bg-position:center 45%" aria-labelledby="languages-title">
-  <div class="photo-backdrop" aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>02</b> LANGUAGE / 語学</div>
-      <h2 class="scene__heading reveal" id="languages-title">言葉を学ぶ。<br>世界の見方が変わる。</h2>
-      <div class="eyebrow reveal scene__metric-label">学べる外国語</div>
-      <div class="scene__measure reveal"><strong class="scene__num">6</strong><span class="scene__unit">ヶ国語</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      <p class="scene__body reveal">言葉の向こうにある文化に触れる。ひとつの言語を学ぶことが、まだ知らない世界への入り口になります。</p>
-      <p class="scene__footnote">※履修条件・科目は学校の最新案内をご確認ください。</p>
-    </div>
-    <div class="scene__media language-typography reveal" aria-label="学べる6つの外国語の紹介">
-      <div class="language-typography__head">WORDS OPEN WORLDS</div>
-      <div class="language-typography__grid">
-        <span lang="en">English</span><span lang="de">Deutsch</span>
-        <span lang="fr">Français</span><span lang="es">Español</span>
-        <span lang="zh">中文</span><span lang="ko">한국어</span>
-      </div>
-      <div class="language-typography__footer">SIX LANGUAGES · NEW PERSPECTIVES</div>
-    </div>
+<section class="story story--library" id="library" aria-labelledby="library-title">
+<div class="story__ambient" style="--scene-photo:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=78');--scene-position:center 52%" aria-hidden="true"></div>
+<div class="story__inner">
+  <div class="story__copy">
+    <div class="story__topline"><strong>04 / 04</strong>KNOWLEDGE & CURIOSITY</div>
+    <h2 class="story__label" id="library-title">コミュニケーションセンター 蔵書数</h2>
+    <div class="story__metric"><span class="story__prefix">約</span><strong>63,500</strong><span class="story__unit">冊</span></div>
+    <div class="story__rule" aria-hidden="true"></div>
+    <p class="story__description">興味のある一冊から、知らなかった世界へ。<br>たくさんの本が、学びたい気持ちを支えています。</p>
+    <p class="story__source">※ 学校パンフレット掲載値</p>
   </div>
-</section>
-
-<section class="scene scene--future-minimal" id="future" style="--photo:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 42%" aria-labelledby="future-title">
-  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>03</b> NEXT CHAPTER / 進路</div>
-      <h2 class="scene__heading reveal" id="future-title">一人ひとりの、<br>次のステージへ。</h2>
-      <div class="eyebrow reveal scene__metric-label">内部進学率</div>
-      <div class="scene__measure reveal"><small>約</small><strong class="scene__num">90</strong><span class="scene__unit">%</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      <p class="scene__body reveal">同志社大学・同志社女子大学をはじめ、自分が目指す進路へ。学校で育んだ学びを、その先の未来につなげていきます。</p>
-      <p class="scene__footnote">※内部進学率は学校案内の掲載値です。年度・対象範囲は最新資料でご確認ください。</p>
-    </div>
-    <figure class="scene__media">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=75" alt="学習の風景を示すイメージ写真。同志社国際で撮影された写真ではありません。"></div>
-      <figcaption class="scene__photo-label">THE FUTURE IS YOURS</figcaption>
-    </figure>
+  <div class="story__visual">
+    <div class="story__disc">
+<svg viewBox="0 0 480 480" role="img" aria-label="ページを開いた本と整然とした書籍のグラフィック">
+<defs>
+  <linearGradient id="paperV14" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8e4e2"/></linearGradient>
+</defs>
+<path d="M70 337h340" stroke="#b8a6b6" stroke-width="1.5"/>
+<path d="M108 326l31-32 15 14-31 32z" fill="#b9c2c5"/>
+<path d="M142 334l13-75 22 4-13 74z" fill="#d3cbd5"/>
+<path d="M174 336l1-95 29 1-1 94z" fill="#946f9d"/>
+<path d="M210 336l4-107 24 2-4 105z" fill="#c0b2c6"/>
+<path d="M244 336l-4-93 26-1 3 94z" fill="#abbcc2"/>
+<path d="M272 336l8-99 24 3-8 96z" fill="#aa90af"/>
+<path d="M306 336l7-80 24 2-7 78z" fill="#d0bdc9"/>
+<path d="M341 336l4-72 18 2-5 70z" fill="#b6c3c7"/>
+<path d="M112 255q59-34 126 10 67-44 132-10l-9 81q-66-27-123 14-62-41-117-14z" fill="#e5e0e2" stroke="#6f507b" stroke-width="1.7"/>
+<path d="M111 245q61-42 127 2 70-44 133-2l-9 86q-66-28-124 13-62-41-117-13z" fill="url(#paperV14)" stroke="#70497b" stroke-width="1.5"/>
+<path d="M238 247v96" stroke="#70497b" stroke-width="2" fill="none"/>
+<g stroke="#beb6bc" stroke-width="1.4" stroke-linecap="round" fill="none">
+<path d="M128 267q46-15 91 13M132 290q42-10 87 14M137 314q37-6 80 14"/>
+<path d="M255 279q44-27 98-11M255 302q47-24 94-14M255 326q44-20 89-11"/>
+</g>
+<path d="M158 146l4-13 9 10-1 21M325 151l11-14 6 11-10 12" stroke="#b7a1ba" stroke-width="2" fill="none"/>
+<path d="M239 98v62" stroke="#cab8cb" stroke-width="1.2" stroke-dasharray="3 9"/>
+<path d="M229 117l10-18 10 18" stroke="#cab8cb" fill="none" stroke-width="1.3"/>
+<text x="239" y="85" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="36" fill="#754786">∞</text>
+</svg></div>
+    <div class="story__art-caption">OPEN A BOOK · OPEN A WORLD</div>
   </div>
-</section>
-
-<section class="scene scene--reverse scene--library scene--book-minimal" id="library" style="--photo:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 50%" aria-labelledby="library-title">
-  <div class="photo-backdrop photo-backdrop--book" aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>04</b> KNOWLEDGE / 学習環境</div>
-      <h2 class="scene__heading reveal" id="library-title">知りたい気持ちに、<br>限界はない。</h2>
-      <div class="eyebrow reveal scene__metric-label">コミュニケーションセンター 蔵書数</div>
-      <div class="scene__measure reveal"><small>約</small><strong class="scene__num scene__num--wide">63,500</strong><span class="scene__unit">冊</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      <p class="scene__body reveal">多彩な書籍が、好奇心を新しい発見に変えてくれる。学びを深めたいと思ったとき、すぐそばに広がる知の世界。</p>
-      <p class="scene__footnote">※蔵書数は学校案内の掲載値です。</p>
-    </div>
-    <figure class="scene__media">
-      <div class="scene__photo scene__photo--rectangle"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1100&q=75" alt="図書館を表すイメージ写真。学校の実際のコミュニケーションセンターの写真ではありません。"></div>
-      <figcaption class="scene__photo-label">A WORLD BETWEEN PAGES</figcaption>
-    </figure>
-  </div>
-</section>
-<section class="end" id="end" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75')" aria-labelledby="ending-title">
-  <div class="photo-backdrop" aria-hidden="true"></div>
-  <div class="end__inner">
-    <div class="eyebrow reveal">A WORLD OF POSSIBILITIES</div>
-    <h2 class="reveal" id="ending-title">まだ知らない自分に、<br><em>出会いにいこう。</em></h2>
-    <p class="reveal">違いを知ることから、未来がひらく。</p>
-    <a class="end__cta" href="https://www.intnl.doshisha.ac.jp/" target="_blank" rel="noopener">同志社国際 公式サイトへ <span aria-hidden="true">↗</span></a>
-  </div>
+</div>
+<div class="story__corner">DOSHISHA INTERNATIONAL</div>
+<div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
 </main>
-<nav class="side-dots" aria-label="セクションナビゲーション">
-<a href="#top" class="active" aria-label="トップ"></a>
-<a href="#numbers"  aria-label="数字一覧"></a>
-<a href="#returning"  aria-label="DIVERSITY / BACKGROUND"></a>
-<a href="#languages"  aria-label="LANGUAGES / GLOBAL LEARNING"></a>
-<a href="#future"  aria-label="ACADEMIC / FUTURE"></a>
-<a href="#campus"  aria-label="CAMPUS / EVERYDAY LIFE"></a>
-<a href="#library"  aria-label="BOOKS / COMMUNICATION CENTER"></a>
-<a href="#end"  aria-label="最後"></a>
-</nav>
-<footer class="site-footer">同志社国際中学校・高等学校｜非公式デザインプレビュー<br>掲載数値はご提供の学校案内に基づいています。背景・円形写真はデザイン検討用のイメージ素材であり、学校の実際の写真ではありません。</footer>
+<nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#world" aria-label="海外滞在国" class="active"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="内部進学率" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a></nav>
+<section class="closing"><h2 class="closing__text"><small>DISCOVER DOSHISHA INTERNATIONAL</small>まだ知らない自分に、出会いにいこう。</h2>
+<a class="closing__link" href="https://www.intnl.doshisha.ac.jp/" rel="noopener" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a></section>
+<footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値はご提供の学校パンフレットに基づく掲載値です。ぼかし背景は仮のイメージ写真で、学校の実際の写真ではありません。</footer>
 <script>
-(()=>{
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(!("IntersectionObserver"in window)||reduce)return;
-  const els=[...document.querySelectorAll(".reveal")];
-  const revealObserver=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");revealObserver.unobserve(e.target)}});
-  },{threshold:.035,rootMargin:"0px 0px 80px 0px"});
-  document.documentElement.classList.add("motion");
-  els.forEach(el=>revealObserver.observe(el));
-  setTimeout(()=>els.forEach(el=>el.classList.add("visible")),2500);
-  const links=[...document.querySelectorAll(".side-dots a")];
-  const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{
-    if(e.isIntersecting){links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}
-  }),{rootMargin:"-35% 0px -45% 0px"});
-  [...document.querySelectorAll("main section[id]")].forEach(el=>sectionObserver.observe(el));
+(function(){
+if(!('IntersectionObserver' in window))return;
+const sections=[...document.querySelectorAll('.story')],links=[...document.querySelectorAll('.dot-nav a')];
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){
+e.target.classList.add('is-in');
+links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+}}),{threshold:.42});
+sections.forEach(s=>io.observe(s));
 })();
 </script>
 </body>
