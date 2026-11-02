@@ -259,79 +259,62 @@ html{scroll-snap-type:y mandatory}
 }
 
 
-/* V17: Path-opening cinematic epilogue */
-.closing--journey{min-height:760px;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;position:relative;isolation:isolate;overflow:hidden;padding:clamp(106px,13vh,158px) 24px 92px;background:#fbf9f6;scroll-snap-align:start;scroll-snap-stop:always}
-.closing--journey .closing__content{position:relative;z-index:6;display:flex;flex-direction:column;align-items:center;text-align:center;width:min(100%,950px);pointer-events:auto}
-.closing__eyebrow{font:600 10px "DM Sans",sans-serif;letter-spacing:.24em;color:#8d7298;margin-bottom:19px}
-.closing--journey .closing__text{font:500 clamp(37px,4.55vw,66px)/1.58 "Noto Serif JP",serif;letter-spacing:-.055em;color:#482d54;margin:0;filter:drop-shadow(0 2px 12px #ffffffb0);text-wrap:balance}
-.closing--journey .closing__text em{font-style:normal;color:#70417d}
-.closing__lead{font:400 clamp(11px,1vw,13px)/1.9 "Noto Sans JP",sans-serif;letter-spacing:.075em;color:#756679;margin:16px 0 0}
-.closing--journey .closing__link{position:relative;z-index:9;align-self:center;min-height:51px;padding:13px 25px;margin:24px 0 0;background:#633574;border:1px solid #633574;color:#fff;font:600 12px "Noto Sans JP",sans-serif;letter-spacing:.02em;box-shadow:0 5px 24px #50345317}
-.closing--journey .closing__link:hover{background:#4b285b;transform:translateY(-2px)}
-.journey{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none}
-.journey__landscape{position:absolute;width:100%;height:100%;inset:0;overflow:hidden}
-.journey__sunrise{opacity:.67;transform-box:fill-box;transform-origin:center;transition:opacity 1.9s .35s ease,transform 1.9s .35s ease}
-.journey__road-group{transform-box:fill-box;transform-origin:center top;transform:scaleX(1);opacity:1;transition:transform 1.45s .4s cubic-bezier(.2,.7,.18,1),opacity 1s .4s ease}
-.journey__gate{transform-box:fill-box;transform-origin:center;transition:transform 1.9s .28s cubic-bezier(.25,.62,.15,1)}
-.journey__gate--left{transform:translateX(-110%)}
-.journey__gate--right{transform:translateX(110%)}
-.journey__sparkles{opacity:.55;transition:opacity 1s 1.2s ease}
-.journey__student{position:absolute;bottom:2%;left:50%;width:86px;height:154px;transform-origin:50% 100%;transform:translate(-50%,-29svh) scale(.27);opacity:.72;z-index:3;filter:drop-shadow(0 7px 12px #432f4b32)}
-.journey__student svg{height:100%;width:100%;display:block}
-.journey__leg,.journey__arm{transform-box:fill-box;transform-origin:center 8%}
-.journey__horizon-note{position:absolute;bottom:19px;right:clamp(24px,6vw,80px);font:600 9px "DM Sans",sans-serif;letter-spacing:.17em;color:#8e7895}
-.closing__scene-label{position:absolute;left:clamp(24px,6vw,80px);bottom:19px;z-index:5;font:600 9px "DM Sans",sans-serif;letter-spacing:.17em;color:#8e7895}
-.journey-motion-ready .closing--journey:not(.is-in) .journey__road-group{transform:scaleX(.025);opacity:.12}
-.journey-motion-ready .closing--journey:not(.is-in) .journey__gate{transform:translateX(0)}
-.journey-motion-ready .closing--journey:not(.is-in) .journey__sunrise{opacity:.18;transform:scale(.65)}
-.journey-motion-ready .closing--journey:not(.is-in) .journey__sparkles{opacity:0}
-.journey-motion-ready .closing--journey:not(.is-in) .journey__student{opacity:0;transform:translate(-50%,10px) scale(1.1)}
-.journey-motion-ready .closing--journey.is-in .journey__student{animation:student-walk-forward 5.2s 1.28s cubic-bezier(.26,.08,.34,.95) both}
-.journey-motion-ready .closing--journey.is-in .journey__leg--left{animation:student-step-left .47s 1.35s ease-in-out 9 alternate both}
-.journey-motion-ready .closing--journey.is-in .journey__leg--right{animation:student-step-right .47s 1.35s ease-in-out 9 alternate both}
-.journey-motion-ready .closing--journey.is-in .journey__arm--left{animation:student-step-right .47s 1.35s ease-in-out 9 alternate both}
-.journey-motion-ready .closing--journey.is-in .journey__arm--right{animation:student-step-left .47s 1.35s ease-in-out 9 alternate both}
-@keyframes student-walk-forward{
-0%{opacity:0;transform:translate(-50%,10px) scale(1.1)}
-7%{opacity:1}
-20%{transform:translate(-50%,-5svh) scale(.94)}
-50%{transform:translate(-50%,-14svh) scale(.7)}
-76%{opacity:.91;transform:translate(-50%,-22svh) scale(.47)}
-100%{opacity:.7;transform:translate(-50%,-29svh) scale(.27)}
+/* V18: quiet cinematic finale — no theatrical gates or cartoon character */
+.closing--epilogue{position:relative;isolation:isolate;display:flex;justify-content:flex-start;align-items:center;flex-direction:column;min-height:740px;min-height:100svh;padding:clamp(103px,13vh,155px) 24px 84px;overflow:hidden;background:#f9f7f5;scroll-snap-align:start;scroll-snap-stop:always}
+.epilogue__landscape{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.epilogue__canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.epilogue__light{transform-box:fill-box;transform-origin:center;opacity:1;transition:transform 2.1s .25s ease,opacity 1.9s .25s ease}
+.epilogue__path{transform-box:fill-box;transform-origin:50% 0%;opacity:1;transition:clip-path 2s .12s cubic-bezier(.25,.72,.2,1),opacity 1.3s .12s ease;clip-path:inset(0 0 0 0)}
+.epilogue__walker{position:absolute;bottom:4%;left:50%;width:48px;height:101px;transform:translate(-50%,-30svh) scale(.2);transform-origin:center bottom;opacity:.68;filter:blur(.25px)}
+.epilogue__walker svg{display:block;width:100%;height:100%}
+.epilogue__content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:960px;width:100%;pointer-events:auto}
+.epilogue__eyebrow{font:600 10px "DM Sans",sans-serif;letter-spacing:.22em;color:#8d7993;margin-bottom:26px}
+.epilogue__content h2{font:500 clamp(37px,4.8vw,66px)/1.55 "Noto Serif JP",serif;letter-spacing:-.055em;color:#493650;margin:0;text-wrap:balance}
+.epilogue__content h2 em{font-style:normal;color:#70467e}
+.epilogue__content p{font:400 clamp(11px,1vw,13px)/1.85 "Noto Sans JP",sans-serif;color:#7a6c7c;letter-spacing:.07em;margin:19px 0 0}
+.epilogue__cta{display:inline-flex;align-items:center;gap:28px;justify-content:space-between;min-height:51px;margin-top:26px;padding:13px 23px;background:#633774;border:1px solid #633774;color:#fff;text-decoration:none;font:600 12px "Noto Sans JP",sans-serif;letter-spacing:.02em;transition:transform .2s,background .2s}
+.epilogue__cta:hover{background:#4c285b;transform:translateY(-2px)}
+.epilogue__cta span{font:400 20px/1 sans-serif}
+.epilogue__chapter,.epilogue__horizon-text{position:absolute;bottom:23px;font:600 9px "DM Sans",sans-serif;letter-spacing:.18em;color:#8e7d90}
+.epilogue__chapter{left:clamp(24px,6vw,80px);z-index:3}
+.epilogue__horizon-text{right:clamp(24px,6vw,80px)}
+.epilogue-motion-ready .closing--epilogue:not(.is-in) .epilogue__path{clip-path:inset(0 49% 0 49%);opacity:.2}
+.epilogue-motion-ready .closing--epilogue:not(.is-in) .epilogue__light{transform:scale(.7);opacity:.3}
+.epilogue-motion-ready .closing--epilogue:not(.is-in) .epilogue__walker{opacity:0;transform:translate(-50%,0) scale(.85)}
+.epilogue-motion-ready .closing--epilogue.is-in .epilogue__walker{animation:epilogue-walk 5.8s 1.15s cubic-bezier(.35,.05,.35,1) both}
+@keyframes epilogue-walk{
+  0%{opacity:0;transform:translate(-50%,6px) scale(.85)}
+  12%{opacity:.75}
+  40%{opacity:.74;transform:translate(-50%,-12svh) scale(.58)}
+  76%{opacity:.7;transform:translate(-50%,-25svh) scale(.33)}
+  100%{opacity:.68;transform:translate(-50%,-30svh) scale(.2)}
 }
-@keyframes student-step-left{from{transform:rotate(-9deg)}to{transform:rotate(10deg)}}
-@keyframes student-step-right{from{transform:rotate(10deg)}to{transform:rotate(-9deg)}}
 @media(max-width:720px){
-.closing--journey{min-height:680px;min-height:100svh;padding:clamp(97px,13svh,128px) 19px 70px;scroll-snap-stop:normal}
-.closing--journey .closing__text{font-size:clamp(30px,7.8vw,41px);line-height:1.65}
-.closing__eyebrow{font-size:9px;letter-spacing:.16em;margin-bottom:13px}
-.closing__lead{font-size:11px;line-height:1.8;margin-top:11px}
-.closing--journey .closing__link{margin-top:19px;padding:12px 20px;font-size:11px;min-height:48px}
-.journey__student{width:72px;height:132px}
-.journey__horizon-note{right:20px;bottom:16px;font-size:8px}
-.closing__scene-label{left:20px;bottom:16px;font-size:8px}
+.closing--epilogue{min-height:680px;min-height:100svh;padding:clamp(93px,12svh,125px) 19px 75px;scroll-snap-stop:normal}
+.epilogue__eyebrow{font-size:9px;letter-spacing:.17em;margin-bottom:17px}
+.epilogue__content h2{font-size:clamp(30px,7.8vw,42px);line-height:1.65}
+.epilogue__content p{font-size:11px;letter-spacing:.035em;margin-top:13px}
+.epilogue__cta{font-size:11px;min-height:48px;margin-top:18px;padding:12px 19px}
+.epilogue__walker{width:39px;height:82px}
+.epilogue__chapter,.epilogue__horizon-text{font-size:8px;bottom:17px}
+.epilogue__chapter{left:20px}.epilogue__horizon-text{right:20px}
 }
 @media(max-width:390px){
-.closing--journey .closing__text{font-size:clamp(27px,7.3vw,33px)}
-.closing__eyebrow{font-size:8px}
-.closing__lead{font-size:10px}
-.closing--journey .closing__link{margin-top:15px}
+.epilogue__content h2{font-size:clamp(27px,7.3vw,34px)}
+.epilogue__eyebrow{font-size:8px}
+.epilogue__content p{font-size:10.5px}
 }
 @media(max-height:690px) and (max-width:720px){
-.closing--journey{padding-top:78px}
-.closing--journey .closing__text{font-size:clamp(26px,7vw,33px)}
-.closing__eyebrow{margin-bottom:8px}
-.closing__lead{margin-top:7px}
-.closing--journey .closing__link{margin-top:12px}
-.journey__student{height:110px;width:62px}
+.closing--epilogue{padding-top:75px}
+.epilogue__eyebrow{margin-bottom:9px}
+.epilogue__content h2{font-size:clamp(26px,7vw,34px)}
+.epilogue__content p{margin-top:8px}
+.epilogue__cta{margin-top:12px}
 }
 @media(prefers-reduced-motion:reduce){
-.closing--journey .journey__road-group{transform:scaleX(1)!important;opacity:1!important;transition:none!important}
-.closing--journey .journey__gate--left{transform:translateX(-110%)!important;transition:none!important}
-.closing--journey .journey__gate--right{transform:translateX(110%)!important;transition:none!important}
-.closing--journey .journey__sunrise{opacity:.67!important;transform:none!important;transition:none!important}
-.closing--journey .journey__student{opacity:.72!important;transform:translate(-50%,-29svh) scale(.27)!important;animation:none!important}
-.closing--journey .journey__leg,.closing--journey .journey__arm{animation:none!important}
+.epilogue__path{clip-path:none!important;opacity:1!important;transition:none!important}
+.epilogue__light{transform:none!important;opacity:1!important;transition:none!important}
+.epilogue__walker{transform:translate(-50%,-30svh) scale(.2)!important;opacity:.68!important;animation:none!important}
 }
 </style>
 </head>
@@ -531,110 +514,71 @@ html{scroll-snap-type:y mandatory}
 </section>
 </main>
 <nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#cover" aria-label="表紙" class="active"></a><a href="#world" aria-label="海外滞在国"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="系列大学への推薦進学" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a><a href="#journey" aria-label="未来へ歩き出すエンディング"></a></nav>
-<section class="closing closing--journey" id="journey" aria-labelledby="journey-title">
-  <div class="journey" aria-hidden="true">
-    <svg class="journey__landscape" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+<section class="closing closing--epilogue" id="journey" aria-labelledby="journey-title">
+  <div class="epilogue__landscape" aria-hidden="true">
+    <svg class="epilogue__canvas" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
       <defs>
-        <linearGradient id="journeySkyV17" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fbf9f6"/>
-          <stop offset=".47" stop-color="#f9f4f5"/>
-          <stop offset="1" stop-color="#d8c6dc"/>
+        <linearGradient id="epSkyV18" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#faf9f6"/>
+          <stop offset=".53" stop-color="#f5f1f0"/>
+          <stop offset="1" stop-color="#dbd3dd"/>
         </linearGradient>
-        <radialGradient id="journeyGlowV17" cx=".5" cy=".5" r=".5">
-          <stop offset="0" stop-color="#fff7ce" stop-opacity=".96"/>
-          <stop offset=".38" stop-color="#fff7df" stop-opacity=".72"/>
-          <stop offset="1" stop-color="#fffaf3" stop-opacity="0"/>
+        <radialGradient id="epLightV18" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#fffaf0" stop-opacity="1"/>
+          <stop offset=".35" stop-color="#fff3e5" stop-opacity=".78"/>
+          <stop offset="1" stop-color="#fff8f3" stop-opacity="0"/>
         </radialGradient>
-        <linearGradient id="journeyRoadV17" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fffaf0"/>
-          <stop offset=".72" stop-color="#f8edf0"/>
-          <stop offset="1" stop-color="#eee1ec"/>
+        <linearGradient id="epGroundV18" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f6f0ee"/>
+          <stop offset="1" stop-color="#dbd2dc"/>
         </linearGradient>
-        <linearGradient id="journeyGateLeftV17" x1="0" y1="0" x2="1" y2=".5">
-          <stop offset="0" stop-color="#ad98b7"/>
-          <stop offset="1" stop-color="#d1bfd2"/>
+        <linearGradient id="epPathV18" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fffcf6"/>
+          <stop offset=".52" stop-color="#fcf7f3"/>
+          <stop offset="1" stop-color="#f4eaf0"/>
         </linearGradient>
-        <linearGradient id="journeyGateRightV17" x1="1" y1="0" x2="0" y2=".5">
-          <stop offset="0" stop-color="#ad98b7"/>
-          <stop offset="1" stop-color="#d1bfd2"/>
-        </linearGradient>
+        <filter id="epBlurV18" x="-15%" y="-20%" width="130%" height="140%">
+          <feGaussianBlur stdDeviation="19"/>
+        </filter>
       </defs>
-      <rect width="1440" height="900" fill="url(#journeySkyV17)"/>
-      <ellipse class="journey__sunrise" cx="720" cy="474" rx="304" ry="202" fill="url(#journeyGlowV17)"/>
-      <circle cx="720" cy="479" r="51" fill="#fff9e6" opacity=".5"/>
-      <path d="M0 645 Q240 536 510 502 Q606 487 697 482 L695 900H0Z" fill="#e6dce6" opacity=".78"/>
-      <path d="M1440 650 Q1200 539 938 502 Q830 487 743 482 L745 900H1440Z" fill="#e4d8e3" opacity=".8"/>
-      <path d="M0 725 Q280 593 572 512" fill="none" stroke="#bfadbf" stroke-width="1.25" opacity=".45"/>
-      <path d="M1440 729 Q1167 592 868 512" fill="none" stroke="#bfadbf" stroke-width="1.25" opacity=".45"/>
-      <g class="journey__road-group">
-        <path d="M710 477 Q665 547 535 675 Q397 793 164 912 H1276 Q1043 793 905 675 Q775 547 730 477Z" fill="url(#journeyRoadV17)"/>
-        <path d="M710 477 Q665 547 535 675 Q397 793 164 912" stroke="#a994af" stroke-width="2.5" fill="none" opacity=".58"/>
-        <path d="M730 477 Q775 547 905 675 Q1043 793 1276 912" stroke="#a994af" stroke-width="2.5" fill="none" opacity=".58"/>
-        <path d="M720 491 Q730 653 719 909" stroke="#c4acc6" stroke-width="1.4" stroke-dasharray="7 19" fill="none" opacity=".5"/>
-        <path d="M500 755q-22 16-41 28m-31 14-20 13M956 753q21 18 45 31m28 17 20 12" fill="none" stroke="#c1afc1" stroke-width="1.4" opacity=".33"/>
+      <rect width="1440" height="900" fill="url(#epSkyV18)"/>
+      <g filter="url(#epBlurV18)" opacity=".52">
+        <path d="M0 572Q241 469 497 526Q604 550 684 537L684 907H0Z" fill="#cfc5d0"/>
+        <path d="M1440 567Q1218 466 961 525Q827 552 754 535L754 907H1440Z" fill="#c6c6c7"/>
       </g>
-      <g class="journey__landscape-detail" fill="none" stroke="#977fa0" stroke-width="1.5" opacity=".48" stroke-linecap="round">
-        <path d="M222 651q16-29 20-65m-20 65q-21-24-25-45m25 45q29-17 34-45"/>
-        <path d="M365 586q10-26 10-51m-10 51q-20-15-26-40m26 40q25-14 31-38"/>
-        <path d="M1110 592q14-30 18-54m-18 54q-25-15-30-38m30 38q23-15 30-34"/>
-        <path d="M1260 687q14-36 17-61m-17 61q-21-23-28-48m28 48q31-15 37-41"/>
+      <ellipse class="epilogue__light" cx="720" cy="527" rx="350" ry="268" fill="url(#epLightV18)"/>
+      <path d="M0 643Q286 566 681 547L681 900H0Z" fill="url(#epGroundV18)" opacity=".78"/>
+      <path d="M1440 644Q1154 563 759 547L759 900H1440Z" fill="url(#epGroundV18)" opacity=".78"/>
+      <path d="M0 684Q322 587 666 551M1440 684Q1118 587 774 551" fill="none" stroke="#a89cad" stroke-width="1" opacity=".19"/>
+      <g class="epilogue__path">
+        <path d="M702 547C660 632 502 787 294 908H1146C938 787 780 632 738 547Z" fill="url(#epPathV18)"/>
+        <path d="M702 547C660 632 502 787 294 908" fill="none" stroke="#ac99b1" stroke-width="1.5" opacity=".44"/>
+        <path d="M738 547C780 632 938 787 1146 908" fill="none" stroke="#ac99b1" stroke-width="1.5" opacity=".44"/>
       </g>
-      <g class="journey__gate journey__gate--left">
-        <path d="M-30 410 Q284 407 510 448 Q633 468 722 482 L722 915 H-30Z" fill="url(#journeyGateLeftV17)"/>
-        <path d="M722 483V910" fill="none" stroke="#7b608c" stroke-width="2" opacity=".3"/>
-        <path d="M598 471Q620 690 601 910M510 453Q533 684 524 910" stroke="#fff" fill="none" stroke-width="1" opacity=".15"/>
-        <path d="M675 486V907" stroke="#745481" stroke-width="1" opacity=".18"/>
-      </g>
-      <g class="journey__gate journey__gate--right">
-        <path d="M1470 410 Q1156 407 930 448 Q807 468 718 482 L718 915 H1470Z" fill="url(#journeyGateRightV17)"/>
-        <path d="M718 483V910" fill="none" stroke="#7b608c" stroke-width="2" opacity=".3"/>
-        <path d="M842 471Q820 690 839 910M930 453Q907 684 916 910" stroke="#fff" fill="none" stroke-width="1" opacity=".15"/>
-        <path d="M765 486V907" stroke="#745481" stroke-width="1" opacity=".18"/>
-      </g>
-      <g class="journey__sparkles" fill="#d4b57b">
-        <circle cx="702" cy="449" r="2.4"/>
-        <circle cx="756" cy="455" r="2.1"/>
-        <circle cx="681" cy="480" r="1.5"/>
-        <path d="M721 406l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" opacity=".65"/>
-      </g>
+      <path d="M610 544Q720 533 830 544" fill="none" stroke="#fffaf2" stroke-width="2.2" opacity=".52"/>
     </svg>
-    <div class="journey__student">
-      <svg viewBox="0 0 110 198" focusable="false" aria-hidden="true">
-        <ellipse cx="55" cy="187" rx="24" ry="5" fill="#523b5a" opacity=".2"/>
-        <g class="journey__leg journey__leg--left">
-          <path d="M40 111L32 163L27 181Q36 186 44 181L56 119Z" fill="#423447"/>
-          <path d="M27 180L42 180L47 188H22Z" fill="#332b3d"/>
-        </g>
-        <g class="journey__leg journey__leg--right">
-          <path d="M60 114L69 160L73 180Q65 185 57 181L47 117Z" fill="#4b394e"/>
-          <path d="M57 180L73 179L80 188H55Z" fill="#332b3d"/>
-        </g>
-        <g class="journey__arm journey__arm--left">
-          <path d="M35 71Q22 75 18 91L14 119Q12 127 18 130Q22 130 25 125L37 102Z" fill="#5b4167"/>
-        </g>
-        <g class="journey__arm journey__arm--right">
-          <path d="M75 73Q86 78 89 92L98 117Q101 126 94 129Q88 128 86 121L72 99Z" fill="#60456e"/>
-        </g>
-        <path d="M37 69Q55 62 76 70L82 110Q77 128 54 130Q30 128 29 111Z" fill="#604570"/>
-        <path d="M46 57v14q9 9 19 0V57Z" fill="#c49f96"/>
-        <path d="M37 31Q40 18 55 16Q71 17 73 33L72 52Q66 65 55 66Q42 64 37 52Z" fill="#d0ada2"/>
-        <path d="M36 37Q29 25 39 15Q51 4 66 13Q80 20 74 37L69 42L67 29Q59 33 49 26L39 37Z" fill="#302935"/>
-        <path d="M42 73Q55 66 72 74L77 113Q72 129 56 132Q39 130 34 113Z" fill="#987ca6" stroke="#493956" stroke-width="1.2"/>
-        <path d="M44 78L44 119M67 78L67 119" stroke="#d3b9c9" stroke-width="4" opacity=".75"/>
-        <path d="M47 85H63M47 100H63" stroke="#574062" stroke-width="2" opacity=".5"/>
-        <path d="M38 112Q54 119 75 111" fill="none" stroke="#44314d" stroke-width="1.5"/>
-        <path d="M52 70l3-5 4 5" fill="#f8eddb"/>
+    <div class="epilogue__walker">
+      <svg viewBox="0 0 64 132" aria-hidden="true" focusable="false">
+        <ellipse cx="32" cy="128" rx="17" ry="2.7" fill="#56475d" opacity=".11"/>
+        <path d="M19 72L15 116L24 117L32 81L40 117L49 116L44 72Z" fill="#54475c"/>
+        <path d="M14 113L26 113L29 124L11 124ZM38 113L50 113L54 124L35 124Z" fill="#423748"/>
+        <path d="M19 38Q13 43 12 62L14 85L21 84L22 60L24 72L43 72L45 58L47 83L54 83L52 59Q50 43 44 38Z" fill="#5a4964"/>
+        <path d="M25 22H39V43H25Z" fill="#847384"/>
+        <ellipse cx="32" cy="19" rx="12.5" ry="15" fill="#5a4c5b"/>
+        <path d="M19 19Q20 1 33 3Q46 2 45 20L40 14Q32 16 25 13Z" fill="#3f3647"/>
+        <rect x="24" y="44" width="17" height="30" rx="6" fill="#776280"/>
+        <path d="M26 47V70M39 47V70" stroke="#a391ab" stroke-width="2" fill="none" opacity=".7"/>
       </svg>
     </div>
-    <div class="journey__horizon-note">BEYOND THE HORIZON</div>
+    <div class="epilogue__horizon-text">A NEW CHAPTER</div>
   </div>
-  <div class="closing__content">
-    <div class="closing__eyebrow">THE NEXT CHAPTER BEGINS HERE</div>
-    <h2 class="closing__text" id="journey-title">まだ知らない自分に、<br><em>出会いにいこう。</em></h2>
-    <p class="closing__lead">ひとつの出会いが、未来への道になる。</p>
-    <a class="closing__link" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a>
+  <div class="epilogue__content">
+    <div class="epilogue__eyebrow">THE NEXT CHAPTER BEGINS HERE</div>
+    <h2 id="journey-title">まだ知らない自分に、<br><em>出会いにいこう。</em></h2>
+    <p>ひとつの出会いが、未来への道になる。</p>
+    <a class="epilogue__cta" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="closing__scene-label">YOUR STORY / 05</div>
+  <div class="epilogue__chapter">DOSHISHA INTERNATIONAL / 05</div>
 </section>
 <footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値は学校案内2026および学校法人・学校公式Webサイトの掲載内容に基づきます。出典は各章に記載。背景は学校の実際の写真ではなく、イメージ素材です。</footer>
 <script>
@@ -693,7 +637,7 @@ html{scroll-snap-type:y mandatory}
   const journeySection=document.getElementById("journey");
   if(journeySection){
     if(!reduceMotion){
-      document.documentElement.classList.add("journey-motion-ready");
+      document.documentElement.classList.add("epilogue-motion-ready");
       const journeyObserver=new IntersectionObserver(entries=>{
         if(entries.some(entry=>entry.isIntersecting)){
           journeySection.classList.add("is-in");
