@@ -186,14 +186,107 @@ a{color:inherit}svg{display:block;max-width:100%}
 .story--library .story__metric strong{font-size:67px}
 }
 
+
+/* V16 — cover, editorial chapter transitions, accessible counters and snap */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;clip-path:inset(50%)!important}
+html{scroll-snap-type:y proximity;scroll-padding-top:0;overscroll-behavior-y:auto}
+.cover,.story,.closing{scroll-snap-align:start;scroll-snap-stop:always}
+@media(min-width:901px) and (min-height:720px) and (hover:hover) and (pointer:fine){
+html{scroll-snap-type:y mandatory}
+}
+.cover{background:#54275f;color:white;position:relative;min-height:100vh;min-height:100svh;isolation:isolate;display:grid;place-items:center;overflow:hidden}
+.cover__photo{position:absolute;inset:-30px;z-index:-3;background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center 45%;filter:blur(7px) grayscale(.7) contrast(1.1);transform:scale(1.05);opacity:.5}
+.cover__shade{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 53% 37%,rgba(143,57,146,.35),transparent 59%),linear-gradient(135deg,rgba(69,26,86,.9),rgba(91,36,107,.91) 54%,rgba(60,22,77,.94))}
+.cover__grain{position:absolute;inset:0;z-index:-1;opacity:.14;background-image:radial-gradient(#fff .6px,transparent .8px);background-size:9px 9px;pointer-events:none}
+.cover__inner{width:min(100%,900px);height:100%;display:grid;place-items:center;padding:115px 24px 116px;position:relative;text-align:center;z-index:2}
+.cover__dial{width:min(68vw,68svh,640px);height:auto;aspect-ratio:1;grid-area:1/1;display:grid;place-items:center;color:#f3e8f2;opacity:.84;pointer-events:none;animation:dial-float 30s ease-in-out infinite alternate}
+.cover__dial svg{width:100%;height:100%;overflow:visible}
+.cover__content{grid-area:1/1;z-index:1;width:min(100%,700px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-shadow:0 2px 25px #31123d74;pointer-events:none}
+.cover__top{font:600 10px "DM Sans",sans-serif;letter-spacing:.26em;color:#ebd8ed;margin-bottom:28px}
+.cover h1{font-family:"Yuji Syuku","Noto Serif JP",serif;font-size:clamp(42px,5.5vw,78px);line-height:1.48;font-weight:400;letter-spacing:.025em;color:#fff;margin:0;max-width:100%;text-wrap:balance}
+.cover h1 span{white-space:nowrap}
+.cover__english{font:500 clamp(12px,1.2vw,15px) "DM Sans",sans-serif;letter-spacing:.08em;margin:31px 0 0;color:#f2e6f2}
+.cover__description{font:400 clamp(12px,1vw,14px)/2.15 "Noto Sans JP",sans-serif;letter-spacing:.06em;margin:26px 0 0;color:#f8eaf7}
+.cover__scroll{position:absolute;bottom:27px;left:50%;transform:translateX(-50%);display:flex;align-items:center;flex-direction:column;gap:11px;min-width:160px;min-height:65px;font:500 12px "DM Sans",sans-serif;letter-spacing:.04em;text-decoration:none;color:#fff;z-index:3}
+.cover__scroll svg{animation:scroll-down 2s ease-in-out infinite}
+.cover__index{position:absolute;left:clamp(25px,5vw,86px);bottom:29px;font:600 10px "DM Sans",sans-serif;letter-spacing:.14em;opacity:.65}
+.site-header--cover{background:linear-gradient(to bottom,rgba(60,26,73,.35),transparent)}
+.site-header--cover .site-header__brand-label,.site-header--cover .site-header__center,.site-header--cover .site-header__center span,.site-header--cover .site-header__external{color:#fff}
+.site-header--cover .site-header__brand img{filter:brightness(0) invert(1)}
+.site-header--cover .site-header__external{border-color:#fff8}
+.story.is-in .story__metric{animation:none}
+.story.is-in .story__metric strong[data-counter]{font-variant-numeric:lining-nums tabular-nums}
+.dot-nav a.active:after{width:12px;height:12px;background:#6b3678}
+.dot-nav--cover a:after{background:#ffffff8c}
+.dot-nav--cover a.active:after{background:#fff;box-shadow:0 0 0 4px #fff3}
+@keyframes dial-float{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes scroll-down{0%,100%{transform:translateY(0);opacity:.92}50%{transform:translateY(7px);opacity:.6}}
+@media(max-width:900px){.site-header--cover .site-header__brand-label,.site-header--cover .site-header__external{color:white}}
+@media(max-width:720px){
+ .cover__inner{padding:110px 18px 115px}
+ .cover__dial{width:min(91vw,430px);max-height:none}
+ .cover__top{font-size:8px;letter-spacing:.19em;margin-bottom:20px}
+ .cover h1{font-size:clamp(33px,8.7vw,49px);line-height:1.6;letter-spacing:-.035em}
+ .cover__english{margin-top:20px;font-size:11px;letter-spacing:.01em}
+ .cover__description{margin-top:17px;font-size:11px;line-height:2}
+ .cover__scroll{bottom:30px;font-size:11px}
+ .cover__index{bottom:28px;left:21px;font-size:9px}
+ .site-header--cover{background:linear-gradient(to bottom,rgba(54,21,69,.62),transparent)}
+ .story{scroll-snap-stop:normal}
+}
+@media(max-width:390px){
+ .cover__dial{width:94vw}
+ .cover h1{font-size:clamp(30px,8.2vw,36px)}
+ .cover__top{margin-bottom:15px}
+ .cover__description{font-size:10.5px}
+ .cover__index{display:none}
+}
+@media(max-height:650px) and (max-width:720px){
+ .cover__inner{padding-top:75px;padding-bottom:80px}
+ .cover__dial{width:min(73vw,65svh,400px)}
+ .cover h1{font-size:clamp(28px,7vw,40px)}
+ .cover__top{margin-bottom:9px}
+ .cover__description{margin-top:9px}
+ .cover__english{margin-top:12px}
+ .cover__scroll{bottom:12px}
+ .story{scroll-snap-align:none;scroll-snap-stop:normal}
+ html{scroll-snap-type:y proximity}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-snap-type:none!important}
+ .cover__dial,.cover__scroll svg{animation:none!important}
+ .story.is-in .story__rule{animation:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip-link" href="#world">本文へスキップ</a>
-<header class="site-header"><a class="site-header__brand" href="#world" aria-label="同志社国際中学校・高等学校、先頭へ"><img src="https://www.intnl.doshisha.ac.jp/images/top/top-mv-logo.png" width="64" height="64" alt="同志社国際中学校・高等学校 公式ロゴ" decoding="async"><span class="site-header__brand-label">同志社国際中学校・高等学校</span></a>
+<header class="site-header site-header--cover"><a class="site-header__brand" href="#cover" aria-label="同志社国際中学校・高等学校、表紙へ"><img src="https://www.intnl.doshisha.ac.jp/images/top/top-mv-logo.png" width="64" height="64" alt="同志社国際中学校・高等学校 公式ロゴ" decoding="async"><span class="site-header__brand-label">同志社国際中学校・高等学校</span></a>
 <div class="site-header__center">Doshisha International by the Numbers<span>数字でわかる同志社国際</span></div>
 <a class="site-header__external" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">公式サイト <span aria-hidden="true">↗</span></a></header>
 <main id="main">
+
+<section class="cover" id="cover" aria-labelledby="cover-title">
+ <div class="cover__photo" aria-hidden="true"></div>
+ <div class="cover__shade" aria-hidden="true"></div>
+ <div class="cover__grain" aria-hidden="true"></div>
+ <div class="cover__inner">
+   <div class="cover__dial" aria-hidden="true"><svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet"><g stroke="currentColor" stroke-linecap="round"><line x1="300.00" y1="42.00" x2="300.00" y2="17.00" stroke-width="1.6" opacity="0.95"/><line x1="311.91" y1="27.26" x2="312.34" y2="17.27" stroke-width="0.85" opacity="0.65"/><line x1="323.79" y1="28.04" x2="324.67" y2="18.08" stroke-width="0.85" opacity="0.65"/><line x1="335.63" y1="29.34" x2="336.94" y2="19.42" stroke-width="0.85" opacity="0.65"/><line x1="347.41" y1="31.15" x2="349.14" y2="21.30" stroke-width="0.85" opacity="0.65"/><line x1="359.09" y1="33.47" x2="361.25" y2="23.71" stroke-width="0.85" opacity="0.65"/><line x1="369.36" y1="41.13" x2="373.25" y2="26.64" stroke-width="0.85" opacity="0.65"/><line x1="382.09" y1="39.64" x2="385.10" y2="30.10" stroke-width="0.85" opacity="0.65"/><line x1="393.37" y1="43.46" x2="396.79" y2="34.07" stroke-width="0.85" opacity="0.65"/><line x1="404.47" y1="47.78" x2="408.30" y2="38.54" stroke-width="0.85" opacity="0.65"/><line x1="415.37" y1="52.58" x2="419.60" y2="43.51" stroke-width="0.85" opacity="0.65"/><line x1="426.06" y1="57.85" x2="430.67" y2="48.98" stroke-width="0.85" opacity="0.65"/><line x1="429.00" y1="76.57" x2="441.50" y2="54.91" stroke-width="1.6" opacity="0.95"/><line x1="446.68" y1="69.75" x2="452.06" y2="61.32" stroke-width="0.85" opacity="0.65"/><line x1="456.59" y1="76.37" x2="462.32" y2="68.18" stroke-width="0.85" opacity="0.65"/><line x1="466.19" y1="83.41" x2="472.28" y2="75.48" stroke-width="0.85" opacity="0.65"/><line x1="475.48" y1="90.87" x2="481.91" y2="83.21" stroke-width="0.85" opacity="0.65"/><line x1="484.44" y1="98.72" x2="491.19" y2="91.35" stroke-width="0.85" opacity="0.65"/><line x1="489.50" y1="110.50" x2="500.11" y2="99.89" stroke-width="0.85" opacity="0.65"/><line x1="501.28" y1="115.56" x2="508.65" y2="108.81" stroke-width="0.85" opacity="0.65"/><line x1="509.13" y1="124.52" x2="516.79" y2="118.09" stroke-width="0.85" opacity="0.65"/><line x1="516.59" y1="133.81" x2="524.52" y2="127.72" stroke-width="0.85" opacity="0.65"/><line x1="523.63" y1="143.41" x2="531.82" y2="137.68" stroke-width="0.85" opacity="0.65"/><line x1="530.25" y1="153.32" x2="538.68" y2="147.94" stroke-width="0.85" opacity="0.65"/><line x1="523.43" y1="171.00" x2="545.09" y2="158.50" stroke-width="1.6" opacity="0.95"/><line x1="542.15" y1="173.94" x2="551.02" y2="169.33" stroke-width="0.85" opacity="0.65"/><line x1="547.42" y1="184.63" x2="556.49" y2="180.40" stroke-width="0.85" opacity="0.65"/><line x1="552.22" y1="195.53" x2="561.46" y2="191.70" stroke-width="0.85" opacity="0.65"/><line x1="556.54" y1="206.63" x2="565.93" y2="203.21" stroke-width="0.85" opacity="0.65"/><line x1="560.36" y1="217.91" x2="569.90" y2="214.90" stroke-width="0.85" opacity="0.65"/><line x1="558.87" y1="230.64" x2="573.36" y2="226.75" stroke-width="0.85" opacity="0.65"/><line x1="566.53" y1="240.91" x2="576.29" y2="238.75" stroke-width="0.85" opacity="0.65"/><line x1="568.85" y1="252.59" x2="578.70" y2="250.86" stroke-width="0.85" opacity="0.65"/><line x1="570.66" y1="264.37" x2="580.58" y2="263.06" stroke-width="0.85" opacity="0.65"/><line x1="571.96" y1="276.21" x2="581.92" y2="275.33" stroke-width="0.85" opacity="0.65"/><line x1="572.74" y1="288.09" x2="582.73" y2="287.66" stroke-width="0.85" opacity="0.65"/><line x1="558.00" y1="300.00" x2="583.00" y2="300.00" stroke-width="1.6" opacity="0.95"/><line x1="572.74" y1="311.91" x2="582.73" y2="312.34" stroke-width="0.85" opacity="0.65"/><line x1="571.96" y1="323.79" x2="581.92" y2="324.67" stroke-width="0.85" opacity="0.65"/><line x1="570.66" y1="335.63" x2="580.58" y2="336.94" stroke-width="0.85" opacity="0.65"/><line x1="568.85" y1="347.41" x2="578.70" y2="349.14" stroke-width="0.85" opacity="0.65"/><line x1="566.53" y1="359.09" x2="576.29" y2="361.25" stroke-width="0.85" opacity="0.65"/><line x1="558.87" y1="369.36" x2="573.36" y2="373.25" stroke-width="0.85" opacity="0.65"/><line x1="560.36" y1="382.09" x2="569.90" y2="385.10" stroke-width="0.85" opacity="0.65"/><line x1="556.54" y1="393.37" x2="565.93" y2="396.79" stroke-width="0.85" opacity="0.65"/><line x1="552.22" y1="404.47" x2="561.46" y2="408.30" stroke-width="0.85" opacity="0.65"/><line x1="547.42" y1="415.37" x2="556.49" y2="419.60" stroke-width="0.85" opacity="0.65"/><line x1="542.15" y1="426.06" x2="551.02" y2="430.67" stroke-width="0.85" opacity="0.65"/><line x1="523.43" y1="429.00" x2="545.09" y2="441.50" stroke-width="1.6" opacity="0.95"/><line x1="530.25" y1="446.68" x2="538.68" y2="452.06" stroke-width="0.85" opacity="0.65"/><line x1="523.63" y1="456.59" x2="531.82" y2="462.32" stroke-width="0.85" opacity="0.65"/><line x1="516.59" y1="466.19" x2="524.52" y2="472.28" stroke-width="0.85" opacity="0.65"/><line x1="509.13" y1="475.48" x2="516.79" y2="481.91" stroke-width="0.85" opacity="0.65"/><line x1="501.28" y1="484.44" x2="508.65" y2="491.19" stroke-width="0.85" opacity="0.65"/><line x1="489.50" y1="489.50" x2="500.11" y2="500.11" stroke-width="0.85" opacity="0.65"/><line x1="484.44" y1="501.28" x2="491.19" y2="508.65" stroke-width="0.85" opacity="0.65"/><line x1="475.48" y1="509.13" x2="481.91" y2="516.79" stroke-width="0.85" opacity="0.65"/><line x1="466.19" y1="516.59" x2="472.28" y2="524.52" stroke-width="0.85" opacity="0.65"/><line x1="456.59" y1="523.63" x2="462.32" y2="531.82" stroke-width="0.85" opacity="0.65"/><line x1="446.68" y1="530.25" x2="452.06" y2="538.68" stroke-width="0.85" opacity="0.65"/><line x1="429.00" y1="523.43" x2="441.50" y2="545.09" stroke-width="1.6" opacity="0.95"/><line x1="426.06" y1="542.15" x2="430.67" y2="551.02" stroke-width="0.85" opacity="0.65"/><line x1="415.37" y1="547.42" x2="419.60" y2="556.49" stroke-width="0.85" opacity="0.65"/><line x1="404.47" y1="552.22" x2="408.30" y2="561.46" stroke-width="0.85" opacity="0.65"/><line x1="393.37" y1="556.54" x2="396.79" y2="565.93" stroke-width="0.85" opacity="0.65"/><line x1="382.09" y1="560.36" x2="385.10" y2="569.90" stroke-width="0.85" opacity="0.65"/><line x1="369.36" y1="558.87" x2="373.25" y2="573.36" stroke-width="0.85" opacity="0.65"/><line x1="359.09" y1="566.53" x2="361.25" y2="576.29" stroke-width="0.85" opacity="0.65"/><line x1="347.41" y1="568.85" x2="349.14" y2="578.70" stroke-width="0.85" opacity="0.65"/><line x1="335.63" y1="570.66" x2="336.94" y2="580.58" stroke-width="0.85" opacity="0.65"/><line x1="323.79" y1="571.96" x2="324.67" y2="581.92" stroke-width="0.85" opacity="0.65"/><line x1="311.91" y1="572.74" x2="312.34" y2="582.73" stroke-width="0.85" opacity="0.65"/><line x1="300.00" y1="558.00" x2="300.00" y2="583.00" stroke-width="1.6" opacity="0.95"/><line x1="288.09" y1="572.74" x2="287.66" y2="582.73" stroke-width="0.85" opacity="0.65"/><line x1="276.21" y1="571.96" x2="275.33" y2="581.92" stroke-width="0.85" opacity="0.65"/><line x1="264.37" y1="570.66" x2="263.06" y2="580.58" stroke-width="0.85" opacity="0.65"/><line x1="252.59" y1="568.85" x2="250.86" y2="578.70" stroke-width="0.85" opacity="0.65"/><line x1="240.91" y1="566.53" x2="238.75" y2="576.29" stroke-width="0.85" opacity="0.65"/><line x1="230.64" y1="558.87" x2="226.75" y2="573.36" stroke-width="0.85" opacity="0.65"/><line x1="217.91" y1="560.36" x2="214.90" y2="569.90" stroke-width="0.85" opacity="0.65"/><line x1="206.63" y1="556.54" x2="203.21" y2="565.93" stroke-width="0.85" opacity="0.65"/><line x1="195.53" y1="552.22" x2="191.70" y2="561.46" stroke-width="0.85" opacity="0.65"/><line x1="184.63" y1="547.42" x2="180.40" y2="556.49" stroke-width="0.85" opacity="0.65"/><line x1="173.94" y1="542.15" x2="169.33" y2="551.02" stroke-width="0.85" opacity="0.65"/><line x1="171.00" y1="523.43" x2="158.50" y2="545.09" stroke-width="1.6" opacity="0.95"/><line x1="153.32" y1="530.25" x2="147.94" y2="538.68" stroke-width="0.85" opacity="0.65"/><line x1="143.41" y1="523.63" x2="137.68" y2="531.82" stroke-width="0.85" opacity="0.65"/><line x1="133.81" y1="516.59" x2="127.72" y2="524.52" stroke-width="0.85" opacity="0.65"/><line x1="124.52" y1="509.13" x2="118.09" y2="516.79" stroke-width="0.85" opacity="0.65"/><line x1="115.56" y1="501.28" x2="108.81" y2="508.65" stroke-width="0.85" opacity="0.65"/><line x1="110.50" y1="489.50" x2="99.89" y2="500.11" stroke-width="0.85" opacity="0.65"/><line x1="98.72" y1="484.44" x2="91.35" y2="491.19" stroke-width="0.85" opacity="0.65"/><line x1="90.87" y1="475.48" x2="83.21" y2="481.91" stroke-width="0.85" opacity="0.65"/><line x1="83.41" y1="466.19" x2="75.48" y2="472.28" stroke-width="0.85" opacity="0.65"/><line x1="76.37" y1="456.59" x2="68.18" y2="462.32" stroke-width="0.85" opacity="0.65"/><line x1="69.75" y1="446.68" x2="61.32" y2="452.06" stroke-width="0.85" opacity="0.65"/><line x1="76.57" y1="429.00" x2="54.91" y2="441.50" stroke-width="1.6" opacity="0.95"/><line x1="57.85" y1="426.06" x2="48.98" y2="430.67" stroke-width="0.85" opacity="0.65"/><line x1="52.58" y1="415.37" x2="43.51" y2="419.60" stroke-width="0.85" opacity="0.65"/><line x1="47.78" y1="404.47" x2="38.54" y2="408.30" stroke-width="0.85" opacity="0.65"/><line x1="43.46" y1="393.37" x2="34.07" y2="396.79" stroke-width="0.85" opacity="0.65"/><line x1="39.64" y1="382.09" x2="30.10" y2="385.10" stroke-width="0.85" opacity="0.65"/><line x1="41.13" y1="369.36" x2="26.64" y2="373.25" stroke-width="0.85" opacity="0.65"/><line x1="33.47" y1="359.09" x2="23.71" y2="361.25" stroke-width="0.85" opacity="0.65"/><line x1="31.15" y1="347.41" x2="21.30" y2="349.14" stroke-width="0.85" opacity="0.65"/><line x1="29.34" y1="335.63" x2="19.42" y2="336.94" stroke-width="0.85" opacity="0.65"/><line x1="28.04" y1="323.79" x2="18.08" y2="324.67" stroke-width="0.85" opacity="0.65"/><line x1="27.26" y1="311.91" x2="17.27" y2="312.34" stroke-width="0.85" opacity="0.65"/><line x1="42.00" y1="300.00" x2="17.00" y2="300.00" stroke-width="1.6" opacity="0.95"/><line x1="27.26" y1="288.09" x2="17.27" y2="287.66" stroke-width="0.85" opacity="0.65"/><line x1="28.04" y1="276.21" x2="18.08" y2="275.33" stroke-width="0.85" opacity="0.65"/><line x1="29.34" y1="264.37" x2="19.42" y2="263.06" stroke-width="0.85" opacity="0.65"/><line x1="31.15" y1="252.59" x2="21.30" y2="250.86" stroke-width="0.85" opacity="0.65"/><line x1="33.47" y1="240.91" x2="23.71" y2="238.75" stroke-width="0.85" opacity="0.65"/><line x1="41.13" y1="230.64" x2="26.64" y2="226.75" stroke-width="0.85" opacity="0.65"/><line x1="39.64" y1="217.91" x2="30.10" y2="214.90" stroke-width="0.85" opacity="0.65"/><line x1="43.46" y1="206.63" x2="34.07" y2="203.21" stroke-width="0.85" opacity="0.65"/><line x1="47.78" y1="195.53" x2="38.54" y2="191.70" stroke-width="0.85" opacity="0.65"/><line x1="52.58" y1="184.63" x2="43.51" y2="180.40" stroke-width="0.85" opacity="0.65"/><line x1="57.85" y1="173.94" x2="48.98" y2="169.33" stroke-width="0.85" opacity="0.65"/><line x1="76.57" y1="171.00" x2="54.91" y2="158.50" stroke-width="1.6" opacity="0.95"/><line x1="69.75" y1="153.32" x2="61.32" y2="147.94" stroke-width="0.85" opacity="0.65"/><line x1="76.37" y1="143.41" x2="68.18" y2="137.68" stroke-width="0.85" opacity="0.65"/><line x1="83.41" y1="133.81" x2="75.48" y2="127.72" stroke-width="0.85" opacity="0.65"/><line x1="90.87" y1="124.52" x2="83.21" y2="118.09" stroke-width="0.85" opacity="0.65"/><line x1="98.72" y1="115.56" x2="91.35" y2="108.81" stroke-width="0.85" opacity="0.65"/><line x1="110.50" y1="110.50" x2="99.89" y2="99.89" stroke-width="0.85" opacity="0.65"/><line x1="115.56" y1="98.72" x2="108.81" y2="91.35" stroke-width="0.85" opacity="0.65"/><line x1="124.52" y1="90.87" x2="118.09" y2="83.21" stroke-width="0.85" opacity="0.65"/><line x1="133.81" y1="83.41" x2="127.72" y2="75.48" stroke-width="0.85" opacity="0.65"/><line x1="143.41" y1="76.37" x2="137.68" y2="68.18" stroke-width="0.85" opacity="0.65"/><line x1="153.32" y1="69.75" x2="147.94" y2="61.32" stroke-width="0.85" opacity="0.65"/><line x1="171.00" y1="76.57" x2="158.50" y2="54.91" stroke-width="1.6" opacity="0.95"/><line x1="173.94" y1="57.85" x2="169.33" y2="48.98" stroke-width="0.85" opacity="0.65"/><line x1="184.63" y1="52.58" x2="180.40" y2="43.51" stroke-width="0.85" opacity="0.65"/><line x1="195.53" y1="47.78" x2="191.70" y2="38.54" stroke-width="0.85" opacity="0.65"/><line x1="206.63" y1="43.46" x2="203.21" y2="34.07" stroke-width="0.85" opacity="0.65"/><line x1="217.91" y1="39.64" x2="214.90" y2="30.10" stroke-width="0.85" opacity="0.65"/><line x1="230.64" y1="41.13" x2="226.75" y2="26.64" stroke-width="0.85" opacity="0.65"/><line x1="240.91" y1="33.47" x2="238.75" y2="23.71" stroke-width="0.85" opacity="0.65"/><line x1="252.59" y1="31.15" x2="250.86" y2="21.30" stroke-width="0.85" opacity="0.65"/><line x1="264.37" y1="29.34" x2="263.06" y2="19.42" stroke-width="0.85" opacity="0.65"/><line x1="276.21" y1="28.04" x2="275.33" y2="18.08" stroke-width="0.85" opacity="0.65"/><line x1="288.09" y1="27.26" x2="287.66" y2="17.27" stroke-width="0.85" opacity="0.65"/></g><circle cx="300" cy="300" r="247" fill="none" stroke="currentColor" stroke-width=".75" opacity=".22"/></svg></div>
+   <div class="cover__content">
+     <div class="cover__top">DOSHISHA INTERNATIONAL</div>
+     <h1 id="cover-title">世界が集まる。<br><span>ここから、未来へ。</span></h1>
+     <p class="cover__english">Doshisha International by the Numbers</p>
+     <p class="cover__description">4つの数字から見えてくる、<br>同志社国際中学校・高等学校の魅力。</p>
+   </div>
+ </div>
+ <a class="cover__scroll" href="#world" aria-label="数字のセクションを見る">
+   <span>Scroll to discover</span>
+   <svg viewBox="0 0 44 30" width="44" height="30" aria-hidden="true"><path d="M5 7L22 24 39 7" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </a>
+ <div class="cover__index">INTRO / 00</div>
+</section>
+
 <section class="story story--world" id="world" aria-labelledby="world-title">
 <div class="story__ambient story__ambient--map" aria-hidden="true">
 <svg class="background-map" viewBox="0 0 1280 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -214,8 +307,8 @@ a{color:inherit}svg{display:block;max-width:100%}
 <div class="story__inner">
   <div class="story__copy">
     <div class="story__topline"><strong>01 / 04</strong>GLOBAL BACKGROUND</div>
-    <h1 class="story__label" id="world-title">海外滞在国</h1>
-    <div class="story__metric"><span class="story__prefix">約</span><strong>70</strong><span class="story__unit">ヶ国</span></div>
+    <h2 class="story__label" id="world-title">海外滞在国</h2>
+    <div class="story__metric"><span class="story__prefix">約</span><strong data-counter="70" aria-hidden="true">70</strong><span class="sr-only">約70ヶ国</span><span class="story__unit">ヶ国</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">さまざまな国や地域で暮らした経験が、ひとつの学校で交わる。<br>その違いが、新しい気づきと学びを生み出します。</p>
     <p class="story__source">2026年版 学校案内「数字でわかる同志社国際」 <a href="https://www.intnl.doshisha.ac.jp/admission/digital_pamphlet/pamphlet/" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
@@ -262,7 +355,7 @@ a{color:inherit}svg{display:block;max-width:100%}
   <div class="story__copy">
     <div class="story__topline"><strong>02 / 04</strong>MULTILINGUAL LEARNING</div>
     <h2 class="story__label" id="languages-title">学べる外国語</h2>
-    <div class="story__metric"><strong>6</strong><span class="story__unit">ヶ国語</span></div>
+    <div class="story__metric"><strong data-counter="6" aria-hidden="true">6</strong><span class="sr-only">6ヶ国語</span><span class="story__unit">ヶ国語</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">言語を学ぶことは、文化を知ること。<br>異なる価値観に触れる経験が、世界への扉を開きます。</p>
     <p class="story__source">2026年版 学校案内。開講・履修条件は年度により異なります。 <a href="https://www.intnl.doshisha.ac.jp/admission/digital_pamphlet/pamphlet/" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
@@ -298,7 +391,7 @@ a{color:inherit}svg{display:block;max-width:100%}
   <div class="story__copy">
     <div class="story__topline"><strong>03 / 04</strong>FUTURE PATHWAYS</div>
     <h2 class="story__label" id="future-title">系列大学への推薦進学</h2>
-    <div class="story__metric"><span class="story__prefix">例年</span><strong>90</strong><span class="story__unit">%以上</span></div>
+    <div class="story__metric"><span class="story__prefix">例年</span><strong data-counter="90" aria-hidden="true">90</strong><span class="sr-only">90%以上</span><span class="story__unit">%以上</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">高校卒業生の90%以上が推薦入学制度を利用して、同志社大学・同志社女子大学へ進学しています。<br>ほかにも国内外の大学を目指す道があります。</p>
     <p class="story__source">学校法人同志社「一貫教育 FAQ」／高校卒業生の進路に関する説明。 <a href="https://www.doshisha.ed.jp/schools/faq.html" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
@@ -323,7 +416,7 @@ a{color:inherit}svg{display:block;max-width:100%}
   <div class="story__copy">
     <div class="story__topline"><strong>04 / 04</strong>KNOWLEDGE & CURIOSITY</div>
     <h2 class="story__label" id="library-title">コミュニケーションセンター 蔵書数</h2>
-    <div class="story__metric"><span class="story__prefix">約</span><strong>64,125</strong><span class="story__unit">冊</span></div>
+    <div class="story__metric"><span class="story__prefix">約</span><strong data-counter="64125" aria-hidden="true">64,125</strong><span class="sr-only">約64,125冊</span><span class="story__unit">冊</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">興味のある一冊から、知らなかった世界へ。<br>たくさんの本が、学びたい気持ちを支えています。</p>
     <p class="story__source">学校公式Webサイト掲載値（2026年11月2日確認）。 <a href="https://www.intnl.doshisha.ac.jp/education/practice.html" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
@@ -362,19 +455,69 @@ a{color:inherit}svg{display:block;max-width:100%}
 <div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
 </main>
-<nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#world" aria-label="海外滞在国" class="active"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="系列大学への推薦進学" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a></nav>
+<nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#cover" aria-label="表紙" class="active"></a><a href="#world" aria-label="海外滞在国"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="系列大学への推薦進学" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a></nav>
 <section class="closing"><h2 class="closing__text"><small>DISCOVER DOSHISHA INTERNATIONAL</small>まだ知らない自分に、出会いにいこう。</h2>
 <a class="closing__link" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a></section>
 <footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値は学校案内2026および学校法人・学校公式Webサイトの掲載内容に基づきます。出典は各章に記載。背景は学校の実際の写真ではなく、イメージ素材です。</footer>
 <script>
 (function(){
-if(!('IntersectionObserver' in window))return;
-const sections=[...document.querySelectorAll('.story')],links=[...document.querySelectorAll('.dot-nav a')];
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){
-e.target.classList.add('is-in');
-links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
-}}),{threshold:.42});
-sections.forEach(s=>io.observe(s));
+  "use strict";
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const chapters=[...document.querySelectorAll(".cover, .story")];
+  const dots=[...document.querySelectorAll(".dot-nav a")];
+  const header=document.querySelector(".site-header");
+  const nav=document.querySelector(".dot-nav");
+  const counters=[...document.querySelectorAll("[data-counter]")];
+  const normalized=(number)=>Math.round(number).toLocaleString("ja-JP");
+  function updateCoverState(){
+    const onCover=window.scrollY < document.querySelector(".cover").offsetHeight*.66;
+    header.classList.toggle("site-header--cover",onCover);
+    nav.classList.toggle("dot-nav--cover",onCover);
+  }
+  function showChapter(el){
+    if(!el.classList.contains("is-in"))el.classList.add("is-in");
+    if(!reduceMotion){
+      const counter=el.querySelector("[data-counter]");
+      if(counter&&!counter.dataset.played){
+        counter.dataset.played="true";
+        const target=Number(counter.dataset.counter);
+        if(!Number.isFinite(target)||target<0)return;
+        const duration=target>10000?1500:target>90?1150:980;
+        const start=performance.now();
+        function tick(now){
+          const x=Math.min(1,(now-start)/duration);
+          const eased=1-Math.pow(1-x,3);
+          counter.textContent=normalized(target*eased);
+          if(x<1)requestAnimationFrame(tick);
+          else counter.textContent=normalized(target);
+        }
+        requestAnimationFrame(tick);
+      }
+    }
+  }
+  // Static HTML always contains the final numbers. Never hide content while waiting for JS.
+  if(!("IntersectionObserver" in window)){
+    chapters.forEach(showChapter);
+    updateCoverState();
+    return;
+  }
+  const enter=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){showChapter(entry.target)}});
+  },{threshold:.26});
+  chapters.forEach(el=>enter.observe(el));
+  const selected=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      dots.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+entry.target.id));
+    });
+  },{rootMargin:"-32% 0px -42% 0px",threshold:0});
+  chapters.forEach(el=>selected.observe(el));
+  updateCoverState();
+  window.addEventListener("scroll",updateCoverState,{passive:true});
+  window.addEventListener("resize",updateCoverState,{passive:true});
+  // Trigger counters on loaded deep links without waiting for a future scroll.
+  const anchor=window.location.hash?document.querySelector(window.location.hash):null;
+  if(anchor&&anchor.matches(".story"))showChapter(anchor);
 })();
 </script>
 </body>
