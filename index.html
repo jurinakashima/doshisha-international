@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f3">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="数字でわかる同志社国際 | Doshisha International by the Numbers">
+<meta property="og:description" content="国際性、外国語教育、進路、コミュニケーションセンター。4つの数字で知る同志社国際中学校・高等学校。">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="https://www.intnl.doshisha.ac.jp/images/top/top-mv-logo.png" type="image/png">
 <title>数字でわかる同志社国際｜Doshisha International by the Numbers</title>
 <meta name="description" content="同志社国際中学校・高等学校を4つの数字で紹介。国際性、語学、進路、学びの環境を、わかりやすいグラフィックとともに。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,12 +138,61 @@ a{color:inherit}svg{display:block;max-width:100%}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Release candidate refinements: official mark, contrast, mobile and sourcing */
+.skip-link{position:fixed;z-index:90;left:16px;top:-80px;background:#fff;color:var(--plum);padding:12px 18px;font-size:13px}
+.skip-link:focus{top:12px}
+.site-header__brand{display:flex!important;gap:13px;align-items:center;text-decoration:none;max-width:310px;white-space:normal}
+.site-header__brand img{width:56px;height:56px;flex:none;object-fit:contain;filter:brightness(0) saturate(100%) invert(28%) sepia(19%) saturate(1304%) hue-rotate(248deg) brightness(88%) contrast(95%)}
+.site-header__brand-label{font:600 12px/1.6 "Noto Sans JP",sans-serif;letter-spacing:.015em;color:#4c285b;max-width:230px}
+.site-header__center{top:15px}
+.site-header__external{display:flex;font-family:"Noto Sans JP",sans-serif}
+.story__source{font:400 10px/1.9 "Noto Sans JP",sans-serif;letter-spacing:0;color:#79717b}
+.story__source a{display:inline-block;color:var(--plum);font-weight:600;text-decoration:underline;text-underline-offset:3px;margin-left:5px;min-height:28px}
+.story__description{max-width:525px}
+.story--future .story__label{font-size:clamp(20px,1.9vw,27px)}
+.story--future .story__prefix{font-size:clamp(18px,2vw,26px)}
+.story--future .story__unit{font-size:clamp(23px,2.65vw,35px);margin-left:-5px}
+.story--library .story__metric strong{font-size:clamp(103px,10.6vw,160px);letter-spacing:-.09em}
+.story--library .story__metric{gap:6px}
+.site-footer{max-width:none}
+@media(min-width:1051px) and (max-width:1370px){
+.site-header__center{left:54%;font-size:11px}
+.site-header__brand-label{font-size:11px}
+}
+@media(max-width:900px){
+.site-header__center{display:none}
+.site-header{justify-content:space-between}
+}
+@media(max-width:720px){
+.site-header{justify-content:space-between;gap:8px;padding:8px 14px;height:70px}
+.site-header__brand{display:flex!important;gap:8px;max-width:245px;min-width:0}
+.site-header__brand img{width:45px;height:45px}
+.site-header__brand-label{font-size:10px;line-height:1.55}
+.site-header__external{display:flex!important;font-size:10px;min-height:44px;padding:5px 4px;flex:none}
+.story--future .story__label{font-size:20px}
+.story--future .story__prefix{font-size:15px}
+.story--future .story__unit{font-size:20px;margin-left:-5px}
+.story--future .story__metric strong{font-size:clamp(127px,37vw,170px)}
+.story--library .story__metric strong{font-size:clamp(68px,19.8vw,99px)}
+.story__source{font-size:10px;line-height:2.1}
+.story__source a{margin-left:0}
+}
+@media(max-width:380px){
+.site-header__brand img{width:39px;height:39px}
+.site-header__brand-label{font-size:9px}
+.site-header__external{font-size:9px}
+.story--future .story__metric strong{font-size:126px}
+.story--library .story__metric strong{font-size:67px}
+}
+
 </style>
 </head>
 <body>
-<header class="site-header"><a class="site-header__brand" href="#world">同志社国際中学校・高等学校</a>
+<a class="skip-link" href="#world">本文へスキップ</a>
+<header class="site-header"><a class="site-header__brand" href="#world" aria-label="同志社国際中学校・高等学校、先頭へ"><img src="https://www.intnl.doshisha.ac.jp/images/top/top-mv-logo.png" width="64" height="64" alt="同志社国際中学校・高等学校 公式ロゴ" decoding="async"><span class="site-header__brand-label">同志社国際中学校・高等学校</span></a>
 <div class="site-header__center">Doshisha International by the Numbers<span>数字でわかる同志社国際</span></div>
-<a class="site-header__external" href="https://www.intnl.doshisha.ac.jp/" rel="noopener" target="_blank">OFFICIAL SITE <span aria-hidden="true">↗</span></a></header>
+<a class="site-header__external" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">公式サイト <span aria-hidden="true">↗</span></a></header>
 <main id="main">
 <section class="story story--world" id="world" aria-labelledby="world-title">
 <div class="story__ambient story__ambient--map" aria-hidden="true">
@@ -162,7 +218,7 @@ a{color:inherit}svg{display:block;max-width:100%}
     <div class="story__metric"><span class="story__prefix">約</span><strong>70</strong><span class="story__unit">ヶ国</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">さまざまな国や地域で暮らした経験が、ひとつの学校で交わる。<br>その違いが、新しい気づきと学びを生み出します。</p>
-    <p class="story__source">※ 学校パンフレット掲載値</p>
+    <p class="story__source">2026年版 学校案内「数字でわかる同志社国際」 <a href="https://www.intnl.doshisha.ac.jp/admission/digital_pamphlet/pamphlet/" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
   </div>
   <div class="story__visual">
     <div class="story__disc">
@@ -209,7 +265,7 @@ a{color:inherit}svg{display:block;max-width:100%}
     <div class="story__metric"><strong>6</strong><span class="story__unit">ヶ国語</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">言語を学ぶことは、文化を知ること。<br>異なる価値観に触れる経験が、世界への扉を開きます。</p>
-    <p class="story__source">※ 科目・履修条件は学校の最新案内をご確認ください</p>
+    <p class="story__source">2026年版 学校案内。開講・履修条件は年度により異なります。 <a href="https://www.intnl.doshisha.ac.jp/admission/digital_pamphlet/pamphlet/" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
   </div>
   <div class="story__visual">
     <div class="story__disc">
@@ -241,11 +297,11 @@ a{color:inherit}svg{display:block;max-width:100%}
 <div class="story__inner">
   <div class="story__copy">
     <div class="story__topline"><strong>03 / 04</strong>FUTURE PATHWAYS</div>
-    <h2 class="story__label" id="future-title">内部進学率</h2>
-    <div class="story__metric"><span class="story__prefix">約</span><strong>90</strong><span class="story__unit">%</span></div>
+    <h2 class="story__label" id="future-title">系列大学への推薦進学</h2>
+    <div class="story__metric"><span class="story__prefix">例年</span><strong>90</strong><span class="story__unit">%以上</span></div>
     <div class="story__rule" aria-hidden="true"></div>
-    <p class="story__description">仲間と学んだ時間を、その先の進路へ。<br>ひとりひとりが、自分らしい未来を描いていきます。</p>
-    <p class="story__source">※ 学校パンフレット掲載値</p>
+    <p class="story__description">高校卒業生の90%以上が推薦入学制度を利用して、同志社大学・同志社女子大学へ進学しています。<br>ほかにも国内外の大学を目指す道があります。</p>
+    <p class="story__source">学校法人同志社「一貫教育 FAQ」／高校卒業生の進路に関する説明。 <a href="https://www.doshisha.ed.jp/schools/faq.html" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
   </div>
   <div class="story__visual">
     <div class="story__disc">
@@ -267,10 +323,10 @@ a{color:inherit}svg{display:block;max-width:100%}
   <div class="story__copy">
     <div class="story__topline"><strong>04 / 04</strong>KNOWLEDGE & CURIOSITY</div>
     <h2 class="story__label" id="library-title">コミュニケーションセンター 蔵書数</h2>
-    <div class="story__metric"><span class="story__prefix">約</span><strong>63,500</strong><span class="story__unit">冊</span></div>
+    <div class="story__metric"><span class="story__prefix">約</span><strong>64,125</strong><span class="story__unit">冊</span></div>
     <div class="story__rule" aria-hidden="true"></div>
     <p class="story__description">興味のある一冊から、知らなかった世界へ。<br>たくさんの本が、学びたい気持ちを支えています。</p>
-    <p class="story__source">※ 学校パンフレット掲載値</p>
+    <p class="story__source">学校公式Webサイト掲載値（2026年11月2日確認）。 <a href="https://www.intnl.doshisha.ac.jp/education/practice.html" target="_blank" rel="noopener noreferrer">出典を見る ↗</a></p>
   </div>
   <div class="story__visual">
     <div class="story__disc">
@@ -306,10 +362,10 @@ a{color:inherit}svg{display:block;max-width:100%}
 <div class="story__feature">SCROLL TO DISCOVER</div>
 </section>
 </main>
-<nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#world" aria-label="海外滞在国" class="active"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="内部進学率" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a></nav>
+<nav class="dot-nav" aria-label="ページ内ナビゲーション"><a href="#world" aria-label="海外滞在国" class="active"></a><a href="#languages" aria-label="学べる外国語" ></a><a href="#future" aria-label="系列大学への推薦進学" ></a><a href="#library" aria-label="コミュニケーションセンター 蔵書数" ></a></nav>
 <section class="closing"><h2 class="closing__text"><small>DISCOVER DOSHISHA INTERNATIONAL</small>まだ知らない自分に、出会いにいこう。</h2>
-<a class="closing__link" href="https://www.intnl.doshisha.ac.jp/" rel="noopener" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a></section>
-<footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値はご提供の学校パンフレットに基づく掲載値です。ぼかし背景は仮のイメージ写真で、学校の実際の写真ではありません。</footer>
+<a class="closing__link" href="https://www.intnl.doshisha.ac.jp/" rel="noopener noreferrer" target="_blank">学校公式サイトを見る <span aria-hidden="true">↗</span></a></section>
+<footer class="site-footer">同志社国際中学校・高等学校｜デザイン検討用・非公式プレビュー<br>数値は学校案内2026および学校法人・学校公式Webサイトの掲載内容に基づきます。出典は各章に記載。背景は学校の実際の写真ではなく、イメージ素材です。</footer>
 <script>
 (function(){
 if(!('IntersectionObserver' in window))return;
