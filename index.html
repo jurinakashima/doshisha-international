@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f4">
-<meta name="description" content="数字でわかる同志社国際中学校・高等学校。帰国生徒数、海外滞在国、語学、進学、学校生活、蔵書数まで。学校案内の数字を紹介するデザインプレビュー。">
+<meta name="description" content="数字でわかる同志社国際中学校・高等学校。国際性、語学、進路、学習環境の4つの数字から魅力を紹介するデザインプレビュー。">
 <title>数字でわかる同志社国際 | Doshisha International by the Numbers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,6 +214,73 @@ a{color:inherit}button{font:inherit}img{display:block;max-width:100%}
  .motion .reveal{opacity:1!important;transform:none!important}
  .motion .scene__rule{opacity:1!important;transform:none!important}
 }
+
+/* V13: Curated editorial narrative. Four themes, five brochure figures. */
+.curated-intro{background:#fff;padding:113px clamp(26px,6vw,92px) 88px}
+.curated-intro__container{max-width:1200px;margin:0 auto}
+.curated-intro__title{font:500 clamp(35px,3.85vw,57px)/1.66 var(--jpserif);letter-spacing:-.055em;color:var(--dark);margin:20px 0 0}
+.curated-intro__description{font:400 13px/2.2 var(--sans);color:var(--slate);margin:20px 0 0}
+.curated-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:67px;border-top:1px solid var(--hairline)}
+.curated-index a{display:grid;gap:5px;grid-template-columns:auto 1fr;align-content:start;text-decoration:none;min-height:114px;padding:20px clamp(12px,2vw,29px);border-right:1px solid var(--hairline);transition:background .25s}
+.curated-index a:first-child{padding-left:0}.curated-index a:last-child{border:0}
+.curated-index a:hover{background:#f7f4f7}
+.curated-index a span{grid-row:span 2;font:500 31px/.9 var(--serif);color:var(--plum);margin-right:13px}
+.curated-index a strong{font:600 16px/1.6 var(--jpserif);color:var(--dark)}
+.curated-index a small{font:700 9px "DM Sans",sans-serif;letter-spacing:.15em;color:var(--slate)}
+.scene__metric-label{margin-top:27px}
+.scene--feature .scene__num{font-size:clamp(170px,19vw,285px)}
+.scene__sub small{font-size:11px;line-height:1.7;color:var(--slate);font-weight:400}
+.scene--language-minimal .scene__media{margin:0}
+.language-typography{display:block;width:100%;max-width:510px;border-top:1px solid var(--plum);border-bottom:1px solid var(--plum);padding:18px 0 20px;align-self:center}
+.language-typography__head{font:700 10px "DM Sans",sans-serif;letter-spacing:.18em;color:var(--plum);padding:0 8px 23px}
+.language-typography__grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.language-typography__grid span{font:500 clamp(25px,3.3vw,47px)/1.3 var(--serif);letter-spacing:-.02em;color:var(--plum);padding:17px 9px;border-top:1px solid var(--hairline)}
+.language-typography__grid span:nth-child(n+5){font-family:var(--jpserif);font-size:clamp(22px,2.7vw,35px);line-height:1.6}
+.language-typography__footer{font:700 9px "DM Sans",sans-serif;letter-spacing:.16em;color:var(--slate);margin-top:18px;padding-left:8px}
+.scene--future-minimal .scene__num{font-size:clamp(175px,20vw,290px)}
+.scene--future-minimal .scene__unit{font:500 clamp(38px,4vw,63px)/1 var(--serif)}
+.scene--book-minimal .scene__num--wide{font-size:clamp(97px,10.5vw,164px)}
+.scene--book-minimal .scene__measure{gap:8px}
+.scene__photo--rectangle{width:min(33vw,460px);height:min(29vw,400px);border-radius:0;box-shadow:15px 15px 0 #ffffffa0}
+.scene__photo--rectangle:after{border-radius:0}
+.scene--book-minimal .scene__media{padding-bottom:20px}
+.scene--book-minimal .scene__photo-label{margin-top:-4px}
+@media(max-width:1050px){
+.curated-index a{padding:18px 12px}
+.scene--feature .scene__num{font-size:clamp(145px,18vw,235px)}
+.scene--future-minimal .scene__num{font-size:clamp(145px,18vw,250px)}
+.scene--book-minimal .scene__num--wide{font-size:clamp(85px,10vw,130px)}
+}
+@media(max-width:720px){
+.curated-intro{padding:82px 24px 68px}
+.curated-intro__title{font-size:clamp(32px,7.8vw,43px);line-height:1.62}
+.curated-intro__description{font-size:11px}
+.curated-index{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:38px}
+.curated-index a{min-height:92px;padding:17px 10px 16px;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline)}
+.curated-index a:first-child{padding-left:0}
+.curated-index a:nth-child(2){border-right:0}
+.curated-index a:nth-child(3){padding-left:0}
+.curated-index a:last-child{border-bottom:1px solid var(--hairline)}
+.curated-index a span{font-size:27px;margin-right:10px}
+.curated-index a strong{font-size:14px}
+.curated-index a small{font-size:9px}
+.scene--feature .scene__num{font-size:clamp(140px,41vw,190px)}
+.scene--future-minimal .scene__num{font-size:clamp(140px,41vw,190px)}
+.scene--future-minimal .scene__unit{font-size:40px}
+.scene__measure small{font-size:12px}
+.language-typography{margin:35px auto 0!important;width:100%;max-width:430px}
+.language-typography__grid span{font-size:clamp(28px,8vw,40px);padding:12px 6px}
+.language-typography__grid span:nth-child(n+5){font-size:24px}
+.scene__photo--rectangle{width:min(76vw,350px);height:min(65vw,300px)}
+.scene--book-minimal .scene__num--wide{font-size:clamp(75px,21.5vw,125px)}
+.scene--book-minimal .scene__unit{font-size:16px}
+}
+@media(max-width:390px){
+.scene--book-minimal .scene__num--wide{font-size:clamp(70px,20.5vw,91px)}
+.scene--book-minimal .scene__measure{gap:4px}
+.scene--future-minimal .scene__num,.scene--feature .scene__num{font-size:138px}
+}
+
 </style>
 </head>
 <body>
@@ -226,7 +293,7 @@ a{color:inherit}button{font:inherit}img{display:block;max-width:100%}
   <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
   <div class="hero__inner">
     <div class="hero__copy">
-      <div class="hero__counter">DOSHISHA INTERNATIONAL / 2026</div>
+      <div class="hero__counter">FOUR STORIES OF DOSHISHA INTERNATIONAL</div>
       <h1 id="hero-title">数字でわかる<br>同志社国際</h1>
       <p class="hero__en">Doshisha International<br>by the Numbers.</p>
       <p class="hero__body">国際色豊かな本校には、さまざまなバックグラウンドを持つ生徒たちが集まります。その魅力を、学校案内に掲載された数字とともに。</p>
@@ -236,128 +303,101 @@ a{color:inherit}button{font:inherit}img{display:block;max-width:100%}
       <div class="hero__photo-label">A WORLD OF POSSIBILITIES</div>
     </div>
   </div>
-  <div class="hero__bottom"><span>SCROLL TO DISCOVER</span><span>01 — 05 / OUR STORIES</span></div>
+  <div class="hero__bottom"><span>SCROLL TO DISCOVER</span><span>01 — 04 / OUR STORIES</span></div>
 </section>
-<section class="summary" id="numbers">
-  <div class="summary__intro">
-    <div class="eyebrow reveal">THE STORY BEHIND THE NUMBERS</div>
-    <h2 class="reveal">10の数字に、<br>10の発見。</h2>
-    <p class="reveal">ひとつの数字から、ひとつのストーリーへ。<br>同志社国際の特徴を、わかりやすくひもときます。</p>
+
+<section class="curated-intro" id="numbers" aria-label="4つの数字で知る同志社国際">
+  <div class="curated-intro__container">
+    <div class="eyebrow reveal">FOUR STORIES. ONE SCHOOL.</div>
+    <h2 class="curated-intro__title reveal">数字は、学校の魅力を知る<br>ひとつの入り口。</h2>
+    <p class="curated-intro__description reveal">たくさんの数字を並べるのではなく、<br>同志社国際らしさが伝わる4つのテーマを選びました。</p>
+    <nav class="curated-index reveal" aria-label="数字で見る4つのテーマ">
+      <a href="#returning"><span>01</span><strong>国際性</strong><small>DIVERSITY</small></a>
+      <a href="#languages"><span>02</span><strong>語学</strong><small>LANGUAGES</small></a>
+      <a href="#future"><span>03</span><strong>進路</strong><small>FUTURE</small></a>
+      <a href="#library"><span>04</span><strong>学習環境</strong><small>KNOWLEDGE</small></a>
+    </nav>
   </div>
-  <div class="summary__grid reveal"><div class="summary__stat"><strong>682</strong><span>帰国生徒数</span></div>
-<div class="summary__stat"><strong>約70</strong><span>海外滞在国</span></div>
-<div class="summary__stat"><strong>6</strong><span>学べる外国語</span></div>
-<div class="summary__stat"><strong>約100</strong><span>海外プログラム参加者</span></div>
-<div class="summary__stat"><strong>929</strong><span>TOEFL®受験者数</span></div>
-<div class="summary__stat"><strong>約90%</strong><span>内部進学率</span></div>
-<div class="summary__stat"><strong>約120</strong><span>寮生徒数</span></div>
-<div class="summary__stat"><strong>54</strong><span>同時展開授業数</span></div>
-<div class="summary__stat"><strong>約63,500</strong><span>蔵書数</span></div>
-<div class="summary__stat"><strong>約11,400</strong><span>洋書数</span></div></div>
-  <p class="summary__note">数字はご提供いただいた学校パンフレットの掲載値です。対象年度や定義の詳細は、学校の最新資料でご確認ください。</p>
 </section>
-<section class="scene " id="returning" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 44%" aria-labelledby="returning-title">
-  <div class="photo-backdrop " aria-hidden="true"></div>
+
+<section class="scene scene--feature" id="returning" style="--photo:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 44%" aria-labelledby="returning-title">
+  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
   <div class="scene__container">
     <div class="scene__copy">
-      <div class="scene__index"><b>01</b> DIVERSITY / BACKGROUND</div>
-      <h2 class="scene__heading reveal" id="returning-title">さまざまな経験が、<br>ひとつの教室に。</h2>
-      <div class="eyebrow reveal" style="margin-top:27px">帰国生徒数</div>
-      <div class="scene__measure reveal"><strong class="scene__num ">682</strong><span class="scene__unit">名</span></div>
+      <div class="scene__index"><b>01</b> GLOBAL COMMUNITY / 国際性</div>
+      <h2 class="scene__heading reveal" id="returning-title">世界中の経験が、<br>この教室に集まる。</h2>
+      <div class="eyebrow reveal scene__metric-label">海外滞在国</div>
+      <div class="scene__measure reveal"><small>約</small><strong class="scene__num">70</strong><span class="scene__unit">ヶ国</span></div>
       <div class="scene__rule reveal" aria-hidden="true"></div>
-      <div class="scene__footnote">全校生徒1,215名のうち（2026年度）</div>
-      <p class="scene__body reveal">多様な国や地域での生活経験を持つ生徒たち。異なる文化や価値観との出会いが、日々の学びを豊かにします。</p>
-      
-      <div class="scene__sub reveal"><strong><i>約</i>70<i>ヶ国</i></strong><span>海外滞在国</span></div>
-      <p class="scene__footnote">※帰国生徒数・海外滞在国は学校案内の掲載値です。</p>
+      <p class="scene__body reveal">異なる国や地域での生活経験を持つ生徒が、一緒に学び合う。多様なバックグラウンドが、この学校の日常をつくっています。</p>
+      <div class="scene__sub reveal"><strong>682<i>名</i></strong><span>帰国生徒数<br><small>全校生徒1,215名のうち（2026年度）</small></span></div>
+      <p class="scene__footnote">※学校案内の掲載値に基づきます。</p>
     </div>
-    <figure class="scene__media scene__media--map">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
-      <figcaption class="scene__photo-label">DIVERSITY / SCHOOL LIFE</figcaption>
+    <figure class="scene__media scene__media--feature">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=75" alt="学生たちの交流を表すイメージ写真。同志社国際の生徒の写真ではありません。"></div>
+      <figcaption class="scene__photo-label">ONE CAMPUS · MANY STORIES</figcaption>
     </figure>
   </div>
 </section>
-<section class="scene scene--reverse " id="languages" style="--photo:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=75');--bg-position:center 45%;--photo-pos:center 48%" aria-labelledby="languages-title">
-  <div class="photo-backdrop " aria-hidden="true"></div>
+
+<section class="scene scene--reverse scene--language-minimal" id="languages" style="--photo:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=75');--bg-position:center 45%" aria-labelledby="languages-title">
+  <div class="photo-backdrop" aria-hidden="true"></div>
   <div class="scene__container">
     <div class="scene__copy">
-      <div class="scene__index"><b>02</b> LANGUAGES / GLOBAL LEARNING</div>
-      <h2 class="scene__heading reveal" id="languages-title">学ぶ言葉の数だけ、<br>世界が広がる。</h2>
-      <div class="eyebrow reveal" style="margin-top:27px">学べる外国語</div>
-      <div class="scene__measure reveal"><strong class="scene__num ">6</strong><span class="scene__unit">ヶ国語</span></div>
+      <div class="scene__index"><b>02</b> LANGUAGE / 語学</div>
+      <h2 class="scene__heading reveal" id="languages-title">言葉を学ぶ。<br>世界の見方が変わる。</h2>
+      <div class="eyebrow reveal scene__metric-label">学べる外国語</div>
+      <div class="scene__measure reveal"><strong class="scene__num">6</strong><span class="scene__unit">ヶ国語</span></div>
       <div class="scene__rule reveal" aria-hidden="true"></div>
-      
-      <p class="scene__body reveal">言葉の向こうにある、文化や考え方を知る。教室での学びは、海外での体験にもつながっています。</p>
-      <div class="scene__languages" aria-label="学べる言語"><span>ENGLISH</span><span>DEUTSCH</span><span>FRANÇAIS</span><span>ESPAÑOL</span><span>中文</span><span>한국어</span></div>
-      <div class="scene__sub reveal"><strong><i>約</i>100<i>名</i></strong><span>海外プログラム参加者</span></div>
-      <p class="scene__footnote">※語学の科目・履修条件は年度や学年によって異なります。</p>
+      <p class="scene__body reveal">言葉の向こうにある文化に触れる。ひとつの言語を学ぶことが、まだ知らない世界への入り口になります。</p>
+      <p class="scene__footnote">※履修条件・科目は学校の最新案内をご確認ください。</p>
     </div>
-    <figure class="scene__media ">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
-      <figcaption class="scene__photo-label">LANGUAGE / EXPLORATION</figcaption>
+    <div class="scene__media language-typography reveal" aria-label="学べる6つの外国語の紹介">
+      <div class="language-typography__head">WORDS OPEN WORLDS</div>
+      <div class="language-typography__grid">
+        <span lang="en">English</span><span lang="de">Deutsch</span>
+        <span lang="fr">Français</span><span lang="es">Español</span>
+        <span lang="zh">中文</span><span lang="ko">한국어</span>
+      </div>
+      <div class="language-typography__footer">SIX LANGUAGES · NEW PERSPECTIVES</div>
+    </div>
+  </div>
+</section>
+
+<section class="scene scene--future-minimal" id="future" style="--photo:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 42%" aria-labelledby="future-title">
+  <div class="photo-backdrop photo-backdrop--strong" aria-hidden="true"></div>
+  <div class="scene__container">
+    <div class="scene__copy">
+      <div class="scene__index"><b>03</b> NEXT CHAPTER / 進路</div>
+      <h2 class="scene__heading reveal" id="future-title">一人ひとりの、<br>次のステージへ。</h2>
+      <div class="eyebrow reveal scene__metric-label">内部進学率</div>
+      <div class="scene__measure reveal"><small>約</small><strong class="scene__num">90</strong><span class="scene__unit">%</span></div>
+      <div class="scene__rule reveal" aria-hidden="true"></div>
+      <p class="scene__body reveal">同志社大学・同志社女子大学をはじめ、自分が目指す進路へ。学校で育んだ学びを、その先の未来につなげていきます。</p>
+      <p class="scene__footnote">※内部進学率は学校案内の掲載値です。年度・対象範囲は最新資料でご確認ください。</p>
+    </div>
+    <figure class="scene__media">
+      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=75" alt="学習の風景を示すイメージ写真。同志社国際で撮影された写真ではありません。"></div>
+      <figcaption class="scene__photo-label">THE FUTURE IS YOURS</figcaption>
     </figure>
   </div>
 </section>
-<section class="scene scene--tint " id="future" style="--photo:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 42%" aria-labelledby="future-title">
-  <div class="photo-backdrop " aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>03</b> ACADEMIC / FUTURE</div>
-      <h2 class="scene__heading reveal" id="future-title">その先の可能性を、<br>自分らしく。</h2>
-      <div class="eyebrow reveal" style="margin-top:27px">TOEFL® 受験者数</div>
-      <div class="scene__measure reveal"><strong class="scene__num ">929</strong><span class="scene__unit">名</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      <div class="scene__footnote">2025年度</div>
-      <p class="scene__body reveal">それぞれの進路へ踏み出すために。語学への挑戦と進路の選択を、学校案内の数字から紹介します。</p>
-      
-      <div class="scene__sub reveal"><strong><i>約</i>90<i>%</i></strong><span>内部進学率</span></div>
-      <p class="scene__footnote">※内部進学率は「約90%」。2025年度のTOEFL受験者数は学校案内の掲載値です。</p>
-    </div>
-    <figure class="scene__media ">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
-      <figcaption class="scene__photo-label">LEARNING / NEXT CHAPTER</figcaption>
-    </figure>
-  </div>
-</section>
-<section class="scene scene--reverse " id="campus" style="--photo:url('https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=1600&q=75');--bg-position:center 46%;--photo-pos:center 46%" aria-labelledby="campus-title">
-  <div class="photo-backdrop " aria-hidden="true"></div>
-  <div class="scene__container">
-    <div class="scene__copy">
-      <div class="scene__index"><b>04</b> CAMPUS / EVERYDAY LIFE</div>
-      <h2 class="scene__heading reveal" id="campus-title">学びも、暮らしも、<br>ここからはじまる。</h2>
-      <div class="eyebrow reveal" style="margin-top:27px">寮生徒数</div>
-      <div class="scene__measure reveal"><small>約</small><strong class="scene__num ">120</strong><span class="scene__unit">名</span></div>
-      <div class="scene__rule reveal" aria-hidden="true"></div>
-      
-      <p class="scene__body reveal">仲間と過ごす日常も、多様な学びの時間も。学校生活を形づくる、一人ひとりの居場所があります。</p>
-      
-      <div class="scene__sub reveal"><strong>54<i>コマ</i></strong><span>同時展開授業数</span></div>
-      <p class="scene__footnote">※同時展開授業数は2026年度。</p>
-    </div>
-    <figure class="scene__media ">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
-      <figcaption class="scene__photo-label">CAMPUS / EVERYDAY MOMENTS</figcaption>
-    </figure>
-  </div>
-</section>
-<section class="scene scene--library " id="library" style="--photo:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 50%" aria-labelledby="library-title">
+
+<section class="scene scene--reverse scene--library scene--book-minimal" id="library" style="--photo:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=75');--bg-position:center 50%;--photo-pos:center 50%" aria-labelledby="library-title">
   <div class="photo-backdrop photo-backdrop--book" aria-hidden="true"></div>
   <div class="scene__container">
     <div class="scene__copy">
-      <div class="scene__index"><b>05</b> BOOKS / COMMUNICATION CENTER</div>
-      <h2 class="scene__heading reveal" id="library-title">知りたい気持ちの、<br>その先へ。</h2>
-      <div class="eyebrow reveal" style="margin-top:27px">コミュニケーションセンター 蔵書数</div>
+      <div class="scene__index"><b>04</b> KNOWLEDGE / 学習環境</div>
+      <h2 class="scene__heading reveal" id="library-title">知りたい気持ちに、<br>限界はない。</h2>
+      <div class="eyebrow reveal scene__metric-label">コミュニケーションセンター 蔵書数</div>
       <div class="scene__measure reveal"><small>約</small><strong class="scene__num scene__num--wide">63,500</strong><span class="scene__unit">冊</span></div>
       <div class="scene__rule reveal" aria-hidden="true"></div>
-      
-      <p class="scene__body reveal">幅広いジャンルの書籍がそろう学びの場。気になる一冊から、新しい世界への扉が開いていきます。</p>
-      
-      <div class="scene__sub reveal"><strong><i>約</i>11,400<i>冊</i></strong><span>コミュニケーションセンター 洋書数</span></div>
-      <p class="scene__footnote">※蔵書数・洋書数は学校案内の掲載値です。</p>
+      <p class="scene__body reveal">多彩な書籍が、好奇心を新しい発見に変えてくれる。学びを深めたいと思ったとき、すぐそばに広がる知の世界。</p>
+      <p class="scene__footnote">※蔵書数は学校案内の掲載値です。</p>
     </div>
-    <figure class="scene__media ">
-      <div class="scene__photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=75" alt="学校の雰囲気を表現するイメージ写真（実際の同志社国際の写真ではありません）"></div>
-      <figcaption class="scene__photo-label">KNOWLEDGE / OPEN THE WORLD</figcaption>
+    <figure class="scene__media">
+      <div class="scene__photo scene__photo--rectangle"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1100&q=75" alt="図書館を表すイメージ写真。学校の実際のコミュニケーションセンターの写真ではありません。"></div>
+      <figcaption class="scene__photo-label">A WORLD BETWEEN PAGES</figcaption>
     </figure>
   </div>
 </section>
